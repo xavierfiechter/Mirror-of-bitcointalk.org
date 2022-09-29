@@ -1,0 +1,1867 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="[ANN] MMGen, a complete Bitcoin command-line online/offline wallet solution" />
+	<meta http-equiv="Content-Language" content="en" />
+	<meta name="keywords" content="bitcoin, forum, bitcoin forum, bitcointalk" />
+	<script language="JavaScript" type="text/javascript" src="https://bitcointalk.org/Themes/default/script.js"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "https://bitcointalk.org/Themes/custom1";
+		var smf_images_url = "https://bitcointalk.org/Themes/custom1/images";
+		var smf_scripturl = "https://bitcointalk.org/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>[ANN] MMGen, a complete Bitcoin command-line online/offline wallet solution</title><!--e65cd14771a5fd8ad59fa79c545e63be328ba3c8678c279e4c75fd8ad59fa79c545e63be328ba3c8678ce5b683d72453fd8ad59fa79c545e63be328ba3c8678c8b0d4160d6ce767bfd8ad59fa79c545e63be328ba3c8678c7b4a-->
+	<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/custom1/style.css" />
+	 <!--[if !IE]> -->
+	 <link rel="stylesheet" type="text/css" media="only screen and (min-device-width: 320px) and (max-device-width: 650px)" href="https://bitcointalk.org/Themes/custom1/mobile.css" />
+	 <!-- <![endif]-->
+	<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/default/print.css" media="print" /><style type="text/css">
+.SIAKBrRunVSRXXdqswdajw > td {background-color: #E5E5E8; text-align:center;}
+.SIAKBrRunVSRXXdqswdajw > td > table {margin-top:-5px}
+.SIAKBrRunVSRXXdqswdajw .YyZyPlBYxZrXsedyLonalA {display:inline-block;max-width:100%; min-width:100%; max-height:47px; overflow:hidden}
+.SIAKBrRunVSRXXdqswdajw table,.SIAKBrRunVSRXXdqswdajw tbody,.SIAKBrRunVSRXXdqswdajw tr,.SIAKBrRunVSRXXdqswdajw td {display:inline-block;max-width:100%; min-width:100%; overflow:hidden}
+.SIAKBrRunVSRXXdqswdajw .YyZyPlBYxZrXsedyLonalA table,.SIAKBrRunVSRXXdqswdajw .YyZyPlBYxZrXsedyLonalA tbody,.SIAKBrRunVSRXXdqswdajw .YyZyPlBYxZrXsedyLonalA tr,.SIAKBrRunVSRXXdqswdajw .YyZyPlBYxZrXsedyLonalA td {display:initial; max-width:none;min-width:none;overflow:visible}
+.kasghaZykENjLxpjROfdWw {display:none !important}
+.dbenPTvZThtcVNZhJijylw {display:none}
+.xbOBUseqyZJOntVNcRgMPg {padding: 1px 1px 0 1px;}
+.sxCDDezyeTqdQtHexbUGag{color:#699C62; font-weight:bold; font-size:18px}
+.sxCDDezyeTqdQtHexbUGag:link{color:#699C62; font-weight:bold; font-size:18px}
+.sxCDDezyeTqdQtHexbUGag:visited{color:#699C62; font-weight:bold; font-size:18px}
+.UhdqfvQxgIrTsDngMJEgGQ{color:#00F30C;font-size:15px;font-weight:bold}
+.UhdqfvQxgIrTsDngMJEgGQ:link{color:#00F30C;font-size:15px;font-weight:bold}
+.UhdqfvQxgIrTsDngMJEgGQ:visited{color:#00F30C;font-size:15px;font-weight:bold}
+.hYOwyKSVebgANbcgpDkKOQ{font-size:x-small}
+
+.iQNvpQxcYerDKktPJyqCxQ:link {font-size:22px;font-weight:bold;color:orange}
+.iQNvpQxcYerDKktPJyqCxQ:active {font-size:22px;font-weight:bold;color:orange}
+.iQNvpQxcYerDKktPJyqCxQ:visited {font-size:22px;font-weight:bold;color:orange}
+.iQNvpQxcYerDKktPJyqCxQ:hover {text-decoration:none !important;color:red}
+.fYUgshzTSFxBysWmiDzkyA:link {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.fYUgshzTSFxBysWmiDzkyA:active {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.fYUgshzTSFxBysWmiDzkyA:visited {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.fYUgshzTSFxBysWmiDzkyA:hover {text-decoration:none !important;color:white;background-color:rgb(181,204,222)}
+.fYUgshzTSFxBysWmiDzkyA {display:inline-block;margin: 3px;0;3px;0}
+.SwgcaBcgwLzCittENZjhXQ:hover {text-decoration:none !important;}
+.SwgcaBcgwLzCittENZjhXQ {font-size:22px;font-weight:bold;}
+.IuCThFyawXyIZFfVIVLOJA {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .IuCThFyawXyIZFfVIVLOJA button {     border: none;     background: #8EE000;     color: #fff;     outline: none;     font-size: 1em;     padding: 0.5em 1.2em;     margin-left: 0.3em;     border-radius: 2em;     text-transform: uppercase;     font-weight: 600;     pointer-events: none;   }    .IuCThFyawXyIZFfVIVLOJA:hover .KHdxoeiscdqyadCSaJBdhQ span {   display: none; }  .IuCThFyawXyIZFfVIVLOJA:hover .KHdxoeiscdqyadCSaJBdhQ span:nth-child(2) {   display: block; }  .KHdxoeiscdqyadCSaJBdhQ {   display: flex;   align-items: center; }    .KHdxoeiscdqyadCSaJBdhQ span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .cPZZQMEeGzivYhYZXpOJpQ {   display: inline-block; }  .KHdxoeiscdqyadCSaJBdhQ span:nth-child(2) {   display: none; }  .yecOjiduClGLabIwdFjoDA {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .yecOjiduClGLabIwdFjoDA:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .yecOjiduClGLabIwdFjoDA > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .IuCThFyawXyIZFfVIVLOJA button {     display: none;   }   .KHdxoeiscdqyadCSaJBdhQ {     margin-left: 1em;   } }   @media (max-width: 550px) {   .yecOjiduClGLabIwdFjoDA span span {     display: none;   } }  @media (max-width: 465px) {   .yecOjiduClGLabIwdFjoDA {     display: none;   }   .IuCThFyawXyIZFfVIVLOJA {     justify-content: center;   } }
+.cIufcSeyHcAPwvfVWdxdxQ {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .cIufcSeyHcAPwvfVWdxdxQ button {     border: none;     background: #8EE000;     color: #fff;     outline: none;     font-size: 1em;     padding: 0.5em 1.2em;     margin-left: 0.4em;     border-radius: 2em;     text-transform: uppercase;     font-weight: 600; cursor:pointer; transition: all 0.3s;   } button:hover{transform: scale(1.05);}    .PifEPaRcjBzARjStMVsXQg:hover span{   display: none; }  .PifEPaRcjBzARjStMVsXQg:hover span:nth-child(2) {   display: block; }  .PifEPaRcjBzARjStMVsXQg {   display: flex;   align-items: center; color:#fff}    .PifEPaRcjBzARjStMVsXQg span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .tfrsJqiWanyiyAiuvSVDnA {   display: inline-block; }  .PifEPaRcjBzARjStMVsXQg span:nth-child(2) {   display: none; }  .VofYQjDjmwAafjjMgRDwNg {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .VofYQjDjmwAafjjMgRDwNg:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .VofYQjDjmwAafjjMgRDwNg > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .cIufcSeyHcAPwvfVWdxdxQ button {     display: none;   }   .PifEPaRcjBzARjStMVsXQg {     margin-left: 1em;   } }   @media (max-width: 550px) {   .VofYQjDjmwAafjjMgRDwNg span span {     display: none;   } }  @media (max-width: 465px) {   .VofYQjDjmwAafjjMgRDwNg {     display: none;   }   .cIufcSeyHcAPwvfVWdxdxQ {     justify-content: center;   } }
+.IuCThFyawXyIZFfVIVLOJA {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .IuCThFyawXyIZFfVIVLOJA button {   border: none;   background: #8EE000;   color: #fff;   outline: none;   font-size: 1em;   padding: 0.5em 1.2em;   margin-left: 0.4em;   border-radius: 2em;   text-transform: uppercase;   font-weight: 600;   cursor: pointer;   transition: all 0.3s; }  button:hover {   transform: scale(1.05); }  .KHdxoeiscdqyadCSaJBdhQ:hover span {   display: none; }  .KHdxoeiscdqyadCSaJBdhQ:hover span:nth-child(2) {   display: block; }  .KHdxoeiscdqyadCSaJBdhQ {   display: flex;   align-items: center;   color: #fff; }    .KHdxoeiscdqyadCSaJBdhQ span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .cPZZQMEeGzivYhYZXpOJpQ {   display: inline-block; }  .KHdxoeiscdqyadCSaJBdhQ span:nth-child(2) {   display: none; }  .yecOjiduClGLabIwdFjoDA {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .yecOjiduClGLabIwdFjoDA:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .yecOjiduClGLabIwdFjoDA > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .IuCThFyawXyIZFfVIVLOJA button {     display: none;   }   .KHdxoeiscdqyadCSaJBdhQ {     margin-left: 1em;   } }   @media (max-width: 550px) {   .yecOjiduClGLabIwdFjoDA span span {     display: none;   } }  @media (max-width: 465px) {   .yecOjiduClGLabIwdFjoDA {     display: none;   }   .IuCThFyawXyIZFfVIVLOJA {     justify-content: center;   } }
+.cIufcSeyHcAPwvfVWdxdxQ {   width: 900px;   height: 44px;   max-width: 100%;   background: #fff;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .cIufcSeyHcAPwvfVWdxdxQ button {   border: none;   background: #8EE000;   color: #fff;   outline: none;   font-size: 1em;   padding: 0.5em 1.2em;   margin-left: 0.4em;   border-radius: 2em;   text-transform: uppercase;   font-weight: 600;   cursor: pointer;   transition: all 0.3s; }  button:hover {   transform: scale(1.05); }  .PifEPaRcjBzARjStMVsXQg:hover span {   display: none; }  .PifEPaRcjBzARjStMVsXQg:hover span:nth-child(2) {   display: block; }  .PifEPaRcjBzARjStMVsXQg {   display: flex;   align-items: center;   color: #5CB9F7; }    .PifEPaRcjBzARjStMVsXQg span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .tfrsJqiWanyiyAiuvSVDnA {   display: inline-block; }  .PifEPaRcjBzARjStMVsXQg span:nth-child(2) {   display: none; }  .VofYQjDjmwAafjjMgRDwNg {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .VofYQjDjmwAafjjMgRDwNg:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .VofYQjDjmwAafjjMgRDwNg > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .cIufcSeyHcAPwvfVWdxdxQ button {     display: none;   }   .PifEPaRcjBzARjStMVsXQg {     margin-left: 1em;   } }   @media (max-width: 550px) {   .VofYQjDjmwAafjjMgRDwNg span span {     display: none;   } }  @media (max-width: 465px) {   .VofYQjDjmwAafjjMgRDwNg {     display: none;   }   .cIufcSeyHcAPwvfVWdxdxQ {     justify-content: center;   } }
+.IFlILzfSvYIMwvEWhlDeng {   width: 900px;   height: 44px;   margin: 0 auto;   background: #fff;   max-width: 100%;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   color: #000 !important;   font-family: arial, sans-serif;   overflow: hidden; } .IFlILzfSvYIMwvEWhlDeng:hover {   color: #fff;   background: #715AD0; } .IFlILzfSvYIMwvEWhlDeng:hover .bvhCiggkXDdZcaioUjTSEA span:nth-child(1) {   display: none; } .IFlILzfSvYIMwvEWhlDeng:hover .bvhCiggkXDdZcaioUjTSEA span:nth-child(2) {   display: block; } .IFlILzfSvYIMwvEWhlDeng:hover .xynKLebDDApcNUbgaMdiIQ span:nth-child(1) {   display: none;   color: #000; } .IFlILzfSvYIMwvEWhlDeng:hover .xynKLebDDApcNUbgaMdiIQ span:nth-child(2) {   display: block;   color: #000; } .IFlILzfSvYIMwvEWhlDeng:hover .bvhCiggkXDdZcaioUjTSEA {   background: #fff;   color: #000; } .IFlILzfSvYIMwvEWhlDeng:hover .xynKLebDDApcNUbgaMdiIQ {   background: #fff;   color: #000; } .IFlILzfSvYIMwvEWhlDeng:hover .bvhCiggkXDdZcaioUjTSEA:after {   background: #715AD0; } .IFlILzfSvYIMwvEWhlDeng:hover .bvhCiggkXDdZcaioUjTSEA:before {   background: #715AD0; } .IFlILzfSvYIMwvEWhlDeng:hover .bvhCiggkXDdZcaioUjTSEA span {   color: #000; } .IFlILzfSvYIMwvEWhlDeng:hover .xynKLebDDApcNUbgaMdiIQ:after {   background: #715AD0; } .IFlILzfSvYIMwvEWhlDeng:hover .xynKLebDDApcNUbgaMdiIQ:before {   background: #715AD0; } .IFlILzfSvYIMwvEWhlDeng:hover .TEEFKzNqiGubMaDAJhGZCQ {   color: #fff; } .IFlILzfSvYIMwvEWhlDeng:hover .TEEFKzNqiGubMaDAJhGZCQ:before {   background: #fff; } .IFlILzfSvYIMwvEWhlDeng:hover .TEEFKzNqiGubMaDAJhGZCQ:after {   background: #fff; } .IFlILzfSvYIMwvEWhlDeng .TEEFKzNqiGubMaDAJhGZCQ {   display: flex;   height: 32px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   position: relative;   z-index: 2;   font-size: 18px;   color: #000;   width: 160px; } .IFlILzfSvYIMwvEWhlDeng .TEEFKzNqiGubMaDAJhGZCQ:after{   position: absolute;   right: 98%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .IFlILzfSvYIMwvEWhlDeng .TEEFKzNqiGubMaDAJhGZCQ:before{   position: absolute;   right: 2%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .IFlILzfSvYIMwvEWhlDeng .TEEFKzNqiGubMaDAJhGZCQ span {   font-size: 26px;   font-family: Existence;   font-weight: 600; } .IFlILzfSvYIMwvEWhlDeng .TEEFKzNqiGubMaDAJhGZCQ span:hover {   color: #fff;   text-decoration: none; } .IFlILzfSvYIMwvEWhlDeng .bvhCiggkXDdZcaioUjTSEA {   display: flex;   background: #715AD0;   height: 30px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-left: 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #fff;   width: 220px } .IFlILzfSvYIMwvEWhlDeng .bvhCiggkXDdZcaioUjTSEA:after{   position: absolute;   right: 102%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .IFlILzfSvYIMwvEWhlDeng .bvhCiggkXDdZcaioUjTSEA:before{   position: absolute;   right: -2%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; } .IFlILzfSvYIMwvEWhlDeng .bvhCiggkXDdZcaioUjTSEA span {   color: #fff;   font-size: 13px;   line-height: 13px; } .IFlILzfSvYIMwvEWhlDeng .bvhCiggkXDdZcaioUjTSEA span:nth-child(2) {   display: none; } .IFlILzfSvYIMwvEWhlDeng .xynKLebDDApcNUbgaMdiIQ{   display: flex;   flex-direction: column;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 220px; } .IFlILzfSvYIMwvEWhlDeng .xynKLebDDApcNUbgaMdiIQ span {   color: #fff;   font-size: 13px;   line-height: 13px; } .IFlILzfSvYIMwvEWhlDeng .xynKLebDDApcNUbgaMdiIQ span:nth-child(2) {   display: none; } .IFlILzfSvYIMwvEWhlDeng .xynKLebDDApcNUbgaMdiIQ {   display: flex;   background: #715AD0;   height: 30px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-right: 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #fff;   width: 220px } .IFlILzfSvYIMwvEWhlDeng .xynKLebDDApcNUbgaMdiIQ:after{   position: absolute;   right: 102%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .IFlILzfSvYIMwvEWhlDeng .xynKLebDDApcNUbgaMdiIQ:before{   position: absolute;   right: -2%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; }
+.HuvfKojdiApnBgiiSsedig {   width: 900px;   height: 44px;   margin: 0 auto;   background: #715AD0;   max-width: 100%;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; } .HuvfKojdiApnBgiiSsedig:hover {   color: #fff; } .HuvfKojdiApnBgiiSsedig:hover .NRWbowKKpSOntdVwyNTKBg span:nth-child(1) {   display: none; } .HuvfKojdiApnBgiiSsedig:hover .NRWbowKKpSOntdVwyNTKBg span:nth-child(2) {   display: block; } .HuvfKojdiApnBgiiSsedig:hover .DtQRSsjANzXlLkxZdmKfGA span:nth-child(2) {   display: none; } .HuvfKojdiApnBgiiSsedig:hover .DtQRSsjANzXlLkxZdmKfGA span:nth-child(3) {   display: block; } .HuvfKojdiApnBgiiSsedig .REgRVjFBolXFAdBOgabuig {   display: flex;   background: #fff;   height: 32px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-right: 1em;   position: relative;   z-index: 2;   font-size: 18px;   color: #000;   width: 150px } // forma mid 1 .HuvfKojdiApnBgiiSsedig .REgRVjFBolXFAdBOgabuig:after{   position: absolute;   right: 90%;   top: 115%;   content: "";   width: 22px;   height: 22px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .HuvfKojdiApnBgiiSsedig .REgRVjFBolXFAdBOgabuig:before{   position: absolute;   right: 10%;   top: -15%;   content: "";   width: 22px;   height: 22px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } // forma mid 2 .HuvfKojdiApnBgiiSsedig .REgRVjFBolXFAdBOgabuig:after{   position: absolute;   right: 98%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .HuvfKojdiApnBgiiSsedig .REgRVjFBolXFAdBOgabuig:before{   position: absolute;   right: 2%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .HuvfKojdiApnBgiiSsedig .REgRVjFBolXFAdBOgabuig span {   font-size: 24px;   font-family: Existence;   font-weight: 600; } .HuvfKojdiApnBgiiSsedig .REgRVjFBolXFAdBOgabuig span:hover {   color: #000;   text-decoration: none; } .HuvfKojdiApnBgiiSsedig .NRWbowKKpSOntdVwyNTKBg {   display: flex;   height: 44px;   flex-direction: column;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 230px; } .HuvfKojdiApnBgiiSsedig .NRWbowKKpSOntdVwyNTKBg:after{   position: absolute;   right: 81%;   top: 70%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .HuvfKojdiApnBgiiSsedig .NRWbowKKpSOntdVwyNTKBg:before{   position: absolute;   right: 19%;   top: 70%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; } .HuvfKojdiApnBgiiSsedig .NRWbowKKpSOntdVwyNTKBg span:nth-child(3) {   display: flex;   background: #fff;   height: 18px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-top: 0.35em;   position: relative;   z-index: 2;   font-size: 14px;   color: #000;   width: 130px } .HuvfKojdiApnBgiiSsedig .NRWbowKKpSOntdVwyNTKBg span {   color: #fff;   font-size: 13px;   line-height: 13px; } .HuvfKojdiApnBgiiSsedig .NRWbowKKpSOntdVwyNTKBg span:nth-child(2) {   display: none; } .HuvfKojdiApnBgiiSsedig .DtQRSsjANzXlLkxZdmKfGA{   display: flex;   flex-direction: column;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 230px; } .HuvfKojdiApnBgiiSsedig .DtQRSsjANzXlLkxZdmKfGA span {   color: #fff;   font-size: 13px;   line-height: 13px; } .HuvfKojdiApnBgiiSsedig .DtQRSsjANzXlLkxZdmKfGA span:nth-child(3) {   display: none; } .HuvfKojdiApnBgiiSsedig .DtQRSsjANzXlLkxZdmKfGA span:nth-child(1) {   display: flex;   background: #fff;   height: 18px;   align-items: center;   justify-content: center;   border-radius: 5px;   margin-bottom: 0.35em;   padding: 0 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #000;   width: 130px } .HuvfKojdiApnBgiiSsedig .DtQRSsjANzXlLkxZdmKfGA:after{   position: absolute;   right: 81%;   top: 30%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .HuvfKojdiApnBgiiSsedig .DtQRSsjANzXlLkxZdmKfGA:before{   position: absolute;   right: 19%;   top: 30%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; }
+.wgESMHuVnNhmhSvtKKtRWA {   background-color:#142155;   width:912px;   height:42px;   display:flex;   justify-content:flex-start;   align-items:center;   position:relative;   padding-left: 20px;   overflow: hidden; }  .wgESMHuVnNhmhSvtKKtRWA > a {   position: absolute;   width: 932px;   height: 42px;   margin-left: -20px;   z-index: 44; }  .wgESMHuVnNhmhSvtKKtRWA > img:nth-child(2) {   margin-right: 48px;   margin-bottom: 4px; }  .wgESMHuVnNhmhSvtKKtRWA > img:nth-child(3) {   margin-right: 48px;   opacity: 1;   transition: opacity 0.2s linear, margin-left 0.2s cubic-bezier(0.05, 0.8, 0.05, 0.8) 0.1s, margin-right 0.2s cubic-bezier(0.05, 0.8, 0.05, 0.8) 0.3s; }  .wgESMHuVnNhmhSvtKKtRWA > img:nth-child(4) {   margin-right: 14px;   transition: opacity 0.3s linear; }  .wgESMHuVnNhmhSvtKKtRWA > .QtiVLTeHerXxjuWvfghigg {    background-color:#fff;    width:48px;    height:16px;    padding:4px 8px;    transition: opacity 0.3s linear; }  .wgESMHuVnNhmhSvtKKtRWA > .QtiVLTeHerXxjuWvfghigg > img {    width:48px; }  .wgESMHuVnNhmhSvtKKtRWA > svg {    position:absolute;    top:0;    left:-184px; }  .wgESMHuVnNhmhSvtKKtRWA:hover > .KFFMBbejQWbvigScIaapfg > .IxsAEHvypaseEatBfhTIaA {   right: 0;   transition: all 0.3s cubic-bezier(0.05, 0.8, 0.05, 0.8); } .wgESMHuVnNhmhSvtKKtRWA:hover > img:nth-child(3) {   opacity: 0;   margin-left: 880px;   margin-right: 600px; } .wgESMHuVnNhmhSvtKKtRWA:hover > img:nth-child(4) {   opacity: 0; } .wgESMHuVnNhmhSvtKKtRWA:hover > .QtiVLTeHerXxjuWvfghigg {   opacity: 0; }  .KFFMBbejQWbvigScIaapfg {   position:absolute;   top:0;   right:0;   height:42px;   width:800px;   overflow: hidden; }  .KFFMBbejQWbvigScIaapfg > .IxsAEHvypaseEatBfhTIaA {   position: absolute;   height:42px;   width:760px;   right: -820px;   top: 0;   background-color:#fff;   transition: all 0.2s cubic-bezier(0.8, 0.3, 0.8, 0.3); }  .KFFMBbejQWbvigScIaapfg > .IxsAEHvypaseEatBfhTIaA::after {   content: "";   position: absolute;   border: 0px solid transparent;   border-top: 40px solid #fff;   border-left: 42px solid transparent;   width: 0;   height: 0;   top: 1px;   left: -40px;   transform: rotate(90deg); }  .KFFMBbejQWbvigScIaapfg > .IxsAEHvypaseEatBfhTIaA > img {   margin-left: 185px;   margin-top: 11px; }
+.awAreZfOfqyyQfXexgxSgA { 	width: 100%; 	max-height: 47px; 	height: 47px; 	border-radius: 8px; 	background: #009FFF; 	background: -webkit-linear-gradient(to right, #736df8, #ec2F4B); 	background: -webkit-gradient(linear, left top, right top, from(#736df8), to(#ec2F4B)); 	background: -webkit-linear-gradient(left, #736df8, #ec2F4B); 	background: -o-linear-gradient(left, #736df8, #ec2F4B); 	background: linear-gradient(to right, #736df8, #ec2F4B); 	color: #ffffff; 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; 	text-decoration: none; 	display: -webkit-box; 	display: -ms-flexbox; 	display: flex; 	-ms-flex-pack: distribute; 	justify-content: space-around; 	-webkit-box-align: center; 	-ms-flex-align: center; 	align-items: center; 	position: relative; }  .dzcINMgrbfQyfVcBIIHzKA { 	position: absolute; 	width: 100%; 	height: 100%; }  .giClCsVceCOmeItecJgWhA { 	background-color: #333648; 	padding: 8px 20px; 	border-radius: 1000px; 	text-align: center; 	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .08); 	box-shadow: 0 5px 15px rgba(0, 0, 0, .08); 	text-transform: uppercase; 	letter-spacing: 0.0625em; 	font-weight: bold; 	font-size: 14px; 	color: #ffffff; 	text-decoration: none; 	cursor: pointer; }  .TfqtyfQUIoYPwYecigsiJA { 	display: -webkit-box; 	display: -ms-flexbox; 	display: flex; 	-webkit-box-pack: center; 	-ms-flex-pack: center; 	justify-content: center; 	-webkit-box-align: center; 	-ms-flex-align: center; 	align-items: center; 	font-size: 16px; }  .TfqtyfQUIoYPwYecigsiJA>span { 	margin-left: 8px; 	margin-right: 8px; }  .PbEYYfjgUTYWeNctnJhMdQ { 	font-size: 20px; }
+.nounderline:hover {text-decoration:none}
+.exempttable {display:inline-table !important}
+.bbca table, .bbca tbody, .bbca tr, .bbca td{
+	display: inline-block !important;
+	min-width: 0px !important;
+	text-align: center !important;
+}
+.gunbot td{text-align:left !important}
+.olddiv{display:block}
+.cryptokg {display:inline-block;padding:2px;font-size:17px;height:42px;width:500px;background-color:white; font-weight:700;color:orange} .cryptokg a:link{color:orange} .cryptokg a:hover{color:orange} .cryptokg a:visited{color:orange}
+</style>
+<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/ac/105.css" />
+<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/ac/106.css" />
+
+
+
+	<link rel="help" href="https://bitcointalk.org/index.php?action=help" target="_blank" />
+	<link rel="search" href="https://bitcointalk.org/index.php?action=search" />
+	<link rel="contents" href="https://bitcointalk.org/index.php" />
+	<link rel="alternate" type="application/rss+xml" title="Bitcoin Forum - RSS" href="https://bitcointalk.org/index.php?type=rss;action=.xml" />
+	<link rel="prev" href="https://bitcointalk.org/index.php?topic=567069.0;prev_next=prev" />
+	<link rel="next" href="https://bitcointalk.org/index.php?topic=567069.0;prev_next=next" />
+	<link rel="index" href="https://bitcointalk.org/index.php?board=12.0" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		function showhide(msgnr)
+		{
+			if (document.getElementById("message"+msgnr).style.display == "")
+			    {document.getElementById("message"+msgnr).style.display = "none";
+			     document.getElementById("ignmsgbttns"+msgnr).style.visibility = "hidden";
+			     document.getElementById("ignoremessage"+msgnr).style.display = "";
+			     document.getElementById("ignfooter"+msgnr).style.display = "none";
+			     document.getElementById("showhide"+msgnr).src = "https://bitcointalk.org/Themes/custom1/images/english/ignshow.gif";
+			     document.getElementById("showhide"+msgnr).alt = "Show";
+			     document.getElementById("ignprofile"+msgnr).style.display = "none";
+			    }
+			    else
+			    {document.getElementById("message"+msgnr).style.display = "";
+			     document.getElementById("ignmsgbttns"+msgnr).style.visibility = "visible";
+			     document.getElementById("ignoremessage"+msgnr).style.display = "none";
+			     document.getElementById("ignfooter"+msgnr).style.display = "";
+			     document.getElementById("showhide"+msgnr).src = "https://bitcointalk.org/Themes/custom1/images/english/ignhide.gif";
+			     document.getElementById("showhide"+msgnr).alt = "Hide";
+			     document.getElementById("ignprofile"+msgnr).style.display = "";
+			     }
+		}
+// ]]></script>
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+			document.getElementById("upshrinkHeader2").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			var current_header_ic = false;
+
+			function shrinkHeaderIC(mode)
+			{
+				document.cookie = "upshrinkIC=" + (mode ? 1 : 0);
+				document.getElementById("upshrink_ic").src = smf_images_url + (mode ? "/expand.gif" : "/collapse.gif");
+
+				document.getElementById("upshrinkHeaderIC").style.display = mode ? "none" : "";
+
+				current_header_ic = mode;
+			}
+		// ]]></script></head>
+<body>
+	<div class="tborder" >
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" id="smfheader">
+			<tr>
+				<td class="catbg" height="32">
+					<span style="font-family: Verdana, sans-serif; font-size: 140%; ">Bitcoin Forum</span>
+				</td>
+				<td align="right" class="catbg">
+					<img src="https://bitcointalk.org/Themes/custom1/images/smflogo.gif" style="margin: 2px;" alt="" />
+				</td>
+			</tr>
+		</table>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" >
+			<tr>
+				<td class="titlebg2" height="32" align="right">
+					<span class="smalltext">September 29, 2022, 11:09:46 AM</span>
+					<a href="#" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="https://bitcointalk.org/Themes/custom1/images/upshrink.gif" alt="*" title="Shrink or expand the header." align="bottom" style="margin: 0 1ex;" /></a>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top" colspan="2">
+					<table width="100%" class="bordercolor" cellpadding="8" cellspacing="1" border="0" style="margin-top: 1px;">
+						<tr>
+							<td colspan="2" width="100%" valign="top" class="windowbg2" id="variousheadlinks"><span class="middletext">Welcome, <b>Guest</b>. Please <a href="https://bitcointalk.org/index.php?action=login">login</a> or <a href="https://bitcointalk.org/index.php?action=register">register</a>.				</span>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table id="upshrinkHeader2" width="100%" cellpadding="4" cellspacing="0" border="0">
+			<tr>
+				<td width="90%" class="titlebg2">
+					<span class="smalltext"><b>News</b>: Latest Bitcoin Core release: <a class="ul" href="https://bitcoincore.org/en/download/"><b>23.0</b></a> [<a class="ul" href="https://bitcointalk.org/bitcoin-23.0.torrent">Torrent</a>]</span>
+				</td>
+				<td class="titlebg2" align="right" nowrap="nowrap" valign="top">
+					<form action="https://bitcointalk.org/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<a href="https://bitcointalk.org/index.php?action=search;advanced"><img src="https://bitcointalk.org/Themes/custom1/images/filter.gif" align="middle" style="margin: 0 1ex;" alt="" /></a>
+						<input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+						<input type="submit" name="submit" value="Search" style="width: 11ex;" />
+						<input type="hidden" name="advanced" value="0" />
+						<input type="hidden" name="topic" value="567069" />
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+			<table cellpadding="0" cellspacing="0" border="0" style="margin-left: 10px;">
+				<tr>
+					<td class="maintab_first">&nbsp;</td><td class="maintab_active_first">&nbsp;</td>
+				<td valign="top" class="maintab_active_back">
+					<a href="https://bitcointalk.org/index.php">Home</a>
+				</td><td class="maintab_active_last">&nbsp;</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=help">Help</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=search">Search</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=login">Login</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=register">Register</a>
+				</td>
+                                <td valign="top" class="maintab_back">
+                                        <a href="/more.php">More</a>
+                                </td>
+				<td class="maintab_last">&nbsp;</td>
+			</tr>
+		</table>
+	<div id="bodyarea" style="padding: 1ex 0px 2ex 0px;">
+<a name="top"></a>
+<a name="msg6177137"></a>
+<div><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="https://bitcointalk.org/index.php" class="nav">Bitcoin Forum</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php#1" class="nav">Bitcoin</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?board=12.0" class="nav">Project Development</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?topic=567069.0" class="nav">[ANN] MMGen, a complete Bitcoin command-line online/offline wallet solution</a></b></div></div>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="middletext" valign="bottom" style="padding-bottom: 4px;">Pages:  [<b>1</b>] <a class="navPages" href="https://bitcointalk.org/index.php?topic=567069.20">2</a> <a class="navPages" href="https://bitcointalk.org/index.php?topic=567069.40">3</a> <a class="navPages" href="https://bitcointalk.org/index.php?topic=567069.60">4</a> <span class="prevnext"><a class="navPages" href="https://bitcointalk.org/index.php?topic=567069.20">&#187;</a> </span>&nbsp;<a href="https://bitcointalk.org/index.php?topic=567069.0;all">All</a> </td>
+		<td align="right" style="padding-right: 1ex;">
+			<div class="nav" style="margin-bottom: 2px;"> <a href="https://bitcointalk.org/index.php?topic=567069.0;prev_next=prev#new">&laquo; previous topic</a> <a href="https://bitcointalk.org/index.php?topic=567069.0;prev_next=next#new">next topic &raquo;</a></div>
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					
+		<td class="mirrortab_first">&nbsp;</td>
+		<td class="mirrortab_back"><a href="https://bitcointalk.org/index.php?action=printpage;topic=567069.0" target="_blank">Print</a></td>
+		<td class="mirrortab_last">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+		<tr class="catbg3">
+				<td valign="middle" width="2%" style="padding-left: 6px;">
+						<img src="https://bitcointalk.org/Themes/custom1/images/topic/hot_post.gif" align="bottom" alt="" />
+				</td>
+				<td width="13%"> Author</td>
+				<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+						Topic: [ANN] MMGen, a complete Bitcoin command-line online/offline wallet solution &nbsp;(Read 35262 times)
+				</td>
+		</tr>
+</table>
+<form action="https://bitcointalk.org/index.php?action=quickmod2;topic=567069.0" method="post" accept-charset="ISO-8859-1" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('fd8ad59fa79c545e63be328ba3c8678c') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg6177137#msg6177137"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_6177137">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg6177137#msg6177137">[ANN] MMGen, a complete Bitcoin command-line online/offline wallet solution</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: November 24, 2016, 03:54:25 AM by mmgen-py" class="edited">April 11, 2014, 08:01:18 PM</span><span class="editplain"><br />Last edit: November 24, 2016, 03:54:25 AM by mmgen-py</span></div><div class="smalltext"><i><span style="color:green">Merited</span> by <a href="/index.php?action=profile;u=359716">ETFbitcoin</a> (6), <a href="/index.php?action=profile;u=2739424">NotATether</a> (5)</i></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns1" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg6177137#msg6177137">#1</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="font-size: 14pt !important; line-height: 1.3em;"><b>MMGen</b> = <b><span style="color: blue;">M</span></b>ulti-<b><span style="color: blue;">M</span></b>ode <b><span style="color: blue;">GEN</span></b>erator, a complete online/offline Bitcoin wallet solution for the command line</span><br /><br />MMGen is a Bitcoin cold-storage system implemented as a suite of lightweight Python command-line scripts that work together with the reference Bitcoin Core daemon (bitcoind) to create a <b><span style="color: red;">complete system</span></b> for <b><span style="color: red;">storing</span></b>, <b><span style="color: red;">tracking</span></b>, <b><span style="color: red;">sending</span></b> and <b><span style="color: red;">receiving</span></b> Bitcoins.<br /><br />The MMGen system is completely self-contained, requiring no external server. No third party will know which addresses you&#039;re tracking.<br /><br />Like all deterministic wallets, MMGen can generate a virtually unlimited number of address/key pairs from a single seed. <span style="color: red;">Since the seed never changes, your wallet needs to be backed up <b>only once</b>.</span><br /><br />At the heart of the MMGen system is the seed, the &quot;master key&quot; providing access to all your Bitcoins. &nbsp;The seed can be stored in five different ways:<br /><br />&nbsp;&nbsp;1. as a wallet, encrypted with the <span style="color: red;">crack-resistant <b>scrypt</b> function</span>;<br />&nbsp;&nbsp;2. as a one-line <span style="color: red;">unencrypted seed file</span>;<br />&nbsp;&nbsp;3. as an <span style="color: red;"><b>Electrum</b>-like mnemonic</span> of 12, 18 or 24 words;<br />&nbsp;&nbsp;4. as a <span style="color: red;"><b>brainwallet</b> password</span>; or<br />&nbsp;&nbsp;5. as an <span style="color: red;">&quot;incognito wallet&quot;</span> consisting of random-looking data (72 bytes by default) suitable for hiding in a file or on a disk partition.<br /><br />Furthermore, all these methods can be combined. If you forget your mnemonic, for example, you can regenerate it and your keys from a saved wallet or seed file. Correspondingly, a lost wallet can be regenerated from a mnemonic or seed or a lost seed from a wallet or mnemonic.<br /><br />All of MMGen&#039;s wallet formats are short, <span style="color: red;">plain ASCII text files</span> suitable for printing on paper or even writing out by hand. This makes MMGen an <span style="color: red;"><span style="font-family: Verdana;">ideal <b>paper wallet</b> system</span></span>. Just choose the wallet format that best suits your security needs and print or write it out.<br /><br />MMGen runs on Linux and Windows.<br /><br /><span style="color: navy;">For more information, see the <b>MMGen project page</b>:</span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><br /><i><span style="font-size: 10pt !important; line-height: 1.3em;"><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></span></i></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_6177137">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr><tr><td class="xbOBUseqyZJOntVNcRgMPg"></td></tr><tr class="SIAKBrRunVSRXXdqswdajw"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b> <a name="msg1664449786"></a>
+ <table width="100%" border="0">
+  <tbody><tr><td>
+   <table width="100%">
+    <tbody><tr>
+       <td rowspan="2">
+     </td>
+       <td>
+      <table width="100%" class="kasghaZykENjLxpjROfdWw"><tr><td></td></tr>
+      </table>
+      <div class="YyZyPlBYxZrXsedyLonalA"><a style="background-image:url(Themes/ai/ownic.png);background-repeat:no-repeat;background-position:center;height:47px;display:block" href="https://discord.gg/Fnd2NjvtVG"></a></div>
+     </td>
+    </tr>
+    <tr class="kasghaZykENjLxpjROfdWw"><td></td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+ <span class="hYOwyKSVebgANbcgpDkKOQ">Ad<i></i>ver<i></i>tised sites are not endorse<i></i>d by the Bit<i></i>coin Forum. <i></i>They may<i></i> be unsafe, untrustworthy, or ill<i></i>egal<i></i> in your jurisdiction. <a href="https://bitcointalk.org/adrotate.php?adinfo">Adve<i></i>rtise here.</a></span>
+</td></tr><tr class="dbenPTvZThtcVNZhJijylw"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b> <a name="msg1664449786"></a>
+ <table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tbody><tr><td class="windowbg2">
+   <table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+    <tbody><tr>
+       <td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+      <b><a href="https://bitcointalk.org/index.php?action=profile;u=1664449786" title="View the profile of 1664449786">1664449786</a></b>
+      <div class="smalltext">
+       Hero Member<br />
+       <img src="/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664449786" title="Personal Message (Offline)"><img src="/Themes/custom1/images/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0" /></a><span class="smalltext"> Offline</span><br /><br />
+       Posts: 1664449786<br />
+       
+       
+       
+       <br />
+       <a href="https://bitcointalk.org/index.php?action=profile;u=1664449786"><img src="/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664449786" title="Personal Message (Offline)"><img src="/Themes/custom1/images/im_off.gif" alt="Personal Message (Offline)" border="0" /></a><br />
+       <br /><a href="https://bitcointalk.org/index.php?action=ignore;u=1664449786;topic=1664449786;msg=1664449786">Ignore</a>
+      </div>
+     </td>
+       <td style="padding: 2px;" class="td_headerandpost" valign="top" width="85%" height="100%">
+      <table width="100%" border="0"><tbody><tr>
+       <td valign="middle"><a href="https://bitcointalk.org/index.php?topic=1664449786.msg1664449786#msg1664449786"><img src="/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+       <td valign="middle">
+           <div style="font-weight: bold;" class="subject">
+         <a href="https://bitcointalk.org/index.php?topic=1664449786.msg1664449786#msg1664449786">1664449786</a>
+        </div>
+           <div class="smalltext">1664449786</div></td>
+           <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" valign="middle" align="right" height="20"><div style="visibility: visible;">
+    <a href="https://bitcointalk.org/index.php?action=post;quote=1664449786;topic=1664449786.100;num_replies=2;sesc=1664449786"><img src="/Themes/custom1/images/frostee/frostee_quote.png" alt="Reply with quote" class="reply_button" style="vertical-align: middle;" /></a>
+       &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=1664449786.msg1664449786#msg1664449786">#2</a>
+  </div>
+       </td>
+      </tr></tbody></table>
+         <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%" />
+      <div class="post">1664449786</div>
+     </td>
+    </tr>
+    <tr>
+     <td class="smalltext" valign="bottom" width="85%">
+      <table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+       <td colspan="2" class="smalltext" width="100%">
+       </td>
+      </tr><tr>
+       <td class="smalltext" valign="bottom">
+       </td>
+       <td class="smalltext" valign="bottom" align="right">
+        <a href="https://bitcointalk.org/index.php?action=reporttm;topic=1664449786.101;msg=1664449786">Report to moderator</a>
+       </td>
+      </tr></tbody></table>
+     </td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg7841414"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg7841414#msg7841414"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_7841414">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg7841414#msg7841414">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: May 02, 2015, 05:30:49 AM by mmgen-py" class="edited">July 14, 2014, 04:34:10 PM</span><span class="editplain"><br />Last edit: May 02, 2015, 05:30:49 AM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns2" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg7841414#msg7841414">#2</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><b>New feature: export wallet to <span style="color: red;">incognito format</span></b><br /><br />Incognito wallet is 56, 64 or 72 bytes of apparently random data.<br /><br />Allows user to hide wallet data in a pre-existing file or on a disk partition (preferably filled in advance with random data).<br /><br />Can be used to hide wallet securely in unencrypted cloud storage or on paper, without revealing the nature of the data.<br /><br />Data may be written at a user-specified offset into the file or partition, in which case user must remember the offset.<br /><br />Each export operation uses a new random init vector to create different data each time. &nbsp;This allows the user to hide wallets at different locations on the Net without detection.<br /><br />User must remember hash preset in addition to passphrase (though trial and error can be used if it&#039;s forgotten).<br /><br />Fully integrated with address generation and tx signing operations.<br /><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> &nbsp;<span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7841414">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg">
+		<a name="msg7897027"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg7897027#msg7897027"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_7897027">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg7897027#msg7897027">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: July 18, 2014, 06:07:06 PM by mmgen-py" class="edited">July 17, 2014, 06:10:08 PM</span><span class="editplain"><br />Last edit: July 18, 2014, 06:07:06 PM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns3" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg7897027#msg7897027">#3</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">New <b><span style="color: red;">mmgen-tool</span></b> utility with the following commands:<br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>General operations:</b></span><tt><br />&nbsp;&nbsp;hexdump &nbsp; &nbsp; &nbsp;- encode binary data in formatted hexadecimal form<br />&nbsp;&nbsp;unhexdump &nbsp; &nbsp;- decode formatted hexadecimal data</tt><br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>Bitcoin operations:</b></span><tt><br />&nbsp;&nbsp;strtob58 &nbsp; &nbsp; - convert a string to base 58<br />&nbsp;&nbsp;hextob58 &nbsp; &nbsp; - convert a hexadecimal number to base 58<br />&nbsp;&nbsp;b58tohex &nbsp; &nbsp; - convert a base 58 number to hexadecimal<br />&nbsp;&nbsp;b58randenc &nbsp; - generate a random 32-byte number and convert it to base 58<br />&nbsp;&nbsp;randwif &nbsp; &nbsp; &nbsp;- generate a random private key in WIF format<br />&nbsp;&nbsp;randpair &nbsp; &nbsp; - generate a random private key/address pair<br />&nbsp;&nbsp;wif2addr &nbsp; &nbsp; - generate a Bitcoin address from a key in WIF format</tt><br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>Mnemonic operations</b></span> (&quot;electrum&quot; and &quot;tirosh&quot; wordlists):<tt><br />&nbsp;&nbsp;mn_rand128 &nbsp; - generate random 128-bit mnemonic<br />&nbsp;&nbsp;mn_rand192 &nbsp; - generate random 192-bit mnemonic<br />&nbsp;&nbsp;mn_rand256 &nbsp; - generate random 256-bit mnemonic<br />&nbsp;&nbsp;mn_stats &nbsp; &nbsp; - show stats for mnemonic wordlist<br />&nbsp;&nbsp;mn_printlist - print mnemonic wordlist</tt><br /><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;"> 15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_7897027">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg">
+		<a name="msg8140846"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg8140846#msg8140846"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_8140846">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg8140846#msg8140846">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: August 02, 2014, 11:31:51 AM by mmgen-py" class="edited">August 01, 2014, 06:57:34 PM</span><span class="editplain"><br />Last edit: August 02, 2014, 11:31:51 AM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns4" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg8140846#msg8140846">#4</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">New commands for the <b><span style="color: red;">mmgen-tool</span></b> utility:<br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>Bitcoin address/key operations (compressed public keys supported):</b></span><tt><br />&nbsp;&nbsp;addr2hexaddr - convert Bitcoin address from base58 to hex format<br />&nbsp;&nbsp;b58randenc &nbsp; - generate a random 32-byte number and convert it to base 58<br />&nbsp;&nbsp;b58tohex &nbsp; &nbsp; - convert a base 58 number to hexadecimal<br />&nbsp;&nbsp;hex2wif &nbsp; &nbsp; &nbsp;- convert a private key from hex to WIF format<br />&nbsp;&nbsp;hexaddr2addr - convert Bitcoin address from hex to base58 format<br />&nbsp;&nbsp;hextob58 &nbsp; &nbsp; - convert a hexadecimal number to base 58<br />&nbsp;&nbsp;privhex2addr - generate Bitcoin address from private key in hex format<br />&nbsp;&nbsp;pubkey2addr &nbsp;- convert Bitcoin public key to address<br />&nbsp;&nbsp;pubkey2hexaddr - convert Bitcoin public key to address in hex format<br />&nbsp;&nbsp;randpair &nbsp; &nbsp; - generate a random private key/address pair<br />&nbsp;&nbsp;randwif &nbsp; &nbsp; &nbsp;- generate a random private key in WIF format<br />&nbsp;&nbsp;strtob58 &nbsp; &nbsp; - convert a string to base 58<br />&nbsp;&nbsp;wif2addr &nbsp; &nbsp; - generate a Bitcoin address from a key in WIF format<br />&nbsp;&nbsp;wif2hex &nbsp; &nbsp; &nbsp;- convert a private key from WIF to hex format</tt><br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>Wallet/TX operations (bitcoind must be running):</b></span><tt><br />&nbsp;&nbsp;getbalance &nbsp; &nbsp;- like &#039;bitcoind getbalance&#039; but shows confirmed/unconfirmed,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; spendable/unspendable balances for individual MMGen wallets<br />&nbsp;&nbsp;listaddresses - list MMGen addresses and their balances<br />&nbsp;&nbsp;viewtx &nbsp; &nbsp; &nbsp; &nbsp;- show raw/signed MMGen transaction in human-readable form</tt><br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>General utilities:</b></span><tt><br />&nbsp;&nbsp;bytespec &nbsp; &nbsp; - convert a byte specifier such as &#039;1GB&#039; into a plain integer<br />&nbsp;&nbsp;hexdump &nbsp; &nbsp; &nbsp;- encode data into formatted hexadecimal form (file or stdin)<br />&nbsp;&nbsp;hexlify &nbsp; &nbsp; &nbsp;- display string in hexadecimal format<br />&nbsp;&nbsp;hexreverse &nbsp; - reverse bytes of a hexadecimal string<br />&nbsp;&nbsp;rand2file &nbsp; &nbsp;- write &#039;n&#039; bytes of random data to specified file<br />&nbsp;&nbsp;randhex &nbsp; &nbsp; &nbsp;- print &#039;n&#039; bytes (default 32) of random data in hex format<br />&nbsp;&nbsp;sha256x2 &nbsp; &nbsp; - compute a double sha256 hash of data<br />&nbsp;&nbsp;unhexdump &nbsp; &nbsp;- decode formatted hexadecimal data (file or stdin)</tt><br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>File encryption:</b></span><tt><br />&nbsp;&nbsp;encrypt &nbsp; &nbsp; &nbsp;- encrypt a file<br />&nbsp;&nbsp;decrypt &nbsp; &nbsp; &nbsp;- decrypt a file<br />&nbsp;&nbsp;MMGen encryption suite:<br />&nbsp;&nbsp; &nbsp;* Key: Scrypt (user-configurable hash parameters, 32-byte salt)<br />&nbsp;&nbsp; &nbsp;* Enc: AES256_CTR, 16-byte rand IV, sha256 hash + 32-byte nonce + data<br />&nbsp;&nbsp; &nbsp;* The encrypted file is indistinguishable from random data</tt><br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>MMGen-specific operations:</b></span><tt><br />&nbsp;&nbsp;check_addrfile - compute checksum and address list for MMGen address file<br />&nbsp;&nbsp;find_incog_data - Use an Incog ID to find hidden incognito wallet data<br />&nbsp;&nbsp;id6 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- generate 6-character MMGen ID checksum for file (or stdin)<br />&nbsp;&nbsp;id8 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- generate 8-character MMGen ID checksum for file (or stdin)</tt><br /><br />&nbsp;&nbsp;<span style="color: blue;"><b>Mnemonic operations (choose &quot;electrum&quot; (default), &quot;tirosh&quot; or &quot;all&quot; wordlists):</b></span><tt><br />&nbsp;&nbsp;mn_rand128 &nbsp; - generate random 128-bit mnemonic<br />&nbsp;&nbsp;mn_rand192 &nbsp; - generate random 192-bit mnemonic<br />&nbsp;&nbsp;mn_rand256 &nbsp; - generate random 256-bit mnemonic<br />&nbsp;&nbsp;mn_stats &nbsp; &nbsp; - show stats for mnemonic wordlist<br />&nbsp;&nbsp;mn_printlist - print mnemonic wordlist</tt><br /><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;"> 15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8140846">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg8142075"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg8142075#msg8142075"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_8142075">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg8142075#msg8142075">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: August 02, 2014, 11:33:17 AM by mmgen-py" class="edited">August 01, 2014, 08:38:50 PM</span><span class="editplain"><br />Last edit: August 02, 2014, 11:33:17 AM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns5" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg8142075#msg8142075">#5</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing MMGen version 0.7.7</b></span><br /><br /><span style="color: blue;"><b>New features since the project&#039;s debut on April 11th, 2014:</b></span><br /><br /><span style="color: blue;"><b>General:</b></span><br /><ul style="margin-top: 0; margin-bottom: 0;"><li>Option for <span style="color: red;">online signing</span> with individual keys, making MMGen a convenient tool for small, day-to-day Bitcoin transactions too</li><li><span style="color: red;">Multiple transaction signing</span> in one operation</li><li><span style="color: red;">Incognito wallets</span> for hiding wallet data in insecure locations</li><li>Option to skip blockchain rescan for new addresses</li></ul><br /><b><span style="color: blue;">An </span><span style="color: red;">mmgen-tool</span><span style="color: blue;"> utility</span></b> with commands too numerous to mention. For a full list, see the <a class="ul" href="https://bitcointalk.org/index.php?topic=567069.msg8140846#msg8140846">previous post</a>.<br /><span style="color: blue;"><b>Some highlights:</b></span><br /><ul style="margin-top: 0; margin-bottom: 0;"><li>a full suite of Bitcoin <span style="color: red;">address/key manipulation utilities</span> with compressed public key support</li><li><span style="color: red;">file encryption tool</span> with strong encryption</li><li><span style="color: red;">random-data-to-file tool</span> with optional added user entropy</li><li>search tool for <span style="color: red;">hidden incognito data</span></li><li>wallet-tracking commands <span style="color: red;">getbalance</span> and <span style="color: red;">listaddresses</span></li></ul><br /><span style="color: blue;"><b>Unique feature:</b></span> The user may now supply <span style="color: red;">additional entropy</span> in all cases where random data is needed. &nbsp;This user entropy (typed symbols + keystroke intervals) is hashed into a key with Scrypt and used to encrypt all random data acquired from the OS during the command run.<br /><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8142075">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b>
+		<a name="msg8456306"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg8456306#msg8456306"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_8456306">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg8456306#msg8456306">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: May 02, 2015, 05:33:46 AM by mmgen-py" class="edited">August 20, 2014, 04:58:31 PM</span><span class="editplain"><br />Last edit: May 02, 2015, 05:33:46 AM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns6" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg8456306#msg8456306">#6</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing MMGen version 0.7.8</b></span><br /><br /><span style="color: blue;"><b>New features:</b></span><br /><ul style="margin-top: 0; margin-bottom: 0;"><li>Updated incognito format now includes a checksum for password verification. &nbsp;The legacy format continues to be supported with &#039;--old-incog-fmt&#039; option</li><li><span style="color: blue;">mmgen-txsign:</span> &#039;--mmgen-keys-from-file&#039; option (supersedes &#039;--all-keys-from-file&#039; option) allows online signing of transactions with both MMGen and non-MMGen inputs.</li><li><span style="color: blue;">mmgen-addrimport:</span> &#039;--keyaddr-file&#039; option allows using key-address file (optionally encrypted) as an address source.</li></ul><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_8456306">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b>
+		<a name="msg10015903"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg10015903#msg10015903"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_10015903">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg10015903#msg10015903">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">January 02, 2015, 09:44:17 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns7" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg10015903#msg10015903">#7</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing MMGen version 0.7.9</b></span><br /><br /><span style="color: blue;"><b>New feature:</b></span><br /><ul style="margin-top: 0; margin-bottom: 0;"><li>An automated, pexpect-based test suite, &#039;test/test.py&#039;, that tests the MMGen scripts in a variety of use cases.&nbsp; The test suite is Linux-only due to dependencies required by the pexpect module.</li></ul><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10015903">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b>
+		<a name="msg10019814"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=182468" title="View the profile of RGBKey">RGBKey</a></b>
+							<div class="smalltext">
+								Hero Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 854<br />
+								Merit: 658<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_182468.jpg" alt="" class="avatar" border="0" /></div><br />
+								rgbkey.github.io/pgp.txt<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=182468"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://yolodice.com/r?2FYJC-7JZ" title="YOLOdice" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg10019814#msg10019814"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_10019814">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg10019814#msg10019814">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">January 03, 2015, 07:23:33 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns8" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg10019814#msg10019814">#8</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">Very nice looking program, I&#039;ll have to try it out later.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10019814">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg10022708"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg10022708#msg10022708"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_10022708">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg10022708#msg10022708">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">January 03, 2015, 02:12:31 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns9" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg10022708#msg10022708">#9</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=567069.msg10019814#msg10019814">Quote from: RGBKey on January 03, 2015, 07:23:33 AM</a></div><div class="quote">Very nice looking program, I&#039;ll have to try it out later.<br /></div>Thanks!&nbsp; Please get back to me when you do.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10022708">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg10951023"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg10951023#msg10951023"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_10951023">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg10951023#msg10951023">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">April 01, 2015, 11:16:27 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns10" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg10951023#msg10951023">#10</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing MMGen version 0.8.0</b></span><br /><br />Bugfix release.&nbsp; Users are strongly advised to upgrade.<br /><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_10951023">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b>
+		<a name="msg11256452"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg11256452#msg11256452"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_11256452">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg11256452#msg11256452">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: May 15, 2015, 07:35:24 AM by mmgen-py" class="edited">May 01, 2015, 07:21:30 PM</span><span class="editplain"><br />Last edit: May 15, 2015, 07:35:24 AM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns11" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg11256452#msg11256452">#11</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing MMGen version 0.8.1</b></span><br /><br /><span style="color: blue;"><b>New features:</b></span><br /><ul style="margin-top: 0; margin-bottom: 0;"><li>New utility, <span style="color: blue;"><b>mmgen-walletconv</b></span>, converts to and from all MMGen wallet formats.</li><li>All wallet-related scripts now use the new object-oriented wallet library <span style="color: blue;">seed.py</span> and share a simpler, more logical command-line interface.</li><li>More thoroughly tested than ever, thanks to a greatly expanded test suite, <span style="color: blue;">test/test.py</span>.</li><li>A subset of the test suite now runs under Windows; some user interaction required.</li><li><span style="color: blue;">mmgen-pywallet</span> functional again.</li></ul><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_11256452">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg12781573"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg12781573#msg12781573"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_12781573">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg12781573#msg12781573">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: November 04, 2015, 12:00:24 PM by mmgen-py" class="edited">October 25, 2015, 01:25:55 PM</span><span class="editplain"><br />Last edit: November 04, 2015, 12:00:24 PM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns12" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg12781573#msg12781573">#12</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing MMGen version 0.8.2</b></span><br /><br />This is a minor code cleanup and bugfix release. &nbsp;Upgrade recommended, testers welcome!<br /><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_12781573">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg14037988"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg14037988#msg14037988"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_14037988">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg14037988#msg14037988">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">February 28, 2016, 02:00:18 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns13" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg14037988#msg14037988">#13</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing MMGen version 0.8.3</b></span><br /><br /><span style="color: blue;"><b>New features/improvements:</b></span><br /><ul style="margin-top: 0; margin-bottom: 0;"><li>New native <span style="color: blue;">Bitcoin RPC library</span>.</li><li>Support for <span style="color: blue;">cookie-based RPC authentication</span> (new in Bitcoin Core v0.12.0).</li><li><span style="color: blue;">Batch mode</span> available when listing and importing addresses.</li><li>mmgen-tool listaddresses: &#039;addrs&#039; argument allows you to specify an address or range of addresses.</li></ul><br />NOTE: if MMGen is already installed on your system, you must remove your existing installation by hand before installing this new version.&nbsp; On Linux, this means deleting everything under the directory &#039;/usr/local/lib/python2.7/dist-packages/mmgen/&#039;.&nbsp; Also, if you did a &#039;git pull&#039; instead of a fresh clone, you must delete the &#039;build&#039; directory in the repository root before installing.<br /><br />The &#039;mmgen-pywallet&#039; utility has been removed.&nbsp; It&#039;s no longer needed, as the &#039;bitcoin-cli dumpwallet&#039; command (available since Core v0.9.0) provides equivalent functionality.<br /><br />The Windows port isn&#039;t being actively maintained at the moment.&nbsp; Use at your own risk, and report any problems on this forum.<br /><br />To make sure everything&#039;s installed and working properly, run &#039;test/test.py -s&#039; in the repository root.<br /><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_14037988">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg15359191"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg15359191#msg15359191"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_15359191">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg15359191#msg15359191">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: June 27, 2016, 06:37:48 PM by mmgen-py" class="edited">June 25, 2016, 03:34:18 PM</span><span class="editplain"><br />Last edit: June 27, 2016, 06:37:48 PM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns14" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg15359191#msg15359191">#14</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing MMGen version 0.8.4</b></span><br /><br /><span style="color: blue;"><b>New features/improvements:</b></span><br /><ul style="margin-top: 0; margin-bottom: 0;"><li><span style="color: blue;">Dynamic transaction fees!</span></li></ul><br />Fee is calculated using Bitcoin Core’s &#039;estimatefee&#039; RPC call and can be overridden interactively by the user.<br /><br /><hr /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15359191">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b>
+		<a name="msg15394526"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg15394526#msg15394526"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_15394526">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg15394526#msg15394526">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">June 28, 2016, 11:27:01 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns15" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg15394526#msg15394526">#15</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><span style="color: blue;"><b>Announcing</b></span> <span style="color: red;"><span style="font-size: 14pt !important; line-height: 1.3em;"><b>MMGenLive,</b></span></span> <span style="color: blue;"><b>a fully functional Linux system</b></span> <span style="color: green;"><span style="font-size: 14pt !important; line-height: 1.3em;"><b>on a USB stick</b></span></span> <span style="color: blue;"><b>with the</b></span> <span style="color: purple;"><b>MMGen online/offline Bitcoin wallet,</b></span> <span style="color: green;"><b>Bitcoin Core</b></span> <span style="color: blue;"><b>and related programs</b></span> <span style="color: purple;"><span style="font-size: 14pt !important; line-height: 1.3em;"><b>preinstalled!</b></span></span><br /><br /><span style="color: navy;"><span style="font-size: 12pt !important; line-height: 1.3em;"><b>MMGenLive gives you, out of the box:</b></span></span><br /><br /><ul style="margin-top: 0; margin-bottom: 0;"><li>A completely installed, upgradeable and configurable Ubuntu Linux system</li><li>Full disk encryption (entire filesystem is read/write)</li><li>The latest Bitcoin Core</li><li>The MMGen wallet system and documentation</li></ul><br /><b><span style="font-size: 12pt !important; line-height: 1.3em;">MMGenLive can be used both as an online or offline wallet.</span></b><br /><br /><b><span style="font-size: 12pt !important; line-height: 1.3em;">Everything’s ready to go.&nbsp; Just download and copy to a USB stick.&nbsp; No installation required!</span></b><br /><br />For Linux users who wish to “roll their own”, an automated build script is also available.<br /><br />As the MMGen Windows port isn’t being actively maintained, MMGenLive is now the recommended way for non-Linux users to use the MMGen wallet system.<br /><br /><hr /><span style="color: navy;"><b>MMGenLive project page:</b></span> <a class="ul" href="https://github.com/mmgen/MMGenLive">https://github.com/mmgen/MMGenLive</a><br /><span style="color: navy;"><b>MMGen project page:</b></span> <a class="ul" href="https://github.com/mmgen/mmgen">https://github.com/mmgen/mmgen</a><br /><i><span style="color: navy;">Support the MMGen project:</span> <span style="color: blue;">15TLdmi5NYLdqmtCqczUs5pBPkJDXRs83w</span></i><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15394526">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b>
+		<a name="msg15395223"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=625996" title="View the profile of morantis">morantis</a></b>
+							<div class="smalltext">
+								Hero Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 868<br />
+								Merit: 500<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_625996.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=625996"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg15395223#msg15395223"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_15395223">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg15395223#msg15395223">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">June 28, 2016, 12:34:31 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns16" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg15395223#msg15395223">#16</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">two questions, almost three<br /><br />1. Does the set of scripts work with just one version of bitcoind or all and is that daemon/client included in the download<br /><br />2. What functionality does this provide versus simply working with bitcoind itself or a third party API<br /><br />I am not being mean, just did not have the time to FULLY read everything and it seemed that as a command line tool this was right up there with the standard daemon with some additional encryption/decryption tools.&nbsp; It should be pretty easy to make this into a GUI although you seem to have a vast number of functions and organization would be time consuming, but really the GUI would just be shelling out the command line functions and parsing the return data.&nbsp; if you want, i could throw together a fast windows GUI for you based on the little bit i had time to read, although i do not code for limux</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15395223">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg15396627"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg15396627#msg15396627"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_15396627">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg15396627#msg15396627">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: June 28, 2016, 05:42:17 PM by mmgen-py" class="edited">June 28, 2016, 02:22:23 PM</span><span class="editplain"><br />Last edit: June 28, 2016, 05:42:17 PM by mmgen-py</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns17" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg15396627#msg15396627">#17</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=567069.msg15395223#msg15395223">Quote from: morantis on June 28, 2016, 12:34:31 PM</a></div><div class="quote">1. Does the set of scripts work with just one version of bitcoind or all and is that daemon/client included in the download<br /></div>The live image includes the most recent version of Bitcoin Core, but the scripts will work with any version of bitcoind &gt;= 0.10.0 (when watch-only support was introduced).<br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=567069.msg15395223#msg15395223">Quote from: morantis on June 28, 2016, 12:34:31 PM</a></div><div class="quote">2. What functionality does this provide versus simply working with bitcoind itself or a third party API<br /></div>Lots of functionality beyond bitcoind itself. &nbsp;Download the live USB image and try it out! &nbsp;That will answer a lot of your questions.<br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=567069.msg15395223#msg15395223">Quote from: morantis on June 28, 2016, 12:34:31 PM</a></div><div class="quote">It should be pretty easy to make this into a GUI although you seem to have a vast number of functions and organization would be time consuming,<br /></div>I&#039;ve thought about a GUI. &nbsp;I think it should be cross-platform, though, and integrated on a lower level, not just parsing the output of the scripts.<br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15396627">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b>
+		<a name="msg15397967"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=503947" title="View the profile of BitcoinNewsMagazine">BitcoinNewsMagazine</a></b>
+							<div class="smalltext">
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 1806<br />
+								Merit: 1164<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_503947.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=503947"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://bitcoinnewsmagazine.com/" title="Bitcoin News Magazine" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg15397967#msg15397967"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_15397967">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg15397967#msg15397967">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">June 28, 2016, 04:18:44 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns18" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg15397967#msg15397967">#18</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">You still need an online and offline computer for your solution. Armory and Electrum have been providing this type of cold storage for years, and it is not convenient to use. Hardware wallets like Ledger and Trezor have pretty much made this type of cold storage obsolete. <br /><br />Trezor costs $99 and new Ledger Nano S is $66 and either provides all the security for your bitcoin you will ever need. And they both work with your phone. </div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15397967">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig503947"><b><span style="font-size: 15px !important; line-height: 1.3em;"><span style="font-family: Impact;"></span><a rel="ugc" class="ul" href="https://bitcoinnewsmagazine.com"><span style="color: #000000;">B</span> <span style="color: #FF0000;">N</span> <span style="color: #000000;">M</span></a></span></b>&nbsp; <b><span style="font-size: 10px !important; line-height: 1.3em;"><span style="font-family: Impact;"></span><a rel="ugc" class="ul" href="https://bitcoinnewsmagazine.com/pgp-public-key/"><span style="color: #000000;">PGP Public Key</span></a></span></b></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg15399004"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=307291" title="View the profile of mmgen-py">mmgen-py</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 108<br />
+								Merit: 21<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=307291"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/mmgen/mmgen" title="MMGen, a complete Bitcoin cold storage solution for the command line" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg15399004#msg15399004"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_15399004">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg15399004#msg15399004">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">June 28, 2016, 05:49:06 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns19" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg15399004#msg15399004">#19</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=567069.msg15397967#msg15397967">Quote from: BitcoinNewsMagazine on June 28, 2016, 04:18:44 PM</a></div><div class="quote">Trezor costs $99 and new Ledger Nano S is $66 and either provides all the security for your bitcoin you will ever need. And they both work with your phone. <br /></div><br />MMGen is intended for power users and provides more options, functionality and security than hardware wallets. &nbsp;It connects with the outside world only via Bitcoin Core. &nbsp;For many of us, the words &quot;phone&quot; and &quot;security&quot; are mutually exclusive. &nbsp;In addition, MMGen costs only $0.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15399004">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="HAVVdhahycLJSeCFwbhFvg"><td class="xbOBUseqyZJOntVNcRgMPg"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg15399152"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=503947" title="View the profile of BitcoinNewsMagazine">BitcoinNewsMagazine</a></b>
+							<div class="smalltext">
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 1806<br />
+								Merit: 1164<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_503947.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=503947"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://bitcoinnewsmagazine.com/" title="Bitcoin News Magazine" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=567069.msg15399152#msg15399152"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_15399152">
+										<a href="https://bitcointalk.org/index.php?topic=567069.msg15399152#msg15399152">Re: [ANN] MMGen, a complete Bitcoin cold storage solution for the command line</a>
+									</div>
+												<div class="smalltext">June 28, 2016, 06:04:09 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns20" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=567069.msg15399152#msg15399152">#20</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=567069.msg15399004#msg15399004">Quote from: mmgen-py on June 28, 2016, 05:49:06 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=567069.msg15397967#msg15397967">Quote from: BitcoinNewsMagazine on June 28, 2016, 04:18:44 PM</a></div><div class="quote">Trezor costs $99 and new Ledger Nano S is $66 and either provides all the security for your bitcoin you will ever need. And they both work with your phone. <br /></div><br />MMGen is intended for power users and provides more options, functionality and security than hardware wallets. &nbsp;It connects with the outside world only via Bitcoin Core. &nbsp;For many of us, the words &quot;phone&quot; and &quot;security&quot; are mutually exclusive. &nbsp;In addition, MMGen costs only $0.<br /></div><br />If you can prove MMGen is more secure than Trezor have at it. Post your comments at /r/Trezor for slush to respond to. </div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_15399152">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig503947"><b><span style="font-size: 15px !important; line-height: 1.3em;"><span style="font-family: Impact;"></span><a rel="ugc" class="ul" href="https://bitcoinnewsmagazine.com"><span style="color: #000000;">B</span> <span style="color: #FF0000;">N</span> <span style="color: #000000;">M</span></a></span></b>&nbsp; <b><span style="font-size: 10px !important; line-height: 1.3em;"><span style="font-family: Impact;"></span><a rel="ugc" class="ul" href="https://bitcoinnewsmagazine.com/pgp-public-key/"><span style="color: #000000;">PGP Public Key</span></a></span></b></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="middletext">Pages:  [<b>1</b>] <a class="navPages" href="https://bitcointalk.org/index.php?topic=567069.20">2</a> <a class="navPages" href="https://bitcointalk.org/index.php?topic=567069.40">3</a> <a class="navPages" href="https://bitcointalk.org/index.php?topic=567069.60">4</a> <span class="prevnext"><a class="navPages" href="https://bitcointalk.org/index.php?topic=567069.20">&#187;</a> </span>&nbsp;<a href="https://bitcointalk.org/index.php?topic=567069.0;all">All</a> </td>
+		<td align="right" style="padding-right: 1ex;">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					
+		<td class="maintab_first">&nbsp;</td>
+		<td class="maintab_back"><a href="https://bitcointalk.org/index.php?action=printpage;topic=567069.0" target="_blank">Print</a></td>
+		<td class="maintab_last">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="https://bitcointalk.org/Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript">//<!--
+	quickReplyCollapsed = true;
+
+	smf_topic = 567069;
+	smf_start = 0;
+	smf_show_modify = 0;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="fd8ad59fa79c545e63be328ba3c8678c" /><input type="hidden" name="topic" value="567069" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'fd8ad59fa79c545e63be328ba3c8678c\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="https://bitcointalk.org/index.php?topic=567069.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 35262 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// --></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 1ex;">
+		<tr>
+				<td valign="top"><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="https://bitcointalk.org/index.php" class="nav">Bitcoin Forum</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php#1" class="nav">Bitcoin</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?board=12.0" class="nav">Project Development</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?topic=567069.0" class="nav">[ANN] MMGen, a complete Bitcoin command-line online/offline wallet solution</a></b></div></td> 
+				<td valign="top" align="right" class="nav"> <a href="https://bitcointalk.org/index.php?topic=567069.0;prev_next=prev#new">&laquo; previous topic</a> <a href="https://bitcointalk.org/index.php?topic=567069.0;prev_next=next#new">next topic &raquo;</a></td>
+		</tr>
+</table>
+	<table cellpadding="0" cellspacing="0" border="0" style="margin-left: 1ex;">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<div class="tborder"><div class="titlebg2" style="padding: 4px;" align="right">
+	<form action="https://bitcointalk.org/index.php" method="get" accept-charset="ISO-8859-1" style="padding:0; margin: 0;">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#1">Bitcoin</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=1.0"> => Bitcoin Discussion</option>
+			<option value="?board=74.0"> ===> Legal</option>
+			<option value="?board=77.0"> ===> Press</option>
+			<option value="?board=86.0"> ===> Meetups</option>
+			<option value="?board=87.0"> ===> Important Announcements</option>
+			<option value="?board=6.0"> => Development &amp; Technical Discussion</option>
+			<option value="?board=37.0"> ===> Wallet software</option>
+			<option value="?board=98.0"> =====> Electrum</option>
+			<option value="?board=100.0"> =====> Bitcoin Wallet for Android</option>
+			<option value="?board=138.0"> =====> BitcoinJ</option>
+			<option value="?board=97.0"> =====> Armory</option>
+			<option value="?board=231.0"> =====> Mycelium</option>
+			<option value="?board=261.0"> =====> Hardware wallets</option>
+			<option value="?board=14.0"> => Mining</option>
+			<option value="?board=40.0"> ===> Mining support</option>
+			<option value="?board=41.0"> ===> Pools</option>
+			<option value="?board=42.0"> ===> Mining software (miners)</option>
+			<option value="?board=76.0"> ===> Hardware</option>
+			<option value="?board=137.0"> =====> Group buys</option>
+			<option value="?board=81.0"> ===> Mining speculation</option>
+			<option value="?board=4.0"> => Bitcoin Technical Support</option>
+			<option value="?board=12.0" selected="selected"> => Project Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Economy</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=7.0"> => Economics</option>
+			<option value="?board=57.0"> ===> Speculation</option>
+			<option value="?board=5.0"> => Marketplace</option>
+			<option value="?board=51.0"> ===> Goods</option>
+			<option value="?board=75.0"> =====> Computer hardware</option>
+			<option value="?board=93.0"> =====> Digital goods</option>
+			<option value="?board=234.0"> =======> Invites &amp; Accounts</option>
+			<option value="?board=217.0"> =====> Collectibles</option>
+			<option value="?board=52.0"> ===> Services</option>
+			<option value="?board=53.0"> ===> Currency exchange</option>
+			<option value="?board=56.0"> ===> Gambling</option>
+			<option value="?board=71.0"> =====> Games and rounds</option>
+			<option value="?board=207.0"> =====> Investor-based games</option>
+			<option value="?board=228.0"> =====> Gambling discussion</option>
+			<option value="?board=65.0"> ===> Lending</option>
+			<option value="?board=88.0"> =====> Long-term offers</option>
+			<option value="?board=78.0"> ===> Securities</option>
+			<option value="?board=73.0"> ===> Auctions</option>
+			<option value="?board=84.0"> ===> Service Announcements</option>
+			<option value="?board=212.0"> =====> Micro Earnings</option>
+			<option value="?board=85.0"> ===> Service Discussion</option>
+			<option value="?board=222.0"> =====> Web Wallets</option>
+			<option value="?board=223.0"> =====> Exchanges</option>
+			<option value="?board=8.0"> => Trading Discussion</option>
+			<option value="?board=83.0"> ===> Scam Accusations</option>
+			<option value="?board=129.0"> ===> Reputation</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Other</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=24.0"> => Meta</option>
+			<option value="?board=167.0"> ===> New forum software</option>
+			<option value="?board=168.0"> ===> Bitcoin Wiki</option>
+			<option value="?board=34.0"> => Politics &amp; Society</option>
+			<option value="?board=39.0"> => Beginners &amp; Help</option>
+			<option value="?board=9.0"> => Off-topic</option>
+			<option value="?board=250.0"> => Serious discussion</option>
+			<option value="?board=251.0"> ===> Ivory Tower</option>
+			<option value="?board=59.0"> => Archival</option>
+			<option value="?board=92.0"> ===> &#1050;&#1086;&#1088;&#1079;&#1080;&#1085;&#1072;</option>
+			<option value="?board=44.0"> ===> CPU/GPU Bitcoin mining hardware</option>
+			<option value="?board=17.0"> ===> Chinese students</option>
+			<option value="?board=25.0"> ===> Obsolete (buying)</option>
+			<option value="?board=26.0"> ===> Obsolete (selling)</option>
+			<option value="?board=99.0"> ===> MultiBit</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Alternate cryptocurrencies</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=67.0"> => Altcoin Discussion</option>
+			<option value="?board=159.0"> => Announcements (Altcoins)</option>
+			<option value="?board=240.0"> ===> Tokens (Altcoins)</option>
+			<option value="?board=160.0"> => Mining (Altcoins)</option>
+			<option value="?board=199.0"> ===> Pools (Altcoins)</option>
+			<option value="?board=161.0"> => Marketplace (Altcoins)</option>
+			<option value="?board=197.0"> ===> Service Announcements (Altcoins)</option>
+			<option value="?board=198.0"> ===> Service Discussion (Altcoins)</option>
+			<option value="?board=238.0"> ===> Bounties (Altcoins)</option>
+			<option value="?board=224.0"> => Speculation (Altcoins)</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Local</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=241.0"> => &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577; (Arabic)</option>
+			<option value="?board=242.0"> ===> &#1575;&#1604;&#1593;&#1605;&#1604;&#1575;&#1578; &#1575;&#1604;&#1576;&#1583;&#1610;&#1604;&#1577; (Altcoins)</option>
+			<option value="?board=265.0"> =====> &#1575;&#1604;&#1606;&#1602;&#1575;&#1588;&#1575;&#1578;</option>
+			<option value="?board=253.0"> ===> &#1573;&#1587;&#1578;&#1601;&#1587;&#1575;&#1585;&#1575;&#1578; &#1608; &#1571;&#1587;&#1574;&#1604;&#1577; &#1575;&#1604;&#1605;&#1576;&#1578;&#1583;&#1574;&#1610;&#1606;</option>
+			<option value="?board=266.0"> ===> &#1575;&#1604;&#1578;&#1593;&#1583;&#1610;&#1606;</option>
+			<option value="?board=267.0"> ===> &#1575;&#1604;&#1606;&#1602;&#1575;&#1588;&#1575;&#1578; &#1575;&#1604;&#1571;&#1582;&#1585;&#1609;</option>
+			<option value="?board=271.0"> ===> &#1605;&#1606;&#1589;&#1575;&#1578; &#1575;&#1604;&#1578;&#1576;&#1575;&#1583;&#1604;</option>
+			<option value="?board=191.0"> => Bahasa Indonesia (Indonesian)</option>
+			<option value="?board=193.0"> ===> Jual Beli</option>
+			<option value="?board=194.0"> ===> Mining (Bahasa Indonesia)</option>
+			<option value="?board=192.0"> ===> Altcoins (Bahasa Indonesia)</option>
+			<option value="?board=27.0"> => Español (Spanish)</option>
+			<option value="?board=31.0"> ===> Mercado y Economía</option>
+			<option value="?board=202.0"> =====> Servicios</option>
+			<option value="?board=203.0"> =====> Trading y especulación</option>
+			<option value="?board=32.0"> ===> Hardware y Minería</option>
+			<option value="?board=33.0"> ===> Esquina Libre</option>
+			<option value="?board=101.0"> ===> Mercadillo</option>
+			<option value="?board=102.0"> =====> Mexico</option>
+			<option value="?board=103.0"> =====> Argentina</option>
+			<option value="?board=104.0"> =====> España</option>
+			<option value="?board=105.0"> =====> Centroamerica y Caribe</option>
+			<option value="?board=130.0"> ===> Primeros pasos y ayuda</option>
+			<option value="?board=151.0"> ===> Altcoins (criptomonedas alternativas)</option>
+			<option value="?board=177.0"> =====> Minería de altcoins</option>
+			<option value="?board=204.0"> =====> Servicios</option>
+			<option value="?board=254.0"> =====> Tokens (Español)</option>
+			<option value="?board=30.0"> => &#20013;&#25991; (Chinese)</option>
+			<option value="?board=117.0"> ===> &#36339;&#34468;&#24066;&#22330;</option>
+			<option value="?board=118.0"> ===> &#23665;&#23528;&#24065;</option>
+			<option value="?board=119.0"> ===> &#23186;&#20307;</option>
+			<option value="?board=146.0"> ===> &#25366;&#30719;</option>
+			<option value="?board=196.0"> ===> &#31163;&#39064;&#19975;&#37324;</option>
+			<option value="?board=201.0"> => Hrvatski (Croatian)</option>
+			<option value="?board=220.0"> ===> Trgovina</option>
+			<option value="?board=221.0"> ===> Altcoins (Hrvatski)</option>
+			<option value="?board=273.0"> =====> Announcements (Hrvatski)</option>
+			<option value="?board=272.0"> ===> Off-topic (Hrvatski)</option>
+			<option value="?board=16.0"> => Deutsch (German)</option>
+			<option value="?board=62.0"> ===> Anfänger und Hilfe</option>
+			<option value="?board=60.0"> ===> Mining (Deutsch)</option>
+			<option value="?board=61.0"> ===> Trading und Spekulation</option>
+			<option value="?board=63.0"> ===> Projektentwicklung</option>
+			<option value="?board=64.0"> ===> Off-Topic (Deutsch)</option>
+			<option value="?board=139.0"> ===> Treffen</option>
+			<option value="?board=140.0"> ===> Presse </option>
+			<option value="?board=152.0"> ===> Altcoins (Deutsch)</option>
+			<option value="?board=270.0"> =====> Announcements (Deutsch)</option>
+			<option value="?board=269.0"> ===> Marktplatz</option>
+			<option value="?board=141.0"> =====> Auktionen</option>
+			<option value="?board=36.0"> =====> Suche</option>
+			<option value="?board=35.0"> =====> Biete</option>
+			<option value="?board=120.0"> => &#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940; (Greek)</option>
+			<option value="?board=136.0"> ===> &#913;&#947;&#959;&#961;&#940;</option>
+			<option value="?board=195.0"> ===> Mining Discussion (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=179.0"> ===> Altcoins (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=246.0"> =====> Altcoin Announcements (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=247.0"> =====> Altcoin Mining (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=95.0"> => &#1506;&#1489;&#1512;&#1497;&#1514; (Hebrew)</option>
+			<option value="?board=13.0"> => Français</option>
+			<option value="?board=183.0"> ===> Actualité et News</option>
+			<option value="?board=208.0"> ===> Débutants</option>
+			<option value="?board=47.0"> ===> Discussions générales et utilisation du Bitcoin</option>
+			<option value="?board=48.0"> ===> Mining et Hardware</option>
+			<option value="?board=187.0"> ===> Économie et spéculation</option>
+			<option value="?board=49.0"> ===> Place de marché</option>
+			<option value="?board=209.0"> =====> Échanges</option>
+			<option value="?board=210.0"> =====> Produits et services</option>
+			<option value="?board=211.0"> =====> Petites annonces</option>
+			<option value="?board=188.0"> ===> Le Bitcoin et la loi</option>
+			<option value="?board=54.0"> ===> Wiki, documentation et traduction</option>
+			<option value="?board=186.0"> ===> Développement et technique</option>
+			<option value="?board=184.0"> ===> Vos sites et projets</option>
+			<option value="?board=50.0"> ===> Hors-sujet</option>
+			<option value="?board=149.0"> ===> Altcoins (Français)</option>
+			<option value="?board=258.0"> =====> Annonces</option>
+			<option value="?board=89.0"> => India</option>
+			<option value="?board=121.0"> ===> Mining (India)</option>
+			<option value="?board=122.0"> ===> Marketplace (India)</option>
+			<option value="?board=123.0"> ===> Regional Languages (India)</option>
+			<option value="?board=124.0"> ===> Press &amp; News from India</option>
+			<option value="?board=125.0"> ===> Alt Coins (India)</option>
+			<option value="?board=126.0"> ===> Buyer/ Seller Reputations (India)</option>
+			<option value="?board=127.0"> ===> Off-Topic (India)</option>
+			<option value="?board=28.0"> => Italiano (Italian)</option>
+			<option value="?board=153.0"> ===> Guide (Italiano)</option>
+			<option value="?board=169.0"> ===> Progetti</option>
+			<option value="?board=205.0"> ===> Discussioni avanzate e sviluppo</option>
+			<option value="?board=175.0"> ===> Trading, analisi e speculazione</option>
+			<option value="?board=170.0"> ===> Mercato</option>
+			<option value="?board=46.0"> =====> Mercato valute</option>
+			<option value="?board=107.0"> =====> Beni</option>
+			<option value="?board=171.0"> =====> Servizi</option>
+			<option value="?board=172.0"> =====> Esercizi commerciali</option>
+			<option value="?board=173.0"> =====> Hardware/Mining (Italiano)</option>
+			<option value="?board=200.0"> =====> Gambling (Italiano)</option>
+			<option value="?board=162.0"> ===> Accuse scam/truffe</option>
+			<option value="?board=115.0"> ===> Mining (Italiano)</option>
+			<option value="?board=132.0"> ===> Alt-Currencies (Italiano)</option>
+			<option value="?board=176.0"> =====> Annunci</option>
+			<option value="?board=144.0"> ===> Raduni/Meeting (Italiano)</option>
+			<option value="?board=165.0"> ===> Crittografia e decentralizzazione</option>
+			<option value="?board=145.0"> ===> Off-Topic (Italiano)</option>
+			<option value="?board=252.0"> => &#26085;&#26412;&#35486; (Japanese)</option>
+			<option value="?board=255.0"> ===> &#12450;&#12523;&#12488;&#12467;&#12452;&#12531;</option>
+			<option value="?board=79.0"> => Nederlands (Dutch)</option>
+			<option value="?board=80.0"> ===> Markt</option>
+			<option value="?board=94.0"> ===> Gokken/lotterijen</option>
+			<option value="?board=116.0"> ===> Mining (Nederlands)</option>
+			<option value="?board=143.0"> ===> Beurzen</option>
+			<option value="?board=147.0"> ===> Alt Coins (Nederlands)</option>
+			<option value="?board=148.0"> ===> Off-topic (Nederlands)</option>
+			<option value="?board=150.0"> ===> Meetings (Nederlands)</option>
+			<option value="?board=82.0"> => &#54620;&#44397;&#50612; (Korean)</option>
+			<option value="?board=182.0"> ===> &#45824;&#52404;&#53076;&#51064; Alt Coins (&#54620;&#44397;&#50612;)</option>
+			<option value="?board=219.0"> => Pilipinas</option>
+			<option value="?board=243.0"> ===> Altcoins (Pilipinas)</option>
+			<option value="?board=260.0"> =====> Altcoin Announcements (Pilipinas)</option>
+			<option value="?board=268.0"> ===> Pamilihan</option>
+			<option value="?board=274.0"> ===> Others (Pilipinas)</option>
+			<option value="?board=142.0"> => Polski</option>
+			<option value="?board=163.0"> ===> Tablica og&#322;osze&#324;</option>
+			<option value="?board=164.0"> ===> Alternatywne kryptowaluty</option>
+			<option value="?board=263.0"> =====> Nowe kryptowaluty i tokeny</option>
+			<option value="?board=264.0"> =====> Tablica og&#322;osze&#324; (altcoiny)</option>
+			<option value="?board=29.0"> => Português (Portuguese)</option>
+			<option value="?board=131.0"> ===> Primeiros Passos (Iniciantes)</option>
+			<option value="?board=69.0"> ===> Economia &amp; Mercado</option>
+			<option value="?board=70.0"> ===> Mineração em Geral</option>
+			<option value="?board=206.0"> ===> Desenvolvimento &amp; Discussões Técnicas</option>
+			<option value="?board=181.0"> ===> Criptomoedas Alternativas</option>
+			<option value="?board=134.0"> ===> Brasil</option>
+			<option value="?board=135.0"> ===> Portugal</option>
+			<option value="?board=10.0"> => &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russian)</option>
+			<option value="?board=22.0"> ===> &#1053;&#1086;&#1074;&#1080;&#1095;&#1082;&#1080;</option>
+			<option value="?board=23.0"> ===> &#1041;&#1080;&#1079;&#1085;&#1077;&#1089;</option>
+			<option value="?board=236.0"> =====> &#1041;&#1072;&#1088;&#1072;&#1093;&#1086;&#1083;&#1082;&#1072;</option>
+			<option value="?board=237.0"> =====> &#1054;&#1073;&#1084;&#1077;&#1085;&#1085;&#1080;&#1082;&#1080;</option>
+			<option value="?board=90.0"> ===> &#1048;&#1076;&#1077;&#1080;</option>
+			<option value="?board=66.0"> ===> &#1050;&#1086;&#1076;&#1077;&#1088;&#1099;</option>
+			<option value="?board=21.0"> ===> &#1052;&#1072;&#1081;&#1085;&#1077;&#1088;&#1099;</option>
+			<option value="?board=91.0"> ===> &#1055;&#1086;&#1083;&#1080;&#1090;&#1080;&#1082;&#1072;</option>
+			<option value="?board=20.0"> ===> &#1058;&#1088;&#1077;&#1081;&#1076;&#1077;&#1088;&#1099;</option>
+			<option value="?board=72.0"> ===> &#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1099;&#1077; &#1082;&#1088;&#1080;&#1087;&#1090;&#1086;&#1074;&#1072;&#1083;&#1102;&#1090;&#1099;</option>
+			<option value="?board=248.0"> =====> &#1058;&#1086;&#1082;&#1077;&#1085;&#1099;</option>
+			<option value="?board=256.0"> =====> &#1041;ay&#1085;&#1090;&#1080; &#1080; a&#1080;p&#1076;po&#1087;&#1099;</option>
+			<option value="?board=55.0"> ===> &#1061;&#1072;&#1081;&#1087;&#1099;</option>
+			<option value="?board=185.0"> ===> &#1056;&#1072;&#1073;&#1086;&#1090;&#1072;</option>
+			<option value="?board=18.0"> ===> &#1056;&#1072;&#1079;&#1085;&#1086;&#1077;</option>
+			<option value="?board=262.0"> ===> O&#1073;cy&#1078;&#1076;e&#1085;&#1080;e Bitcoin</option>
+			<option value="?board=128.0"> =====> &#1053;&#1086;&#1074;&#1086;&#1089;&#1090;&#1080;</option>
+			<option value="?board=19.0"> =====> &#1070;&#1088;&#1080;&#1089;&#1090;&#1099;</option>
+			<option value="?board=108.0"> => Român&#259; (Romanian)</option>
+			<option value="?board=109.0"> ===> Anunturi importante</option>
+			<option value="?board=110.0"> ===> Offtopic</option>
+			<option value="?board=111.0"> ===> Market</option>
+			<option value="?board=257.0"> =====> Discutii Servicii</option>
+			<option value="?board=166.0"> ===> Minerit</option>
+			<option value="?board=112.0"> ===> Tutoriale</option>
+			<option value="?board=113.0"> ===> Bine ai venit!</option>
+			<option value="?board=114.0"> ===> Presa</option>
+			<option value="?board=259.0"> ===> Altcoins (Monede Alternative)</option>
+			<option value="?board=178.0"> =====> Anunturi Monede Alternative</option>
+			<option value="?board=45.0"> => Skandinavisk</option>
+			<option value="?board=133.0"> => Türkçe (Turkish)</option>
+			<option value="?board=180.0"> ===> Bitcoin Haberleri</option>
+			<option value="?board=155.0"> ===> Pazar Alan&#305;</option>
+			<option value="?board=156.0"> ===> Madencilik</option>
+			<option value="?board=189.0"> ===> Ekonomi</option>
+			<option value="?board=190.0"> ===> Servisler</option>
+			<option value="?board=232.0"> =====> Fonlar</option>
+			<option value="?board=229.0"> ===> Proje Geli&#351;tirme</option>
+			<option value="?board=157.0"> ===> Alternatif Kripto-Paralar</option>
+			<option value="?board=235.0"> =====> Madencilik (Alternatif Kripto-Paralar)</option>
+			<option value="?board=239.0"> =====> Duyurular (Alternatif Kripto-Paralar)</option>
+			<option value="?board=158.0"> ===> Konu D&#305;&#351;&#305;</option>
+			<option value="?board=174.0"> ===> Yeni Ba&#351;layanlar &amp; Yard&#305;m</option>
+			<option value="?board=230.0"> ===> Bulu&#351;malar</option>
+			<option value="?board=11.0"> => Other languages/locations</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'https://bitcointalk.org/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div></div><br />
+	</div><script type="text/javascript">
+//<!--
+function detectabp(el) {
+	if(typeof window.getComputedStyle != 'function')
+		return false;
+	if(!el)
+		var el=document.getElementById("sponsor");
+	var s = window.getComputedStyle(el).getPropertyValue("-moz-binding");
+	var s2 = window.getComputedStyle(el).getPropertyValue("display");
+	var detected = typeof s !== "undefined" && s != null && s.length > 0 && s != "none";
+	return detected || (typeof s2 !== "undefined" && s2 != null && s2 == "none");
+}
+function hex(num, length) {
+	str=num.toString(16);
+	while (str.length < length) {
+		str = '0' + str;
+	}
+	return str.substr(0,length);
+
+}
+
+function getabplink(site) {
+	var sites = new Array();sites["https://www.privateinternetaccess.com/"] = 1;
+sites["https://bitcointalk.org/dec/p1.html"] = 2;
+sites["https://fundyourselfnow.com"] = 3;
+sites["https://bountyhive.io"] = 4;
+	site_n=sites[site];
+	if(typeof site_n === 'undefined' || site_n === null || site_n <1 || site_n >150)
+		return site;
+	var code=Math.floor(Math.random()*2100000000);
+	var filler=hex(Math.floor(Math.random()*900000000000000),8);
+	var msg=Math.floor(Math.random()*9999999);
+	var site_c = site_n ^ code;
+	var template = Math.floor(Math.random()*4);
+	if(template==0)
+		template='https://bitcointalk.org/index.php?topic='+msg+'.0;do=watch;sesc=';
+	else if (template==1)
+		template="https://bitcointalk.org/index.php?action=post;msg=" + msg + ";topic=" + msg + ".0;sesc=";
+	else if (template==2)
+		template="https://bitcointalk.org/index.php?action=post;quote="+msg+";topic="+msg+".0;num_replies="+msg+";sesc=";
+	else
+		template="https://bitcointalk.org/index.php?action=ignore;u="+msg+";topic="+msg+";msg="+msg+";sesc=";
+
+	return template + hex(code,8) + hex(code,8) + hex(site_c,8) + filler;
+}
+function antiabp(){
+	if(!detectabp())
+		return;
+	var all_links=document.body.getElementsByTagName('a');
+	var els=new Array();
+	for(var i=0;i<all_links.length;i++) {
+		els.push(all_links[i])
+	}
+	for(var i=0;i<els.length;i++) {
+		if(detectabp(els[i])){
+			var newlink = els[i].cloneNode();
+			newlink.href=getabplink(els[i]);
+			newlink.innerHTML=els[i].innerHTML;
+			els[i].parentNode.insertBefore(newlink, els[i]);
+			els[i].parentNode.removeChild(els[i]);
+		}
+	}
+}
+
+if(window.chrome)
+	window.setTimeout(antiabp, 300);
+else
+	antiabp();
+//-->
+</script><script type="text/javascript">
+//<!--
+Array.prototype.forEach.call(document.getElementsByClassName("userimg"), checkImg);
+//-->
+</script>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" align="center" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="https://bitcointalk.org/Themes/custom1/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="https://bitcointalk.org/Themes/custom1/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.19</a> | 
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2009, Simple Machines</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="https://bitcointalk.org/Themes/custom1/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="https://bitcointalk.org/Themes/custom1/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="ajax_in_progress" style="display: none;">Loading...</div>
+</body></html>

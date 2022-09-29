@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<link rel="canonical" href="https://bitcointalk.org/index.php?topic=5414664.0" />
+		<title>Print Page - Where are these payments coming from?</title>
+		<style type="text/css">
+			body
+			{
+				color: black;
+				background-color: white;
+			}
+			body, td, .normaltext
+			{
+				font-family: Verdana, arial, helvetica, serif;
+				font-size: small;
+			}
+			*, a:link, a:visited, a:hover, a:active
+			{
+				color: black !important;
+			}
+			table
+			{
+				empty-cells: show;
+			}
+			.code
+			{
+				font-size: x-small;
+				font-family: monospace;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.quote
+			{
+				font-size: x-small;
+				border: 1px solid black;
+				margin: 1px;
+				padding: 1px;
+			}
+			.smalltext, .quoteheader, .codeheader
+			{
+				font-size: x-small;
+			}
+			.largetext
+			{
+				font-size: large;
+			}
+			hr
+			{
+				height: 1px;
+				border: 0;
+				color: black;
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<h1 class="largetext">Bitcoin Forum</h1>
+		<h2 class="normaltext">Economy => Trading Discussion => Topic started by: OgNasty on September 23, 2022, 08:12:56 PM</h2>
+
+		<table width="90%" cellpadding="0" cellspacing="0" border="0">
+			<tr>
+				<td>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Where are these payments coming from?</b><br />
+					Post by: <b>OgNasty</b> on <b>September 23, 2022, 08:12:56 PM</b>
+					<hr />
+					<div style="margin: 0 5ex;">I&#039;ve started noticing transactions sending BTC to my wallet, but I have no idea where they&#039;re coming from or why.&nbsp; Sure, it&#039;s possible there&#039;s a simple explanation or maybe I even signed up for something that is causing this, but I&#039;m clueless.&nbsp; The first transaction I figured was just random or something so I donated it to FreeRoss.&nbsp; Now I&#039;m seeing a second transaction.&nbsp; In total they are less than $3, so it isn&#039;t a big deal.&nbsp; I&#039;m just curious why I&#039;m getting these small transactions and if anyone has any clue why or where they&#039;re coming from.&nbsp; Here&#039;s the transactions:<br /><br />https://www.blockchain.com/btc/tx/7883ab2422a2ff5ab50b72ad57a21150046fdb6e972337b8e0c29c74a3a690da<br /><br />https://www.blockchain.com/btc/tx/6fb6ffbf375098781f768664e5a0a8573d9cc7aa1bc4f8258e8c14393dafe5d6</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>mk4</b> on <b>September 24, 2022, 03:43:08 AM</b>
+					<hr />
+					<div style="margin: 0 5ex;">If I were to guess, safe to assume that it&#039;s probably a dust attack?<br /><br />https://support.exodus.com/article/1231-what-is-a-dust-attack-and-how-to-mitigate-it</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>tbct_mt2</b> on <b>September 24, 2022, 01:38:34 PM</b>
+					<hr />
+					<div style="margin: 0 5ex;">Dust Attack, what it is, why it is dangerous and how to prevent falling to it (https://bitcointalk.org/index.php?topic=5175238.0)<br /><br />Your receiving satoshis are very similar to dust attacks.<br /><br />Similar to this one. Even the value is bigger, it is still dust attack.<br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5175238.msg55172607#msg55172607">Quote from: 1miau on September 11, 2020, 01:00:02 AM</a></div><div class="quote">People have to pay 2 m<span class="BTC">BTC</span> to register and we will use this <span class="BTC">BTC</span> as winner price. Now, an unknown person has sent 547 Satoshis to our escrow address: https://blockchair.com/bitcoin/transaction/d3239fcd4ed507b1943ea4fe3cec19fff380d9cfb96d5a3b27bfba549be74a18<br /><br />It&#039;s one of more than 500 addresses where 547 Satoshis each were also sent by that unknown address: <br /><br /><a href="https://i.imgur.com/jwsyUgM.png">https://i.imgur.com/jwsyUgM.png</a><br /></div></div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>hugeblack</b> on <b>September 24, 2022, 06:37:33 PM</b>
+					<hr />
+					<div style="margin: 0 5ex;">For privacy purposes, it is better to have a wallet that supports “coin control<sup>[1]</sup>” and thus it will ensure that the rest of your addresses will not be known, as for the reason, it is either random to attack the network or someone is trying to collect more data about you, in the end money does not grow on trees and is not distributed One free money.<br /><br /><br />[1] https://support.ledger.com/hc/en-us/articles/360015996580-Using-Coin-control</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>OgNasty</b> on <b>September 24, 2022, 08:33:19 PM</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg60997537#msg60997537">Quote from: mk4 on September 24, 2022, 03:43:08 AM</a></div><div class="quote">If I were to guess, safe to assume that it&#039;s probably a dust attack?<br /><br />https://support.exodus.com/article/1231-what-is-a-dust-attack-and-how-to-mitigate-it<br /></div><br />I find it a little hard to believe that someone would be doing dust attacks with dollars instead of fractions of a penny, but that was my first thought as well.&nbsp; Hence why I donated the funds.&nbsp; I guess I&#039;ll keep sending the unknown transactions to FreeRoss and other charities until I figure out where it&#039;s coming from.&nbsp; I don&#039;t really think it&#039;s a dust attack though.&nbsp; I reached out to another user who also received these funds via the same transaction to see if they have any idea what could be causing it as well.&nbsp; I&#039;ll report back if I figure anything out.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>Ultegra134</b> on <b>September 24, 2022, 08:53:19 PM</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg60997537#msg60997537">Quote from: mk4 on September 24, 2022, 03:43:08 AM</a></div><div class="quote">If I were to guess, safe to assume that it&#039;s probably a dust attack?<br /><br />https://support.exodus.com/article/1231-what-is-a-dust-attack-and-how-to-mitigate-it<br /></div>I&#039;ve had this happen to my Metamask wallet. I received a few thousand worthless coins/tokens that showed up when using services such as Yieldwatch and, of course, couldn&#039;t be sold despite showing having an X value due to them having zero liquidity. However, even after reading your article, I still don&#039;t quite understand how dust attacks are dangerous. Could you please elaborate? From what I&#039;ve understood, it simply deanonymizes your address by creating multiple links towards it. Does it pose another risk? Addresses are not actually private, but if you don&#039;t publicly share them, like we do on our profiles, there&#039;s no way for them to be linked back to us. Correct me if I&#039;m wrong.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>DaveF</b> on <b>September 24, 2022, 09:02:52 PM</b>
+					<hr />
+					<div style="margin: 0 5ex;">I have been seeing it more and more with larger and larger amounts on some of my long term cold wallets. I figure if I ever move the funds I&#039;ll coin control all of those funds someplace else. <br /><br />At a guess, it is a dust attack for some reason BUT they know that people in order to have more privacy will ignore / leave the truly dust amounts. But make it more money and they may actually move it someplace where they may have be able to trace it.<br /><br />Yeah, I know, sounds paranoid but it&#039;s the only thing I can come up with.<br /><br />-Dave</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>BitMaxz</b> on <b>September 25, 2022, 12:10:55 AM</b>
+					<hr />
+					<div style="margin: 0 5ex;">I experience one of my addresses with balance but it doesn&#039;t break any privacy because I only receive it in my one address and I include it on my next withdrawal to Binance. <br /><br />I don&#039;t see any effect receiving them if you only receive it only in your one address but if the amount is too small better you manually choose what coin you want to spend because it can affect the transaction size which could lead to a high transaction fee excluding it can save more fees. <br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg61002491#msg61002491">Quote from: Ultegra134 on September 24, 2022, 08:53:19 PM</a></div><div class="quote">I&#039;ve had this happen to my Metamask wallet. I received a few thousand worthless coins/tokens that showed up when using services such as Yieldwatch and, of course, couldn&#039;t be sold despite showing having an X value due to them having zero liquidity. However, even after reading your article, I still don&#039;t quite understand how dust attacks are dangerous. Could you please elaborate? From what I&#039;ve understood, it simply deanonymizes your address by creating multiple links towards it. Does it pose another risk? Addresses are not actually private, but if you don&#039;t publicly share them, like we do on our profiles, there&#039;s no way for them to be linked back to us. Correct me if I&#039;m wrong.<br /></div><br />The issue on Metamask with ETH network or Bep20 network is totally different it looks like a dust attack but it is more likely a phishing attack where newbies fall about these trying to get benefits by transferring or withdrawing them and then sell them to exchanges where it listed but actually, in the end, if you do allow them their other coins or ETH/BNB will be stolen. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>blue_hurricanger</b> on <b>September 25, 2022, 09:26:53 AM</b>
+					<hr />
+					<div style="margin: 0 5ex;">I say it was a dust attack there. Someone tries to probe your wallet if you forgot to exclude that dust input into your balance. Use coin control and send that amount back to where it comes from just to spite those cunt. <br />And if I were you, I would recheck or doubt my security cause someone has malicious intent toward you.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>Oshosondy</b> on <b>September 25, 2022, 10:01:58 AM</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg60997537#msg60997537">Quote from: mk4 on September 24, 2022, 03:43:08 AM</a></div><div class="quote">If I were to guess, safe to assume that it&#039;s probably a dust attack?<br /></div>You re correct.<br /><br />Although dust attack can be of minimal amount, but that does not mean dust attack can not be from high amount too but which is still considerably low in this case. The sender only just want to be able to track OgNasty transactions is what comes my mind.<br /><br />@OgNasty, just freeze the coins or do it like you are doing it by donating it.<br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg61004909#msg61004909">Quote from: blue_hurricanger on September 25, 2022, 09:26:53 AM</a></div><div class="quote">Use coin control and send that amount back to where it comes from just to spite those cunt. <br /></div>No need to send the coins back, using it for donation is good, or he can use coin control to freeze the exact UTXO.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>mk4</b> on <b>September 25, 2022, 11:23:43 AM</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg61002491#msg61002491">Quote from: Ultegra134 on September 24, 2022, 08:53:19 PM</a></div><div class="quote">I&#039;ve had this happen to my Metamask wallet. I received a few thousand worthless coins/tokens that showed up when using services such as Yieldwatch and, of course, couldn&#039;t be sold despite showing having an X value due to them having zero liquidity. However, even after reading your article, I still don&#039;t quite understand how dust attacks are dangerous. Could you please elaborate? From what I&#039;ve understood, it simply deanonymizes your address by creating multiple links towards it. Does it pose another risk? Addresses are not actually private, but if you don&#039;t publicly share them, like we do on our profiles, there&#039;s no way for them to be linked back to us. Correct me if I&#039;m wrong.<br /></div><br />It&#039;s a privacy problem, not necessarily a security problem so yea.<br /><br />As for MetaMask, Ethereum and other smart contract chains uses a different transaction model as Bitcoin whereas Ethereum/etc just reuses addresses by default; so dust attacks aren&#039;t really needed. The tokens you get on your MetaMask wallet are scams that could potentially execute malicious code when trying to move them.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>Ultegra134</b> on <b>September 25, 2022, 02:51:34 PM</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg61003210#msg61003210">Quote from: BitMaxz on September 25, 2022, 12:10:55 AM</a></div><div class="quote">The issue on Metamask with ETH network or Bep20 network is totally different it looks like a dust attack but it is more likely a phishing attack where newbies fall about these trying to get benefits by transferring or withdrawing them and then sell them to exchanges where it listed but actually, in the end, if you do allow them their other coins or ETH/BNB will be stolen. <br /></div>That&#039;s true. When it happened to me, I knew something fishy was going on, but decided to play along. I tried hopping on their so-called website in order to exchange the tokens, and except that it was a copy-cat from another service, it attempted to input your wallet&#039;s private keys when trying to connect your wallet to their website, claiming that automatic integration was faulty or whatever. Thus, while both are dust attacks, the latter aim at phising you in an attempt to steal your wallet&#039;s private keys.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>CryptocurencyKing</b> on <b>September 26, 2022, 12:14:33 AM</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg60997537#msg60997537">Quote from: mk4 on September 24, 2022, 03:43:08 AM</a></div><div class="quote">If I were to guess, safe to assume that it&#039;s probably a dust attack?<br /><br />https://support.exodus.com/article/1231-what-is-a-dust-attack-and-how-to-mitigate-it<br /></div>My guess too as these are just about the amount that fits to the category and as such, its left for you to be more careful on the steps or actions on the wallet.<br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg61001962#msg61001962">Quote from: hugeblack on September 24, 2022, 06:37:33 PM</a></div><div class="quote">For privacy purposes, it is better to have a wallet that supports “coin control<sup>[1]</sup>” and thus it will ensure that the rest of your addresses will not be known, <br /></div>In simple terms, what does it mean for a wallet to support &quot;coin control&quot;?<br />Is it that the wallet would restrict certain amounts from being deposited on an address? More like a deposit limit or it means something else.<br /><br />Meanwhile, its not really easy for one to go private on an address on the forum especially as we&#039;ve got a public nature of displaying spreadsheet and we apply for campaigns every now and then when slot(s) opens.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>adaseb</b> on <b>September 26, 2022, 03:09:12 AM</b>
+					<hr />
+					<div style="margin: 0 5ex;">Yes this is puzzling. Because why not send a few satoshis instead of sending this large amount. Dust attack are usually common when miner fees are low and usually never in strong bull markets. But they are hoping you just send all your bitcoins from your wallet from all your addresses and your privacy is affected by linking all your wallets and addresses together.<br /><br />Also very common on ETH. But with ETH they send you thousands of some unknown coin. You google where to sell it and it’s some unknown exchange where the coin has high value. Only way to sell is to put in your private seeds and all your coins and tokens are gone, very common scam and many fall for it. </div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>OgNasty</b> on <b>September 27, 2022, 04:20:45 PM</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg61005020#msg61005020">Quote from: Oshosondy on September 25, 2022, 10:01:58 AM</a></div><div class="quote">@OgNasty, just freeze the coins or do it like you are doing it by donating it.<br /></div><br />Ya, I don&#039;t mind donating the coins to FreeRoss.&nbsp; A little bit annoying to see them continue to send me coins, but I guess we&#039;ll see how much they&#039;re willing to send.&nbsp; I guess there are worse things that could happen.&nbsp; I still wonder if these are some sort of payouts for something.&nbsp; Who knows when it comes to Bitcoin...&nbsp; I never got a response from other users who I was able to identify on the transaction list, so I guess other users aren&#039;t too worried about it.&nbsp; Waiting now to see if I get another transaction I have to forward as I don&#039;t want to be held responsible for these payments without knowing where they&#039;re coming from.</div>
+					<br />
+					<hr size="2" width="100%" />
+					Title: <b>Re: Where are these payments coming from?</b><br />
+					Post by: <b>jaberwock</b> on <b>September 29, 2022, 06:38:04 AM</b>
+					<hr />
+					<div style="margin: 0 5ex;"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg61006421#msg61006421">Quote from: Ultegra134 on September 25, 2022, 02:51:34 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5414664.msg61003210#msg61003210">Quote from: BitMaxz on September 25, 2022, 12:10:55 AM</a></div><div class="quote">The issue on Metamask with ETH network or Bep20 network is totally different it looks like a dust attack but it is more likely a phishing attack where newbies fall about these trying to get benefits by transferring or withdrawing them and then sell them to exchanges where it listed but actually, in the end, if you do allow them their other coins or ETH/BNB will be stolen. <br /></div>That&#039;s true. When it happened to me, I knew something fishy was going on, but decided to play along. I tried hopping on their so-called website in order to exchange the tokens, and except that it was a copy-cat from another service, it attempted to input your wallet&#039;s private keys when trying to connect your wallet to their website, claiming that automatic integration was faulty or whatever. Thus, while both are dust attacks, the latter aim at phising you in an attempt to steal your wallet&#039;s private keys.<br /></div>I think all who use a metamask wallet or similar had experienced this already. I remember the first time I got a shady token, I was&nbsp; so excited thinking it came from an airdrop and its value is also huge but I only found out the truth when I am about to sell them because the transaction always fails as it needs a lot of gas fees to be able to swap it.<br /><br />We must be careful when dealing with these random coins. Much better if we don&#039;t touch them if we want to stay away from trouble. I never experience this to a btc wallet but thanks for this thread. Now I now that it&#039;s also possible. I hope wallet devs can do something to combat this issue soon.</div>
+					<br /><br />
+					<div align="center" class="smalltext">
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.19</a> | 
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2009, Simple Machines</a>
+		</span></div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

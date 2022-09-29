@@ -1,0 +1,1499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Bitcoin RPC loadwallet Error - Wallet file verification failed" />
+	<meta http-equiv="Content-Language" content="en" />
+	<meta name="keywords" content="bitcoin, forum, bitcoin forum, bitcointalk" />
+	<script language="JavaScript" type="text/javascript" src="https://bitcointalk.org/Themes/default/script.js"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "https://bitcointalk.org/Themes/custom1";
+		var smf_images_url = "https://bitcointalk.org/Themes/custom1/images";
+		var smf_scripturl = "https://bitcointalk.org/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>Bitcoin RPC loadwallet Error - Wallet file verification failed</title><!--779ffd8ad59fa79c545e63be328ba3c8678c456ac1b1465bfd8ad59fa79c545e63be328ba3c8678c8fc0--><link rel="canonical" href="https://bitcointalk.org/index.php?topic=5412734.0" />
+	<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/custom1/style.css" />
+	 <!--[if !IE]> -->
+	 <link rel="stylesheet" type="text/css" media="only screen and (min-device-width: 320px) and (max-device-width: 650px)" href="https://bitcointalk.org/Themes/custom1/mobile.css" />
+	 <!-- <![endif]-->
+	<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/default/print.css" media="print" /><style type="text/css">
+.uhifaAZeHianWZKKxidSaA > td {background-color: #E5E5E8; text-align:center;}
+.uhifaAZeHianWZKKxidSaA > td > table {margin-top:-5px}
+.uhifaAZeHianWZKKxidSaA .jJzcVbNPgjJetTczQBejqQ {display:inline-block;max-width:100%; min-width:100%; max-height:47px; overflow:hidden}
+.uhifaAZeHianWZKKxidSaA table,.uhifaAZeHianWZKKxidSaA tbody,.uhifaAZeHianWZKKxidSaA tr,.uhifaAZeHianWZKKxidSaA td {display:inline-block;max-width:100%; min-width:100%; overflow:hidden}
+.uhifaAZeHianWZKKxidSaA .jJzcVbNPgjJetTczQBejqQ table,.uhifaAZeHianWZKKxidSaA .jJzcVbNPgjJetTczQBejqQ tbody,.uhifaAZeHianWZKKxidSaA .jJzcVbNPgjJetTczQBejqQ tr,.uhifaAZeHianWZKKxidSaA .jJzcVbNPgjJetTczQBejqQ td {display:initial; max-width:none;min-width:none;overflow:visible}
+.eYkBXBEdqOsFDuSZEuoKeg {display:none !important}
+.gTcjHXhjOpXZPsgiNhSjKA {display:none}
+.hxCxHgFEpdcojzhhBosjig {padding: 1px 1px 0 1px;}
+.diymdyJdnCTiGfdqgsGDww{color:#699C62; font-weight:bold; font-size:18px}
+.diymdyJdnCTiGfdqgsGDww:link{color:#699C62; font-weight:bold; font-size:18px}
+.diymdyJdnCTiGfdqgsGDww:visited{color:#699C62; font-weight:bold; font-size:18px}
+.JgIcfgUXDmyfQYtWAQxIMQ{color:#00F30C;font-size:15px;font-weight:bold}
+.JgIcfgUXDmyfQYtWAQxIMQ:link{color:#00F30C;font-size:15px;font-weight:bold}
+.JgIcfgUXDmyfQYtWAQxIMQ:visited{color:#00F30C;font-size:15px;font-weight:bold}
+.XZfSdgEmCbkjlJpECgcQoA{font-size:x-small}
+
+.IfLPgnScFyPjTJZxzmicJw:link {font-size:22px;font-weight:bold;color:orange}
+.IfLPgnScFyPjTJZxzmicJw:active {font-size:22px;font-weight:bold;color:orange}
+.IfLPgnScFyPjTJZxzmicJw:visited {font-size:22px;font-weight:bold;color:orange}
+.IfLPgnScFyPjTJZxzmicJw:hover {text-decoration:none !important;color:red}
+.XxiMNlfDChHDgklNbdpHwg:link {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.XxiMNlfDChHDgklNbdpHwg:active {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.XxiMNlfDChHDgklNbdpHwg:visited {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.XxiMNlfDChHDgklNbdpHwg:hover {text-decoration:none !important;color:white;background-color:rgb(181,204,222)}
+.XxiMNlfDChHDgklNbdpHwg {display:inline-block;margin: 3px;0;3px;0}
+.eDtZaGgMwxACENEWBrdrtA:hover {text-decoration:none !important;}
+.eDtZaGgMwxACENEWBrdrtA {font-size:22px;font-weight:bold;}
+.QIcjeyacCyVRcHmXyzZcWQ {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .QIcjeyacCyVRcHmXyzZcWQ button {     border: none;     background: #8EE000;     color: #fff;     outline: none;     font-size: 1em;     padding: 0.5em 1.2em;     margin-left: 0.3em;     border-radius: 2em;     text-transform: uppercase;     font-weight: 600;     pointer-events: none;   }    .QIcjeyacCyVRcHmXyzZcWQ:hover .TJWXebUwmXetAUelwxEqiA span {   display: none; }  .QIcjeyacCyVRcHmXyzZcWQ:hover .TJWXebUwmXetAUelwxEqiA span:nth-child(2) {   display: block; }  .TJWXebUwmXetAUelwxEqiA {   display: flex;   align-items: center; }    .TJWXebUwmXetAUelwxEqiA span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .vljKhKJrezOWHiFgiXFRHQ {   display: inline-block; }  .TJWXebUwmXetAUelwxEqiA span:nth-child(2) {   display: none; }  .tbPUItziZgyCxRoFEabVfg {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .tbPUItziZgyCxRoFEabVfg:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .tbPUItziZgyCxRoFEabVfg > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .QIcjeyacCyVRcHmXyzZcWQ button {     display: none;   }   .TJWXebUwmXetAUelwxEqiA {     margin-left: 1em;   } }   @media (max-width: 550px) {   .tbPUItziZgyCxRoFEabVfg span span {     display: none;   } }  @media (max-width: 465px) {   .tbPUItziZgyCxRoFEabVfg {     display: none;   }   .QIcjeyacCyVRcHmXyzZcWQ {     justify-content: center;   } }
+.lSyZbjSWyaPgybeFyDhwdQ {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .lSyZbjSWyaPgybeFyDhwdQ button {     border: none;     background: #8EE000;     color: #fff;     outline: none;     font-size: 1em;     padding: 0.5em 1.2em;     margin-left: 0.4em;     border-radius: 2em;     text-transform: uppercase;     font-weight: 600; cursor:pointer; transition: all 0.3s;   } button:hover{transform: scale(1.05);}    .dmtZdAbfvhdvUQeTeqnTAA:hover span{   display: none; }  .dmtZdAbfvhdvUQeTeqnTAA:hover span:nth-child(2) {   display: block; }  .dmtZdAbfvhdvUQeTeqnTAA {   display: flex;   align-items: center; color:#fff}    .dmtZdAbfvhdvUQeTeqnTAA span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .wlPqvFbfNElVMfWfbqFhWw {   display: inline-block; }  .dmtZdAbfvhdvUQeTeqnTAA span:nth-child(2) {   display: none; }  .bcdfPhgxXLeTNuEeLLwKbw {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .bcdfPhgxXLeTNuEeLLwKbw:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .bcdfPhgxXLeTNuEeLLwKbw > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .lSyZbjSWyaPgybeFyDhwdQ button {     display: none;   }   .dmtZdAbfvhdvUQeTeqnTAA {     margin-left: 1em;   } }   @media (max-width: 550px) {   .bcdfPhgxXLeTNuEeLLwKbw span span {     display: none;   } }  @media (max-width: 465px) {   .bcdfPhgxXLeTNuEeLLwKbw {     display: none;   }   .lSyZbjSWyaPgybeFyDhwdQ {     justify-content: center;   } }
+.QIcjeyacCyVRcHmXyzZcWQ {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .QIcjeyacCyVRcHmXyzZcWQ button {   border: none;   background: #8EE000;   color: #fff;   outline: none;   font-size: 1em;   padding: 0.5em 1.2em;   margin-left: 0.4em;   border-radius: 2em;   text-transform: uppercase;   font-weight: 600;   cursor: pointer;   transition: all 0.3s; }  button:hover {   transform: scale(1.05); }  .TJWXebUwmXetAUelwxEqiA:hover span {   display: none; }  .TJWXebUwmXetAUelwxEqiA:hover span:nth-child(2) {   display: block; }  .TJWXebUwmXetAUelwxEqiA {   display: flex;   align-items: center;   color: #fff; }    .TJWXebUwmXetAUelwxEqiA span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .vljKhKJrezOWHiFgiXFRHQ {   display: inline-block; }  .TJWXebUwmXetAUelwxEqiA span:nth-child(2) {   display: none; }  .tbPUItziZgyCxRoFEabVfg {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .tbPUItziZgyCxRoFEabVfg:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .tbPUItziZgyCxRoFEabVfg > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .QIcjeyacCyVRcHmXyzZcWQ button {     display: none;   }   .TJWXebUwmXetAUelwxEqiA {     margin-left: 1em;   } }   @media (max-width: 550px) {   .tbPUItziZgyCxRoFEabVfg span span {     display: none;   } }  @media (max-width: 465px) {   .tbPUItziZgyCxRoFEabVfg {     display: none;   }   .QIcjeyacCyVRcHmXyzZcWQ {     justify-content: center;   } }
+.lSyZbjSWyaPgybeFyDhwdQ {   width: 900px;   height: 44px;   max-width: 100%;   background: #fff;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .lSyZbjSWyaPgybeFyDhwdQ button {   border: none;   background: #8EE000;   color: #fff;   outline: none;   font-size: 1em;   padding: 0.5em 1.2em;   margin-left: 0.4em;   border-radius: 2em;   text-transform: uppercase;   font-weight: 600;   cursor: pointer;   transition: all 0.3s; }  button:hover {   transform: scale(1.05); }  .dmtZdAbfvhdvUQeTeqnTAA:hover span {   display: none; }  .dmtZdAbfvhdvUQeTeqnTAA:hover span:nth-child(2) {   display: block; }  .dmtZdAbfvhdvUQeTeqnTAA {   display: flex;   align-items: center;   color: #5CB9F7; }    .dmtZdAbfvhdvUQeTeqnTAA span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .wlPqvFbfNElVMfWfbqFhWw {   display: inline-block; }  .dmtZdAbfvhdvUQeTeqnTAA span:nth-child(2) {   display: none; }  .bcdfPhgxXLeTNuEeLLwKbw {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .bcdfPhgxXLeTNuEeLLwKbw:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .bcdfPhgxXLeTNuEeLLwKbw > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .lSyZbjSWyaPgybeFyDhwdQ button {     display: none;   }   .dmtZdAbfvhdvUQeTeqnTAA {     margin-left: 1em;   } }   @media (max-width: 550px) {   .bcdfPhgxXLeTNuEeLLwKbw span span {     display: none;   } }  @media (max-width: 465px) {   .bcdfPhgxXLeTNuEeLLwKbw {     display: none;   }   .lSyZbjSWyaPgybeFyDhwdQ {     justify-content: center;   } }
+.tKRLNyxHjaOtxXFdXxUJng {   width: 900px;   height: 44px;   margin: 0 auto;   background: #fff;   max-width: 100%;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   color: #000 !important;   font-family: arial, sans-serif;   overflow: hidden; } .tKRLNyxHjaOtxXFdXxUJng:hover {   color: #fff;   background: #715AD0; } .tKRLNyxHjaOtxXFdXxUJng:hover .dYbjQdyiQEOSfoskokCEqg span:nth-child(1) {   display: none; } .tKRLNyxHjaOtxXFdXxUJng:hover .dYbjQdyiQEOSfoskokCEqg span:nth-child(2) {   display: block; } .tKRLNyxHjaOtxXFdXxUJng:hover .ZripdCsoeHieseEgidfbRQ span:nth-child(1) {   display: none;   color: #000; } .tKRLNyxHjaOtxXFdXxUJng:hover .ZripdCsoeHieseEgidfbRQ span:nth-child(2) {   display: block;   color: #000; } .tKRLNyxHjaOtxXFdXxUJng:hover .dYbjQdyiQEOSfoskokCEqg {   background: #fff;   color: #000; } .tKRLNyxHjaOtxXFdXxUJng:hover .ZripdCsoeHieseEgidfbRQ {   background: #fff;   color: #000; } .tKRLNyxHjaOtxXFdXxUJng:hover .dYbjQdyiQEOSfoskokCEqg:after {   background: #715AD0; } .tKRLNyxHjaOtxXFdXxUJng:hover .dYbjQdyiQEOSfoskokCEqg:before {   background: #715AD0; } .tKRLNyxHjaOtxXFdXxUJng:hover .dYbjQdyiQEOSfoskokCEqg span {   color: #000; } .tKRLNyxHjaOtxXFdXxUJng:hover .ZripdCsoeHieseEgidfbRQ:after {   background: #715AD0; } .tKRLNyxHjaOtxXFdXxUJng:hover .ZripdCsoeHieseEgidfbRQ:before {   background: #715AD0; } .tKRLNyxHjaOtxXFdXxUJng:hover .VbZppkchAZjiqKdcynhKcA {   color: #fff; } .tKRLNyxHjaOtxXFdXxUJng:hover .VbZppkchAZjiqKdcynhKcA:before {   background: #fff; } .tKRLNyxHjaOtxXFdXxUJng:hover .VbZppkchAZjiqKdcynhKcA:after {   background: #fff; } .tKRLNyxHjaOtxXFdXxUJng .VbZppkchAZjiqKdcynhKcA {   display: flex;   height: 32px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   position: relative;   z-index: 2;   font-size: 18px;   color: #000;   width: 160px; } .tKRLNyxHjaOtxXFdXxUJng .VbZppkchAZjiqKdcynhKcA:after{   position: absolute;   right: 98%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .tKRLNyxHjaOtxXFdXxUJng .VbZppkchAZjiqKdcynhKcA:before{   position: absolute;   right: 2%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .tKRLNyxHjaOtxXFdXxUJng .VbZppkchAZjiqKdcynhKcA span {   font-size: 26px;   font-family: Existence;   font-weight: 600; } .tKRLNyxHjaOtxXFdXxUJng .VbZppkchAZjiqKdcynhKcA span:hover {   color: #fff;   text-decoration: none; } .tKRLNyxHjaOtxXFdXxUJng .dYbjQdyiQEOSfoskokCEqg {   display: flex;   background: #715AD0;   height: 30px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-left: 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #fff;   width: 220px } .tKRLNyxHjaOtxXFdXxUJng .dYbjQdyiQEOSfoskokCEqg:after{   position: absolute;   right: 102%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .tKRLNyxHjaOtxXFdXxUJng .dYbjQdyiQEOSfoskokCEqg:before{   position: absolute;   right: -2%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; } .tKRLNyxHjaOtxXFdXxUJng .dYbjQdyiQEOSfoskokCEqg span {   color: #fff;   font-size: 13px;   line-height: 13px; } .tKRLNyxHjaOtxXFdXxUJng .dYbjQdyiQEOSfoskokCEqg span:nth-child(2) {   display: none; } .tKRLNyxHjaOtxXFdXxUJng .ZripdCsoeHieseEgidfbRQ{   display: flex;   flex-direction: column;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 220px; } .tKRLNyxHjaOtxXFdXxUJng .ZripdCsoeHieseEgidfbRQ span {   color: #fff;   font-size: 13px;   line-height: 13px; } .tKRLNyxHjaOtxXFdXxUJng .ZripdCsoeHieseEgidfbRQ span:nth-child(2) {   display: none; } .tKRLNyxHjaOtxXFdXxUJng .ZripdCsoeHieseEgidfbRQ {   display: flex;   background: #715AD0;   height: 30px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-right: 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #fff;   width: 220px } .tKRLNyxHjaOtxXFdXxUJng .ZripdCsoeHieseEgidfbRQ:after{   position: absolute;   right: 102%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .tKRLNyxHjaOtxXFdXxUJng .ZripdCsoeHieseEgidfbRQ:before{   position: absolute;   right: -2%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; }
+.yNYyhISNjIgxhqfgfRGeFg {   width: 900px;   height: 44px;   margin: 0 auto;   background: #715AD0;   max-width: 100%;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; } .yNYyhISNjIgxhqfgfRGeFg:hover {   color: #fff; } .yNYyhISNjIgxhqfgfRGeFg:hover .IaeQXAawhcFNaifbyxJRTg span:nth-child(1) {   display: none; } .yNYyhISNjIgxhqfgfRGeFg:hover .IaeQXAawhcFNaifbyxJRTg span:nth-child(2) {   display: block; } .yNYyhISNjIgxhqfgfRGeFg:hover .haePxSbsTMkBaMjoKyEEsQ span:nth-child(2) {   display: none; } .yNYyhISNjIgxhqfgfRGeFg:hover .haePxSbsTMkBaMjoKyEEsQ span:nth-child(3) {   display: block; } .yNYyhISNjIgxhqfgfRGeFg .aMOfmyZslVacPjrLdIdUiw {   display: flex;   background: #fff;   height: 32px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-right: 1em;   position: relative;   z-index: 2;   font-size: 18px;   color: #000;   width: 150px } // forma mid 1 .yNYyhISNjIgxhqfgfRGeFg .aMOfmyZslVacPjrLdIdUiw:after{   position: absolute;   right: 90%;   top: 115%;   content: "";   width: 22px;   height: 22px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .yNYyhISNjIgxhqfgfRGeFg .aMOfmyZslVacPjrLdIdUiw:before{   position: absolute;   right: 10%;   top: -15%;   content: "";   width: 22px;   height: 22px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } // forma mid 2 .yNYyhISNjIgxhqfgfRGeFg .aMOfmyZslVacPjrLdIdUiw:after{   position: absolute;   right: 98%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .yNYyhISNjIgxhqfgfRGeFg .aMOfmyZslVacPjrLdIdUiw:before{   position: absolute;   right: 2%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .yNYyhISNjIgxhqfgfRGeFg .aMOfmyZslVacPjrLdIdUiw span {   font-size: 24px;   font-family: Existence;   font-weight: 600; } .yNYyhISNjIgxhqfgfRGeFg .aMOfmyZslVacPjrLdIdUiw span:hover {   color: #000;   text-decoration: none; } .yNYyhISNjIgxhqfgfRGeFg .IaeQXAawhcFNaifbyxJRTg {   display: flex;   height: 44px;   flex-direction: column;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 230px; } .yNYyhISNjIgxhqfgfRGeFg .IaeQXAawhcFNaifbyxJRTg:after{   position: absolute;   right: 81%;   top: 70%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .yNYyhISNjIgxhqfgfRGeFg .IaeQXAawhcFNaifbyxJRTg:before{   position: absolute;   right: 19%;   top: 70%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; } .yNYyhISNjIgxhqfgfRGeFg .IaeQXAawhcFNaifbyxJRTg span:nth-child(3) {   display: flex;   background: #fff;   height: 18px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-top: 0.35em;   position: relative;   z-index: 2;   font-size: 14px;   color: #000;   width: 130px } .yNYyhISNjIgxhqfgfRGeFg .IaeQXAawhcFNaifbyxJRTg span {   color: #fff;   font-size: 13px;   line-height: 13px; } .yNYyhISNjIgxhqfgfRGeFg .IaeQXAawhcFNaifbyxJRTg span:nth-child(2) {   display: none; } .yNYyhISNjIgxhqfgfRGeFg .haePxSbsTMkBaMjoKyEEsQ{   display: flex;   flex-direction: column;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 230px; } .yNYyhISNjIgxhqfgfRGeFg .haePxSbsTMkBaMjoKyEEsQ span {   color: #fff;   font-size: 13px;   line-height: 13px; } .yNYyhISNjIgxhqfgfRGeFg .haePxSbsTMkBaMjoKyEEsQ span:nth-child(3) {   display: none; } .yNYyhISNjIgxhqfgfRGeFg .haePxSbsTMkBaMjoKyEEsQ span:nth-child(1) {   display: flex;   background: #fff;   height: 18px;   align-items: center;   justify-content: center;   border-radius: 5px;   margin-bottom: 0.35em;   padding: 0 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #000;   width: 130px } .yNYyhISNjIgxhqfgfRGeFg .haePxSbsTMkBaMjoKyEEsQ:after{   position: absolute;   right: 81%;   top: 30%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .yNYyhISNjIgxhqfgfRGeFg .haePxSbsTMkBaMjoKyEEsQ:before{   position: absolute;   right: 19%;   top: 30%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; }
+.mTWvNXRIlydewubkydhroA {   background-color:#142155;   width:912px;   height:42px;   display:flex;   justify-content:flex-start;   align-items:center;   position:relative;   padding-left: 20px;   overflow: hidden; }  .mTWvNXRIlydewubkydhroA > a {   position: absolute;   width: 932px;   height: 42px;   margin-left: -20px;   z-index: 44; }  .mTWvNXRIlydewubkydhroA > img:nth-child(2) {   margin-right: 48px;   margin-bottom: 4px; }  .mTWvNXRIlydewubkydhroA > img:nth-child(3) {   margin-right: 48px;   opacity: 1;   transition: opacity 0.2s linear, margin-left 0.2s cubic-bezier(0.05, 0.8, 0.05, 0.8) 0.1s, margin-right 0.2s cubic-bezier(0.05, 0.8, 0.05, 0.8) 0.3s; }  .mTWvNXRIlydewubkydhroA > img:nth-child(4) {   margin-right: 14px;   transition: opacity 0.3s linear; }  .mTWvNXRIlydewubkydhroA > .gPjiJWwmedxgzlZFUeXdcg {    background-color:#fff;    width:48px;    height:16px;    padding:4px 8px;    transition: opacity 0.3s linear; }  .mTWvNXRIlydewubkydhroA > .gPjiJWwmedxgzlZFUeXdcg > img {    width:48px; }  .mTWvNXRIlydewubkydhroA > svg {    position:absolute;    top:0;    left:-184px; }  .mTWvNXRIlydewubkydhroA:hover > .wgKxKPjdxzsfiaXpQKWAlg > .KghaVxidaeiBZpjiJuVjYw {   right: 0;   transition: all 0.3s cubic-bezier(0.05, 0.8, 0.05, 0.8); } .mTWvNXRIlydewubkydhroA:hover > img:nth-child(3) {   opacity: 0;   margin-left: 880px;   margin-right: 600px; } .mTWvNXRIlydewubkydhroA:hover > img:nth-child(4) {   opacity: 0; } .mTWvNXRIlydewubkydhroA:hover > .gPjiJWwmedxgzlZFUeXdcg {   opacity: 0; }  .wgKxKPjdxzsfiaXpQKWAlg {   position:absolute;   top:0;   right:0;   height:42px;   width:800px;   overflow: hidden; }  .wgKxKPjdxzsfiaXpQKWAlg > .KghaVxidaeiBZpjiJuVjYw {   position: absolute;   height:42px;   width:760px;   right: -820px;   top: 0;   background-color:#fff;   transition: all 0.2s cubic-bezier(0.8, 0.3, 0.8, 0.3); }  .wgKxKPjdxzsfiaXpQKWAlg > .KghaVxidaeiBZpjiJuVjYw::after {   content: "";   position: absolute;   border: 0px solid transparent;   border-top: 40px solid #fff;   border-left: 42px solid transparent;   width: 0;   height: 0;   top: 1px;   left: -40px;   transform: rotate(90deg); }  .wgKxKPjdxzsfiaXpQKWAlg > .KghaVxidaeiBZpjiJuVjYw > img {   margin-left: 185px;   margin-top: 11px; }
+.fhbfkjaOwKyDYfzhlaCjtA { 	width: 100%; 	max-height: 47px; 	height: 47px; 	border-radius: 8px; 	background: #009FFF; 	background: -webkit-linear-gradient(to right, #736df8, #ec2F4B); 	background: -webkit-gradient(linear, left top, right top, from(#736df8), to(#ec2F4B)); 	background: -webkit-linear-gradient(left, #736df8, #ec2F4B); 	background: -o-linear-gradient(left, #736df8, #ec2F4B); 	background: linear-gradient(to right, #736df8, #ec2F4B); 	color: #ffffff; 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; 	text-decoration: none; 	display: -webkit-box; 	display: -ms-flexbox; 	display: flex; 	-ms-flex-pack: distribute; 	justify-content: space-around; 	-webkit-box-align: center; 	-ms-flex-align: center; 	align-items: center; 	position: relative; }  .msyqMIWeEsANCKdxfdlOpg { 	position: absolute; 	width: 100%; 	height: 100%; }  .hqPttWcVeGvYZxkcdCdsJw { 	background-color: #333648; 	padding: 8px 20px; 	border-radius: 1000px; 	text-align: center; 	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .08); 	box-shadow: 0 5px 15px rgba(0, 0, 0, .08); 	text-transform: uppercase; 	letter-spacing: 0.0625em; 	font-weight: bold; 	font-size: 14px; 	color: #ffffff; 	text-decoration: none; 	cursor: pointer; }  .CHIyHDRfKzehiBoHejMOjQ { 	display: -webkit-box; 	display: -ms-flexbox; 	display: flex; 	-webkit-box-pack: center; 	-ms-flex-pack: center; 	justify-content: center; 	-webkit-box-align: center; 	-ms-flex-align: center; 	align-items: center; 	font-size: 16px; }  .CHIyHDRfKzehiBoHejMOjQ>span { 	margin-left: 8px; 	margin-right: 8px; }  .oNwffPKDAabEQgVgXqwRqg { 	font-size: 20px; }
+.nounderline:hover {text-decoration:none}
+.exempttable {display:inline-table !important}
+.bbca table, .bbca tbody, .bbca tr, .bbca td{
+	display: inline-block !important;
+	min-width: 0px !important;
+	text-align: center !important;
+}
+.gunbot td{text-align:left !important}
+.olddiv{display:block}
+.cryptokg {display:inline-block;padding:2px;font-size:17px;height:42px;width:500px;background-color:white; font-weight:700;color:orange} .cryptokg a:link{color:orange} .cryptokg a:hover{color:orange} .cryptokg a:visited{color:orange}
+</style>
+<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/ac/105.css" />
+<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/ac/106.css" />
+
+
+
+	<link rel="help" href="https://bitcointalk.org/index.php?action=help" target="_blank" />
+	<link rel="search" href="https://bitcointalk.org/index.php?action=search" />
+	<link rel="contents" href="https://bitcointalk.org/index.php" />
+	<link rel="alternate" type="application/rss+xml" title="Bitcoin Forum - RSS" href="https://bitcointalk.org/index.php?type=rss;action=.xml" />
+	<link rel="prev" href="https://bitcointalk.org/index.php?topic=5412734.0;prev_next=prev" />
+	<link rel="next" href="https://bitcointalk.org/index.php?topic=5412734.0;prev_next=next" />
+	<link rel="index" href="https://bitcointalk.org/index.php?board=4.0" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		function showhide(msgnr)
+		{
+			if (document.getElementById("message"+msgnr).style.display == "")
+			    {document.getElementById("message"+msgnr).style.display = "none";
+			     document.getElementById("ignmsgbttns"+msgnr).style.visibility = "hidden";
+			     document.getElementById("ignoremessage"+msgnr).style.display = "";
+			     document.getElementById("ignfooter"+msgnr).style.display = "none";
+			     document.getElementById("showhide"+msgnr).src = "https://bitcointalk.org/Themes/custom1/images/english/ignshow.gif";
+			     document.getElementById("showhide"+msgnr).alt = "Show";
+			     document.getElementById("ignprofile"+msgnr).style.display = "none";
+			    }
+			    else
+			    {document.getElementById("message"+msgnr).style.display = "";
+			     document.getElementById("ignmsgbttns"+msgnr).style.visibility = "visible";
+			     document.getElementById("ignoremessage"+msgnr).style.display = "none";
+			     document.getElementById("ignfooter"+msgnr).style.display = "";
+			     document.getElementById("showhide"+msgnr).src = "https://bitcointalk.org/Themes/custom1/images/english/ignhide.gif";
+			     document.getElementById("showhide"+msgnr).alt = "Hide";
+			     document.getElementById("ignprofile"+msgnr).style.display = "";
+			     }
+		}
+// ]]></script>
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+			document.getElementById("upshrinkHeader2").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			var current_header_ic = false;
+
+			function shrinkHeaderIC(mode)
+			{
+				document.cookie = "upshrinkIC=" + (mode ? 1 : 0);
+				document.getElementById("upshrink_ic").src = smf_images_url + (mode ? "/expand.gif" : "/collapse.gif");
+
+				document.getElementById("upshrinkHeaderIC").style.display = mode ? "none" : "";
+
+				current_header_ic = mode;
+			}
+		// ]]></script></head>
+<body>
+	<div class="tborder" >
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" id="smfheader">
+			<tr>
+				<td class="catbg" height="32">
+					<span style="font-family: Verdana, sans-serif; font-size: 140%; ">Bitcoin Forum</span>
+				</td>
+				<td align="right" class="catbg">
+					<img src="https://bitcointalk.org/Themes/custom1/images/smflogo.gif" style="margin: 2px;" alt="" />
+				</td>
+			</tr>
+		</table>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" >
+			<tr>
+				<td class="titlebg2" height="32" align="right">
+					<span class="smalltext">September 29, 2022, 10:55:41 AM</span>
+					<a href="#" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="https://bitcointalk.org/Themes/custom1/images/upshrink.gif" alt="*" title="Shrink or expand the header." align="bottom" style="margin: 0 1ex;" /></a>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top" colspan="2">
+					<table width="100%" class="bordercolor" cellpadding="8" cellspacing="1" border="0" style="margin-top: 1px;">
+						<tr>
+							<td colspan="2" width="100%" valign="top" class="windowbg2" id="variousheadlinks"><span class="middletext">Welcome, <b>Guest</b>. Please <a href="https://bitcointalk.org/index.php?action=login">login</a> or <a href="https://bitcointalk.org/index.php?action=register">register</a>.				</span>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table id="upshrinkHeader2" width="100%" cellpadding="4" cellspacing="0" border="0">
+			<tr>
+				<td width="90%" class="titlebg2">
+					<span class="smalltext"><b>News</b>: Latest Bitcoin Core release: <a class="ul" href="https://bitcoincore.org/en/download/"><b>23.0</b></a> [<a class="ul" href="https://bitcointalk.org/bitcoin-23.0.torrent">Torrent</a>]</span>
+				</td>
+				<td class="titlebg2" align="right" nowrap="nowrap" valign="top">
+					<form action="https://bitcointalk.org/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<a href="https://bitcointalk.org/index.php?action=search;advanced"><img src="https://bitcointalk.org/Themes/custom1/images/filter.gif" align="middle" style="margin: 0 1ex;" alt="" /></a>
+						<input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+						<input type="submit" name="submit" value="Search" style="width: 11ex;" />
+						<input type="hidden" name="advanced" value="0" />
+						<input type="hidden" name="topic" value="5412734" />
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+			<table cellpadding="0" cellspacing="0" border="0" style="margin-left: 10px;">
+				<tr>
+					<td class="maintab_first">&nbsp;</td><td class="maintab_active_first">&nbsp;</td>
+				<td valign="top" class="maintab_active_back">
+					<a href="https://bitcointalk.org/index.php">Home</a>
+				</td><td class="maintab_active_last">&nbsp;</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=help">Help</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=search">Search</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=login">Login</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=register">Register</a>
+				</td>
+                                <td valign="top" class="maintab_back">
+                                        <a href="/more.php">More</a>
+                                </td>
+				<td class="maintab_last">&nbsp;</td>
+			</tr>
+		</table>
+	<div id="bodyarea" style="padding: 1ex 0px 2ex 0px;">
+<a name="top"></a>
+<a name="msg60898124"></a>
+<div><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="https://bitcointalk.org/index.php" class="nav">Bitcoin Forum</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php#1" class="nav">Bitcoin</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?board=4.0" class="nav">Bitcoin Technical Support</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?topic=5412734.0" class="nav">Bitcoin RPC loadwallet Error - Wallet file verification failed</a></b></div></div>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="middletext" valign="bottom" style="padding-bottom: 4px;">Pages:  [<b>1</b>]  </td>
+		<td align="right" style="padding-right: 1ex;">
+			<div class="nav" style="margin-bottom: 2px;"> <a href="https://bitcointalk.org/index.php?topic=5412734.0;prev_next=prev#new">&laquo; previous topic</a> <a href="https://bitcointalk.org/index.php?topic=5412734.0;prev_next=next#new">next topic &raquo;</a></div>
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					
+		<td class="mirrortab_first">&nbsp;</td>
+		<td class="mirrortab_back"><a href="https://bitcointalk.org/index.php?action=printpage;topic=5412734.0" target="_blank">Print</a></td>
+		<td class="mirrortab_last">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+		<tr class="catbg3">
+				<td valign="middle" width="2%" style="padding-left: 6px;">
+						<img src="https://bitcointalk.org/Themes/custom1/images/topic/normal_post.gif" align="bottom" alt="" />
+				</td>
+				<td width="13%"> Author</td>
+				<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+						Topic: Bitcoin RPC loadwallet Error - Wallet file verification failed &nbsp;(Read 113 times)
+				</td>
+		</tr>
+</table>
+<form action="https://bitcointalk.org/index.php?action=quickmod2;topic=5412734.0" method="post" accept-charset="ISO-8859-1" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('fd8ad59fa79c545e63be328ba3c8678c') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=3502141" title="View the profile of nliveanalytics">nliveanalytics</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 4<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=3502141"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898124#msg60898124"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60898124">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60898124#msg60898124">Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 12:41:54 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns1" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60898124#msg60898124">#1</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">Hi!<br /><br />I am using my own bitcoin node server. I get the following error while making load wallet with RPC. <br /><br /><br />Request body:<br /><br />{&quot;jsonrpc&quot;: &quot;1.0&quot;, &quot;id&quot;: &quot;curltest&quot;, &quot;method&quot;: &quot;loadwallet&quot;, &quot;params&quot;: [&quot;/home/bitcoin/.bitcoin/&lt;mywalletname&gt;/backup.dat&quot;]}<br /><br /><br />Response body:<br /><br />{<br />&nbsp; &nbsp; &quot;result&quot;: null,<br />&nbsp; &nbsp; &quot;error&quot;: {<br />&nbsp; &nbsp; &nbsp; &nbsp; &quot;code&quot;: -4,<br />&nbsp; &nbsp; &nbsp; &nbsp; &quot;message&quot;: &quot;Wallet file verification failed. Invalid -wallet path &#039;/home/bitcoin/.bitcoin/&lt;mywalletname&gt;/backup.dat&#039;. -wallet path should point to a directory where wallet.dat and database/log.<img src="https://bitcointalk.org/Smileys/default/huh.gif" alt="Huh" border="0" /><img src="https://bitcointalk.org/Smileys/default/huh.gif" alt="Huh" border="0" /><img src="https://bitcointalk.org/Smileys/default/huh.gif" alt="Huh" border="0" />? files can be stored, a location where such a directory could be created, or (for backwards compatibility) the name of an existing data file in -walletdir (\&quot;/home/bitcoin/.bitcoin\&quot;)&quot;<br />&nbsp; &nbsp; },<br />&nbsp; &nbsp; &quot;id&quot;: &quot;curltest&quot;<br />}<br /><br />how can i bypass this error</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60898124">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr><tr><td class="hxCxHgFEpdcojzhhBosjig"></td></tr><tr class="uhifaAZeHianWZKKxidSaA"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b> <a name="msg1664448941"></a>
+ <table width="100%" border="0">
+  <tbody><tr><td>
+   <table width="100%">
+    <tbody><tr>
+       <td rowspan="2">
+     </td>
+       <td>
+      <table width="100%" class="eYkBXBEdqOsFDuSZEuoKeg"><tr><td></td></tr>
+      </table>
+      <div class="jJzcVbNPgjJetTczQBejqQ"><a style="background-image:url(Themes/ai/coco6.png);background-repeat:no-repeat;background-position:center;height:47px;display:block" href="https://semerviewdistains.com/98d0d9d0-3b4b-4e1c-87cf-b05e87dca37a"></a></div>
+     </td>
+    </tr>
+    <tr class="eYkBXBEdqOsFDuSZEuoKeg"><td></td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+ <span class="XZfSdgEmCbkjlJpECgcQoA">A<i></i>dvertised s<i></i>ites are no<i></i>t endorsed by the Bitcoin Forum.<i></i> Th<i></i>ey may b<i></i>e unsafe, unt<i></i>rustwort<i></i>hy, or illegal in your jurisd<i></i>ictio<i></i>n. <a href="https://bitcointalk.org/adrotate.php?adinfo">Adv<i></i>ertise here.</a></span>
+</td></tr><tr class="gTcjHXhjOpXZPsgiNhSjKA"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b> <a name="msg1664448941"></a>
+ <table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tbody><tr><td class="windowbg2">
+   <table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+    <tbody><tr>
+       <td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+      <b><a href="https://bitcointalk.org/index.php?action=profile;u=1664448941" title="View the profile of 1664448941">1664448941</a></b>
+      <div class="smalltext">
+       Hero Member<br />
+       <img src="/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664448941" title="Personal Message (Offline)"><img src="/Themes/custom1/images/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0" /></a><span class="smalltext"> Offline</span><br /><br />
+       Posts: 1664448941<br />
+       
+       
+       
+       <br />
+       <a href="https://bitcointalk.org/index.php?action=profile;u=1664448941"><img src="/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664448941" title="Personal Message (Offline)"><img src="/Themes/custom1/images/im_off.gif" alt="Personal Message (Offline)" border="0" /></a><br />
+       <br /><a href="https://bitcointalk.org/index.php?action=ignore;u=1664448941;topic=1664448941;msg=1664448941">Ignore</a>
+      </div>
+     </td>
+       <td style="padding: 2px;" class="td_headerandpost" valign="top" width="85%" height="100%">
+      <table width="100%" border="0"><tbody><tr>
+       <td valign="middle"><a href="https://bitcointalk.org/index.php?topic=1664448941.msg1664448941#msg1664448941"><img src="/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+       <td valign="middle">
+           <div style="font-weight: bold;" class="subject">
+         <a href="https://bitcointalk.org/index.php?topic=1664448941.msg1664448941#msg1664448941">1664448941</a>
+        </div>
+           <div class="smalltext">1664448941</div></td>
+           <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" valign="middle" align="right" height="20"><div style="visibility: visible;">
+    <a href="https://bitcointalk.org/index.php?action=post;quote=1664448941;topic=1664448941.100;num_replies=2;sesc=1664448941"><img src="/Themes/custom1/images/frostee/frostee_quote.png" alt="Reply with quote" class="reply_button" style="vertical-align: middle;" /></a>
+       &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=1664448941.msg1664448941#msg1664448941">#2</a>
+  </div>
+       </td>
+      </tr></tbody></table>
+         <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%" />
+      <div class="post">1664448941</div>
+     </td>
+    </tr>
+    <tr>
+     <td class="smalltext" valign="bottom" width="85%">
+      <table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+       <td colspan="2" class="smalltext" width="100%">
+       </td>
+      </tr><tr>
+       <td class="smalltext" valign="bottom">
+       </td>
+       <td class="smalltext" valign="bottom" align="right">
+        <a href="https://bitcointalk.org/index.php?action=reporttm;topic=1664448941.101;msg=1664448941">Report to moderator</a>
+       </td>
+      </tr></tbody></table>
+     </td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+</td></tr><tr class="gTcjHXhjOpXZPsgiNhSjKA"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b> <a name="msg1664448941"></a>
+ <table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tbody><tr><td class="windowbg2">
+   <table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+    <tbody><tr>
+       <td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+      <b><a href="https://bitcointalk.org/index.php?action=profile;u=1664448941" title="View the profile of 1664448941">1664448941</a></b>
+      <div class="smalltext">
+       Hero Member<br />
+       <img src="/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664448941" title="Personal Message (Offline)"><img src="/Themes/custom1/images/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0" /></a><span class="smalltext"> Offline</span><br /><br />
+       Posts: 1664448941<br />
+       
+       
+       
+       <br />
+       <a href="https://bitcointalk.org/index.php?action=profile;u=1664448941"><img src="/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664448941" title="Personal Message (Offline)"><img src="/Themes/custom1/images/im_off.gif" alt="Personal Message (Offline)" border="0" /></a><br />
+       <br /><a href="https://bitcointalk.org/index.php?action=ignore;u=1664448941;topic=1664448941;msg=1664448941">Ignore</a>
+      </div>
+     </td>
+       <td style="padding: 2px;" class="td_headerandpost" valign="top" width="85%" height="100%">
+      <table width="100%" border="0"><tbody><tr>
+       <td valign="middle"><a href="https://bitcointalk.org/index.php?topic=1664448941.msg1664448941#msg1664448941"><img src="/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+       <td valign="middle">
+           <div style="font-weight: bold;" class="subject">
+         <a href="https://bitcointalk.org/index.php?topic=1664448941.msg1664448941#msg1664448941">1664448941</a>
+        </div>
+           <div class="smalltext">1664448941</div></td>
+           <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" valign="middle" align="right" height="20"><div style="visibility: visible;">
+    <a href="https://bitcointalk.org/index.php?action=post;quote=1664448941;topic=1664448941.100;num_replies=2;sesc=1664448941"><img src="/Themes/custom1/images/frostee/frostee_quote.png" alt="Reply with quote" class="reply_button" style="vertical-align: middle;" /></a>
+       &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=1664448941.msg1664448941#msg1664448941">#2</a>
+  </div>
+       </td>
+      </tr></tbody></table>
+         <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%" />
+      <div class="post">1664448941</div>
+     </td>
+    </tr>
+    <tr>
+     <td class="smalltext" valign="bottom" width="85%">
+      <table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+       <td colspan="2" class="smalltext" width="100%">
+       </td>
+      </tr><tr>
+       <td class="smalltext" valign="bottom">
+       </td>
+       <td class="smalltext" valign="bottom" align="right">
+        <a href="https://bitcointalk.org/index.php?action=reporttm;topic=1664448941.101;msg=1664448941">Report to moderator</a>
+       </td>
+      </tr></tbody></table>
+     </td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b>
+		<a name="msg60898330"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=257071" title="View the profile of NeuroticFish">NeuroticFish</a></b>
+							<div class="smalltext">
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 3080<br />
+								Merit: 4990<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_257071.png" alt="" class="avatar" border="0" /></div><br />
+								Defend Bitcoin and its PoW: bitcoincleanup.com<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=257071"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898330#msg60898330"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60898330">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60898330#msg60898330">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 01:18:27 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns2" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60898330#msg60898330">#2</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898124#msg60898124">Quote from: nliveanalytics on September 07, 2022, 12:41:54 PM</a></div><div class="quote">how can i bypass this error<br /></div><br />I didn&#039;t use this, but according to the error message you may have to have either<br /><br /><div class="codeheader">Code:</div><div class="code">{&quot;jsonrpc&quot;: &quot;1.0&quot;, &quot;id&quot;: &quot;curltest&quot;, &quot;method&quot;: &quot;loadwallet&quot;, &quot;params&quot;: [&quot;/home/bitcoin/.bitcoin/&lt;mywalletname&gt;&quot;]}</div><br />or <br /><br /><div class="codeheader">Code:</div><div class="code">{&quot;jsonrpc&quot;: &quot;1.0&quot;, &quot;id&quot;: &quot;curltest&quot;, &quot;method&quot;: &quot;loadwallet&quot;, &quot;params&quot;: [&quot;backup.dat&quot;]}</div><br /><br />but certainly not the full path.<br />Of course, this may mean some adaptations in filenames or paths.<br /><br /><br />All the examples on the net seem to be loading wallet.dat without a path. Is it a problem for you to put into the datadir the wallet(s) you&#039;re planning to load?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60898330">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig257071"><div align="center"><table style="font: inherit; color: inherit;"><tr><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: Arial Black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<span style="font-family: Impact;"><span style="color: #aa0000;"><span style="font-size: 17pt !important; line-height: 1.3em;">{</span> <span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">MIXING </span></span>REINVENTED </span></span></span></span></span></span></span></span></a><span style="background-color: black;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: arial black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: #476C8E;"><span style="font-family: Impact;"><span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">FOR YOUR</span> </span>PRIVACY <span style="font-size: 22pt !important; line-height: 1.3em;">#</span><span style="font-family: Arial Black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<br /></span></span></span></span></span></span></span></span></span></a></span></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td></tr></table></div></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg60898363"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=1237156" title="View the profile of nc50lc">nc50lc</a></b>
+							<div class="smalltext">
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 1820<br />
+								Merit: 3682<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_1237156.png" alt="" class="avatar" border="0" /></div><br />
+								Self-proclaimed Genius &#12953;&#65039;<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=1237156"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898363#msg60898363"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60898363">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60898363#msg60898363">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 01:22:37 PM</div><div class="smalltext"><i><span style="color:green">Merited</span> by <a href="/index.php?action=profile;u=257071">NeuroticFish</a> (1), <a href="/index.php?action=profile;u=359716">ETFbitcoin</a> (1)</i></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns3" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60898363#msg60898363">#3</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898124#msg60898124">Quote from: nliveanalytics on September 07, 2022, 12:41:54 PM</a></div><div class="quote">how can i bypass this error<br /></div>Either put &#039;backup.dat&#039; inside <tt>.bitcoin/wallets</tt> dir or<br />Create a &#039;backup&#039; folder inside <tt>.bitcoin/wallets</tt> dir, paste your &#039;backup.dat&#039; file there and rename it into &#039;wallet.dat&#039;.<br /><br />Then load it using <span style="color: teal;"><tt>loadwallet backup.dat</tt></span> for the former or <span style="color: teal;"><tt>loadwallet backup</tt></span> for the latter.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60898363">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig1237156"><div align="center"><table style="font: inherit; color: inherit;"><tr><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: Arial Black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<span style="font-family: Impact;"><span style="color: #aa0000;"><span style="font-size: 17pt !important; line-height: 1.3em;">{</span> <span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">MIXING </span></span>REINVENTED </span></span></span></span></span></span></span></span></a><span style="background-color: black;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: arial black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: #476C8E;"><span style="font-family: Impact;"><span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">FOR YOUR</span> </span>PRIVACY <span style="font-size: 22pt !important; line-height: 1.3em;">#</span><span style="font-family: Arial Black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<br /></span></span></span></span></span></span></span></span></span></a></span></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td></tr></table></div></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg60898519"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=3502141" title="View the profile of nliveanalytics">nliveanalytics</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 4<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=3502141"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898519#msg60898519"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60898519">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60898519#msg60898519">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 01:53:25 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns4" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60898519#msg60898519">#4</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898330#msg60898330">Quote from: NeuroticFish on September 07, 2022, 01:18:27 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898124#msg60898124">Quote from: nliveanalytics on September 07, 2022, 12:41:54 PM</a></div><div class="quote">how can i bypass this error<br /></div><br />but certainly not the full path.<br />Of course, this may mean some adaptations in filenames or paths.<br /><br /><br />All the examples on the net seem to be loading wallet.dat without a path. Is it a problem for you to put into the datadir the wallet(s) you&#039;re planning to load?<br /></div><br />I get file validation error when directory name and folder path are correct<br /><br />If I mistype the directory name I get another error because, Wallet file verification failed.<br /><br />Response body: Wallet file verification failed. Failed to load database path &#039;/lastwallet/hey.dat&#039;. Path does not exist.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60898519">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg60898566"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=257071" title="View the profile of NeuroticFish">NeuroticFish</a></b>
+							<div class="smalltext">
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 3080<br />
+								Merit: 4990<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_257071.png" alt="" class="avatar" border="0" /></div><br />
+								Defend Bitcoin and its PoW: bitcoincleanup.com<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=257071"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898566#msg60898566"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60898566">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60898566#msg60898566">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 02:00:59 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns5" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60898566#msg60898566">#5</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898519#msg60898519">Quote from: nliveanalytics on September 07, 2022, 01:53:25 PM</a></div><div class="quote">Response body: Wallet file verification failed. Failed to load database path &#039;/lastwallet/hey.dat&#039;. Path does not exist.<br /></div><br />The parameter has to be either a folder, either a filename (not a file path!). You&#039;ve still put a path there, of course it&#039;s not working.<br />Maybe nc50lc&#039;s answer makes it clearer?</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60898566">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig257071"><div align="center"><table style="font: inherit; color: inherit;"><tr><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: Arial Black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<span style="font-family: Impact;"><span style="color: #aa0000;"><span style="font-size: 17pt !important; line-height: 1.3em;">{</span> <span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">MIXING </span></span>REINVENTED </span></span></span></span></span></span></span></span></a><span style="background-color: black;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: arial black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: #476C8E;"><span style="font-family: Impact;"><span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">FOR YOUR</span> </span>PRIVACY <span style="font-size: 22pt !important; line-height: 1.3em;">#</span><span style="font-family: Arial Black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<br /></span></span></span></span></span></span></span></span></span></a></span></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td></tr></table></div></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b><b><i></i></b>
+		<a name="msg60898806"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=3502141" title="View the profile of nliveanalytics">nliveanalytics</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 4<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=3502141"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898806#msg60898806"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60898806">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60898806#msg60898806">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 02:46:03 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns6" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60898806#msg60898806">#6</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898566#msg60898566">Quote from: NeuroticFish on September 07, 2022, 02:00:59 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898519#msg60898519">Quote from: nliveanalytics on September 07, 2022, 01:53:25 PM</a></div><div class="quote">Response body: Wallet file verification failed. Failed to load database path &#039;/lastwallet/hey.dat&#039;. Path does not exist.<br /></div><br />The parameter has to be either a folder, either a filename (not a file path!). You&#039;ve still put a path there, of course it&#039;s not working.<br />Maybe nc50lc&#039;s answer makes it clearer?<br /></div><br />Sorry, same error.<br /><br />I try with all kinds of link structures / I get an error whether I put it or not. I tried all link structures.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60898806">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig">
+		<a name="msg60898914"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=543626" title="View the profile of jackg">jackg</a></b>
+							<div class="smalltext">
+								Copper Member<br />
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 2604<br />
+								Merit: 2751<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_543626.png" alt="" class="avatar" border="0" /></div><br />
+								https://bit.ly/387FXHi &#8592; lightning theory<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=543626"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898914#msg60898914"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60898914">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60898914#msg60898914">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 03:04:10 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns7" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60898914#msg60898914">#7</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">Can you check the permissions on the wallet file and post the here (ls -l in the parent directory where the wallet file is and then show us the first 10 characters that should look something like -rwxrw----) just in case it&#039;s that, you could also try doing that with the parent folder if you made it yourself to check bitcoin core has the rights to see files inside the folder. </div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60898914">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig543626"><div align="center"><table style="font: inherit; color: inherit;"><tr><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: Arial Black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<span style="font-family: Impact;"><span style="color: #aa0000;"><span style="font-size: 17pt !important; line-height: 1.3em;">{</span> <span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">MIXING </span></span>REINVENTED </span></span></span></span></span></span></span></span></a><span style="background-color: black;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: arial black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: #476C8E;"><span style="font-family: Impact;"><span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">FOR YOUR</span> </span>PRIVACY <span style="font-size: 22pt !important; line-height: 1.3em;">#</span><span style="font-family: Arial Black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<br /></span></span></span></span></span></span></span></span></span></a></span></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td></tr></table></div></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig">
+		<a name="msg60899228"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=3502141" title="View the profile of nliveanalytics">nliveanalytics</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 4<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=3502141"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60899228#msg60899228"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60899228">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60899228#msg60899228">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 04:00:36 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns8" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60899228#msg60899228">#8</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898914#msg60898914">Quote from: jackg on September 07, 2022, 03:04:10 PM</a></div><div class="quote">Can you check the permissions on the wallet file and post the here (ls -l in the parent directory where the wallet file is and then show us the first 10 characters that should look something like -rwxrw----) just in case it&#039;s that, you could also try doing that with the parent folder if you made it yourself to check bitcoin core has the rights to see files inside the folder. <br /></div>Of course I&#039;m sending right away<br /><br />Wallet file ls -l:<br /><br />total 1876<br />drwx------ 2 systemd-coredump systemd-coredump&nbsp; &nbsp;4096 Sep&nbsp; 7 16:23 database<br />-rw------- 1 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp; 0 Sep&nbsp; 7 14:55 db.log<br />-rw------- 1 systemd-coredump systemd-coredump 958464 Sep&nbsp; 7 15:50 hey.dat<br />-rw------- 1 systemd-coredump systemd-coredump 958464 Sep&nbsp; 7 17:56 wallet.dat<br /><br /><br />Parent bitcoin file ls -l:<br /><br />drwx------ 2 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp;4096 Sep&nbsp; 7 14:07 ariswallet<br />-rw------- 1 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp; &nbsp;31 Sep&nbsp; 7 10:54 banlist.json<br />-rw------- 1 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp; &nbsp; 2 Sep&nbsp; 7 13:33 bitcoind.pid<br />drwx------ 3 systemd-coredump systemd-coredump&nbsp; &nbsp;184320 Sep&nbsp; 7 17:58 blocks<br />drwx------ 2 systemd-coredump systemd-coredump&nbsp; &nbsp; 90112 Sep&nbsp; 7 17:57 chainstate<br />-rw------- 1 systemd-coredump systemd-coredump 62182892 Sep&nbsp; 7 17:58 debug.log<br />-rw------- 1 systemd-coredump systemd-coredump&nbsp; &nbsp;247985 Sep&nbsp; 7 13:32 fee_estimates.dat<br />drwx------ 3 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp;4096 Sep&nbsp; 7 15:50 lastwallet<br />-rw------- 1 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp; &nbsp;18 Sep&nbsp; 7 13:32 mempool.dat<br />drwx--x--x 2 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp;4096 Sep&nbsp; 7 13:33 nudewallet<br />-rw------- 1 systemd-coredump systemd-coredump&nbsp; &nbsp;821890 Sep&nbsp; 7 17:48 peers.dat<br />-rw------- 1 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp; &nbsp;47 Sep&nbsp; 7 14:55 settings.json<br />drwx--x--x 2 systemd-coredump systemd-coredump&nbsp; &nbsp; &nbsp;4096 Sep&nbsp; 7 13:33 testwallet</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60899228">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b>
+		<a name="msg60900343"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=543626" title="View the profile of jackg">jackg</a></b>
+							<div class="smalltext">
+								Copper Member<br />
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 2604<br />
+								Merit: 2751<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_543626.png" alt="" class="avatar" border="0" /></div><br />
+								https://bit.ly/387FXHi &#8592; lightning theory<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=543626"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60900343#msg60900343"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60900343">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60900343#msg60900343">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 07, 2022, 08:36:18 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns9" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60900343#msg60900343">#9</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">(I&#039;m assuming testwallet is the first wallet you used and one that works with the rpc command, is it or does that still not work)? <br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60899228#msg60899228">Quote from: nliveanalytics on September 07, 2022, 04:00:36 PM</a></div><div class="quote">drwx------ ariswallet<br />drwx------ lastwallet<br />drwx--x--x nudewallet<br />drwx--x--x testwallet<br /></div><br />Why are these different, is there a reason for that?<br /><br />Can you sudo chmod 711 them (according to a search engine that should be RWX--X--X you might want to confirm before doing it?<br /><br />See if there&#039;s a difference between the subfiles of both of those directories too.<br /><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60900343">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig543626"><div align="center"><table style="font: inherit; color: inherit;"><tr><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: Arial Black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<span style="font-family: Impact;"><span style="color: #aa0000;"><span style="font-size: 17pt !important; line-height: 1.3em;">{</span> <span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">MIXING </span></span>REINVENTED </span></span></span></span></span></span></span></span></a><span style="background-color: black;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: arial black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: #476C8E;"><span style="font-family: Impact;"><span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">FOR YOUR</span> </span>PRIVACY <span style="font-size: 22pt !important; line-height: 1.3em;">#</span><span style="font-family: Arial Black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<br /></span></span></span></span></span></span></span></span></span></a></span></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td></tr></table></div></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b><b><i></i></b>
+		<a name="msg60901081"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=290195" title="View the profile of achow101">achow101</a></b>
+							<div class="smalltext">
+								Moderator<br />
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/staff.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 2884<br />
+								Merit: 5144<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_290195.png" alt="" class="avatar" border="0" /></div><br />
+								Just writing some code<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=290195"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://github.com/achow101" title="Github" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60901081#msg60901081"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60901081">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60901081#msg60901081">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 08, 2022, 01:08:38 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns10" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60901081#msg60901081">#10</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><tt>loadwallet</tt> takes the name of a wallet, which is the name of the directory within the <tt>wallets/</tt> directory that contains the wallet.dat file.<br /><br />You can use the <tt>restorewallet</tt> RPC to restore a wallet from a backup. This takes the name to give the restored wallet, and the path to the backup of a wallet.dat file. It will create the necessary directory structure, copy the backup to the correct location, and name everything correctly. The restored wallet will already be loaded, and can be loaded or unloaded in the future using the name that you gave it when doing the restore.<br /><br />Note that this RPC is currently only available in version 23.0.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60901081">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig290195">Bitcoin Core contributor | <a rel="ugc" class="ul" href="https://tip.achow101.com">Tip Me!</a> | <a rel="ugc" class="ul" href="https://github.com/achow101/">GitHub</a> | <a rel="ugc" class="ul" href="http://achow101.com/achow101.pgp">GPG Key Fingerprint 0x17565732E08E5E41</a></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg60902039"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=1237156" title="View the profile of nc50lc">nc50lc</a></b>
+							<div class="smalltext">
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 1820<br />
+								Merit: 3682<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_1237156.png" alt="" class="avatar" border="0" /></div><br />
+								Self-proclaimed Genius &#12953;&#65039;<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=1237156"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60902039#msg60902039"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60902039">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60902039#msg60902039">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 08, 2022, 07:14:28 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns11" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60902039#msg60902039">#11</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898806#msg60898806">Quote from: nliveanalytics on September 07, 2022, 02:46:03 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898566#msg60898566">Quote from: NeuroticFish on September 07, 2022, 02:00:59 PM</a></div><div class="quote">Maybe nc50lc&#039;s answer makes it clearer?<br /></div>Sorry, same error.<br /><br />I try with all kinds of link structures / I get an error whether I put it or not. I tried all link structures.<br /></div>Have you copied it to the correct directory that I&#039;ve pointed-out in my <a class="ul" href="https://bitcointalk.org/index.php?topic=5412734.msg60898363#msg60898363">reply</a>?<br />Namely: <tt>.bitcoin/wallets</tt> ; either paste &#039;backup.dat&#039; inside or create a &#039;backup&#039; folder there, paste &#039;backup.dat&#039; file inside it and rename it into &#039;wallet.dat&#039;.<br /><br />Because if you did, there shouldn&#039;t be any error when you used the said commands.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60902039">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig1237156"><div align="center"><table style="font: inherit; color: inherit;"><tr><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: Arial Black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<span style="font-family: Impact;"><span style="color: #aa0000;"><span style="font-size: 17pt !important; line-height: 1.3em;">{</span> <span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">MIXING </span></span>REINVENTED </span></span></span></span></span></span></span></span></a><span style="background-color: black;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: arial black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: #476C8E;"><span style="font-family: Impact;"><span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">FOR YOUR</span> </span>PRIVACY <span style="font-size: 22pt !important; line-height: 1.3em;">#</span><span style="font-family: Arial Black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<br /></span></span></span></span></span></span></span></span></span></a></span></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td></tr></table></div></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="DMciEzaRwaixBBdIiNbjvQ"><td class="hxCxHgFEpdcojzhhBosjig"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg60905882"></a><a name="new"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=2739424" title="View the profile of NotATether">NotATether</a></b>
+							<div class="smalltext">
+								Legendary<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/legendary.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useron.gif" alt="Online" border="0" style="margin-top: 2px;" /><span class="smalltext"> Online</span><br /><br />
+								Activity: 1008<br />
+								Merit: 3981<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_2739424.png" alt="" class="avatar" border="0" /></div><br />
+								Defend PoW: https://bitcoincleanup.com #EndTheFUD<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=2739424"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+								<a href="https://notatether.com" title="NotATether.com - Get Your Bitcoin Knowledge HERE" ><img src="https://bitcointalk.org/Themes/custom1/images/www_sm.gif" alt="WWW" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60905882#msg60905882"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_60905882">
+										<a href="https://bitcointalk.org/index.php?topic=5412734.msg60905882#msg60905882">Re: Bitcoin RPC loadwallet Error - Wallet file verification failed</a>
+									</div>
+												<div class="smalltext">September 08, 2022, 10:27:24 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns12" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=5412734.msg60905882#msg60905882">#12</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=5412734.msg60898519#msg60898519">Quote from: nliveanalytics on September 07, 2022, 01:53:25 PM</a></div><div class="quote">I get file validation error when directory name and folder path are correct<br /><br />If I mistype the directory name I get another error because, Wallet file verification failed.<br /><br />Response body: Wallet file verification failed. Failed to load database path &#039;/lastwallet/hey.dat&#039;. Path does not exist.<br /></div><br />Last time I checked, the wallet file needs to have a very specific name (wallet.dat), it&#039;s the folder name that indicates the name of your wallet, and as such, only the folder name should be included in a loadwallet call, without any path.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_60905882">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig2739424"><div align="center"><table style="font: inherit; color: inherit;"><tr><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="https://chipmixer.com/"><span style="font-family: Arial Black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<span style="font-family: Impact;"><span style="color: #aa0000;"><span style="font-size: 17pt !important; line-height: 1.3em;">{</span> <span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">MIXING </span></span>REINVENTED </span></span></span></span></span></span></span></span></a><span style="background-color: black;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: arial black;"><span style="font-size: 23pt !important; line-height: 1.3em;"><span style="background-color: black;"><span style="color: #476C8E;"><span style="font-family: Impact;"><span style="font-size: 12pt !important; line-height: 1.3em;"><span style="color: #fff;">FOR YOUR</span> </span>PRIVACY <span style="font-size: 22pt !important; line-height: 1.3em;">#</span><span style="font-family: Arial Black;"><span style="color: transparent;">.<span style="color: #fff;">ChipMixer<span style="color: transparent;">.<br /></span></span></span></span></span></span></span></span></span></a></span></td><td valign="top" style="font: inherit; color: inherit;"><a rel="ugc" class="ul" href="http://chipmixorflykuxu56uxy7gf5o6ggig7xru7dnihc4fm4cxqsc63e6id.onion"><span style="font-family: monospace;"><span style="font-size: 2pt !important; line-height: 1.3em;"><span style="color: #444444;"><br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;&#9600;&#9600;&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;<br /><span style="color: transparent;">&#9617;</span>&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9608;&#9600;&#9608;<br />&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9612;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;<br />&#9608;&#9608;&#9608;&#9604;<span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;<span style="color: transparent;">&#9617;&#9617;&#9617;</span>&#9608;&#9608;&#9608;<br />&#9608;&#9600;&#9608;&#9604;&#9604;<span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9604;&#9608;&#9608;&#9608;<br /><span style="color: transparent;">&#9617;&#9617;</span>&#9600;&#9608;&#9608;&#9608;&#9608;&#9604;&#9604;&#9604;&#9604;&#9604;&#9604;&#9608;&#9608;&#9608;&#9608;&#9600;<br /><span style="color: transparent;">&#9617;&#9617;&#9617;&#9617;&#9617;</span>&#9600;&#9600;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9600;&#9600;<br /></span></span></span></a></td></tr></table></div></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="middletext">Pages:  [<b>1</b>]  </td>
+		<td align="right" style="padding-right: 1ex;">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					
+		<td class="maintab_first">&nbsp;</td>
+		<td class="maintab_back"><a href="https://bitcointalk.org/index.php?action=printpage;topic=5412734.0" target="_blank">Print</a></td>
+		<td class="maintab_last">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="https://bitcointalk.org/Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript">//<!--
+	quickReplyCollapsed = true;
+
+	smf_topic = 5412734;
+	smf_start = 0;
+	smf_show_modify = 0;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="fd8ad59fa79c545e63be328ba3c8678c" /><input type="hidden" name="topic" value="5412734" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'fd8ad59fa79c545e63be328ba3c8678c\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="https://bitcointalk.org/index.php?topic=5412734.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 113 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// --></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 1ex;">
+		<tr>
+				<td valign="top"><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="https://bitcointalk.org/index.php" class="nav">Bitcoin Forum</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php#1" class="nav">Bitcoin</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?board=4.0" class="nav">Bitcoin Technical Support</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?topic=5412734.0" class="nav">Bitcoin RPC loadwallet Error - Wallet file verification failed</a></b></div></td> 
+				<td valign="top" align="right" class="nav"> <a href="https://bitcointalk.org/index.php?topic=5412734.0;prev_next=prev#new">&laquo; previous topic</a> <a href="https://bitcointalk.org/index.php?topic=5412734.0;prev_next=next#new">next topic &raquo;</a></td>
+		</tr>
+</table>
+	<table cellpadding="0" cellspacing="0" border="0" style="margin-left: 1ex;">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<div class="tborder"><div class="titlebg2" style="padding: 4px;" align="right">
+	<form action="https://bitcointalk.org/index.php" method="get" accept-charset="ISO-8859-1" style="padding:0; margin: 0;">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#1">Bitcoin</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=1.0"> => Bitcoin Discussion</option>
+			<option value="?board=74.0"> ===> Legal</option>
+			<option value="?board=77.0"> ===> Press</option>
+			<option value="?board=86.0"> ===> Meetups</option>
+			<option value="?board=87.0"> ===> Important Announcements</option>
+			<option value="?board=6.0"> => Development &amp; Technical Discussion</option>
+			<option value="?board=37.0"> ===> Wallet software</option>
+			<option value="?board=98.0"> =====> Electrum</option>
+			<option value="?board=100.0"> =====> Bitcoin Wallet for Android</option>
+			<option value="?board=138.0"> =====> BitcoinJ</option>
+			<option value="?board=97.0"> =====> Armory</option>
+			<option value="?board=231.0"> =====> Mycelium</option>
+			<option value="?board=261.0"> =====> Hardware wallets</option>
+			<option value="?board=14.0"> => Mining</option>
+			<option value="?board=40.0"> ===> Mining support</option>
+			<option value="?board=41.0"> ===> Pools</option>
+			<option value="?board=42.0"> ===> Mining software (miners)</option>
+			<option value="?board=76.0"> ===> Hardware</option>
+			<option value="?board=137.0"> =====> Group buys</option>
+			<option value="?board=81.0"> ===> Mining speculation</option>
+			<option value="?board=4.0" selected="selected"> => Bitcoin Technical Support</option>
+			<option value="?board=12.0"> => Project Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Economy</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=7.0"> => Economics</option>
+			<option value="?board=57.0"> ===> Speculation</option>
+			<option value="?board=5.0"> => Marketplace</option>
+			<option value="?board=51.0"> ===> Goods</option>
+			<option value="?board=75.0"> =====> Computer hardware</option>
+			<option value="?board=93.0"> =====> Digital goods</option>
+			<option value="?board=234.0"> =======> Invites &amp; Accounts</option>
+			<option value="?board=217.0"> =====> Collectibles</option>
+			<option value="?board=52.0"> ===> Services</option>
+			<option value="?board=53.0"> ===> Currency exchange</option>
+			<option value="?board=56.0"> ===> Gambling</option>
+			<option value="?board=71.0"> =====> Games and rounds</option>
+			<option value="?board=207.0"> =====> Investor-based games</option>
+			<option value="?board=228.0"> =====> Gambling discussion</option>
+			<option value="?board=65.0"> ===> Lending</option>
+			<option value="?board=88.0"> =====> Long-term offers</option>
+			<option value="?board=78.0"> ===> Securities</option>
+			<option value="?board=73.0"> ===> Auctions</option>
+			<option value="?board=84.0"> ===> Service Announcements</option>
+			<option value="?board=212.0"> =====> Micro Earnings</option>
+			<option value="?board=85.0"> ===> Service Discussion</option>
+			<option value="?board=222.0"> =====> Web Wallets</option>
+			<option value="?board=223.0"> =====> Exchanges</option>
+			<option value="?board=8.0"> => Trading Discussion</option>
+			<option value="?board=83.0"> ===> Scam Accusations</option>
+			<option value="?board=129.0"> ===> Reputation</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Other</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=24.0"> => Meta</option>
+			<option value="?board=167.0"> ===> New forum software</option>
+			<option value="?board=168.0"> ===> Bitcoin Wiki</option>
+			<option value="?board=34.0"> => Politics &amp; Society</option>
+			<option value="?board=39.0"> => Beginners &amp; Help</option>
+			<option value="?board=9.0"> => Off-topic</option>
+			<option value="?board=250.0"> => Serious discussion</option>
+			<option value="?board=251.0"> ===> Ivory Tower</option>
+			<option value="?board=59.0"> => Archival</option>
+			<option value="?board=92.0"> ===> &#1050;&#1086;&#1088;&#1079;&#1080;&#1085;&#1072;</option>
+			<option value="?board=44.0"> ===> CPU/GPU Bitcoin mining hardware</option>
+			<option value="?board=17.0"> ===> Chinese students</option>
+			<option value="?board=25.0"> ===> Obsolete (buying)</option>
+			<option value="?board=26.0"> ===> Obsolete (selling)</option>
+			<option value="?board=99.0"> ===> MultiBit</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Alternate cryptocurrencies</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=67.0"> => Altcoin Discussion</option>
+			<option value="?board=159.0"> => Announcements (Altcoins)</option>
+			<option value="?board=240.0"> ===> Tokens (Altcoins)</option>
+			<option value="?board=160.0"> => Mining (Altcoins)</option>
+			<option value="?board=199.0"> ===> Pools (Altcoins)</option>
+			<option value="?board=161.0"> => Marketplace (Altcoins)</option>
+			<option value="?board=197.0"> ===> Service Announcements (Altcoins)</option>
+			<option value="?board=198.0"> ===> Service Discussion (Altcoins)</option>
+			<option value="?board=238.0"> ===> Bounties (Altcoins)</option>
+			<option value="?board=224.0"> => Speculation (Altcoins)</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Local</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=241.0"> => &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577; (Arabic)</option>
+			<option value="?board=242.0"> ===> &#1575;&#1604;&#1593;&#1605;&#1604;&#1575;&#1578; &#1575;&#1604;&#1576;&#1583;&#1610;&#1604;&#1577; (Altcoins)</option>
+			<option value="?board=265.0"> =====> &#1575;&#1604;&#1606;&#1602;&#1575;&#1588;&#1575;&#1578;</option>
+			<option value="?board=253.0"> ===> &#1573;&#1587;&#1578;&#1601;&#1587;&#1575;&#1585;&#1575;&#1578; &#1608; &#1571;&#1587;&#1574;&#1604;&#1577; &#1575;&#1604;&#1605;&#1576;&#1578;&#1583;&#1574;&#1610;&#1606;</option>
+			<option value="?board=266.0"> ===> &#1575;&#1604;&#1578;&#1593;&#1583;&#1610;&#1606;</option>
+			<option value="?board=267.0"> ===> &#1575;&#1604;&#1606;&#1602;&#1575;&#1588;&#1575;&#1578; &#1575;&#1604;&#1571;&#1582;&#1585;&#1609;</option>
+			<option value="?board=271.0"> ===> &#1605;&#1606;&#1589;&#1575;&#1578; &#1575;&#1604;&#1578;&#1576;&#1575;&#1583;&#1604;</option>
+			<option value="?board=191.0"> => Bahasa Indonesia (Indonesian)</option>
+			<option value="?board=193.0"> ===> Jual Beli</option>
+			<option value="?board=194.0"> ===> Mining (Bahasa Indonesia)</option>
+			<option value="?board=192.0"> ===> Altcoins (Bahasa Indonesia)</option>
+			<option value="?board=27.0"> => Español (Spanish)</option>
+			<option value="?board=31.0"> ===> Mercado y Economía</option>
+			<option value="?board=202.0"> =====> Servicios</option>
+			<option value="?board=203.0"> =====> Trading y especulación</option>
+			<option value="?board=32.0"> ===> Hardware y Minería</option>
+			<option value="?board=33.0"> ===> Esquina Libre</option>
+			<option value="?board=101.0"> ===> Mercadillo</option>
+			<option value="?board=102.0"> =====> Mexico</option>
+			<option value="?board=103.0"> =====> Argentina</option>
+			<option value="?board=104.0"> =====> España</option>
+			<option value="?board=105.0"> =====> Centroamerica y Caribe</option>
+			<option value="?board=130.0"> ===> Primeros pasos y ayuda</option>
+			<option value="?board=151.0"> ===> Altcoins (criptomonedas alternativas)</option>
+			<option value="?board=177.0"> =====> Minería de altcoins</option>
+			<option value="?board=204.0"> =====> Servicios</option>
+			<option value="?board=254.0"> =====> Tokens (Español)</option>
+			<option value="?board=30.0"> => &#20013;&#25991; (Chinese)</option>
+			<option value="?board=117.0"> ===> &#36339;&#34468;&#24066;&#22330;</option>
+			<option value="?board=118.0"> ===> &#23665;&#23528;&#24065;</option>
+			<option value="?board=119.0"> ===> &#23186;&#20307;</option>
+			<option value="?board=146.0"> ===> &#25366;&#30719;</option>
+			<option value="?board=196.0"> ===> &#31163;&#39064;&#19975;&#37324;</option>
+			<option value="?board=201.0"> => Hrvatski (Croatian)</option>
+			<option value="?board=220.0"> ===> Trgovina</option>
+			<option value="?board=221.0"> ===> Altcoins (Hrvatski)</option>
+			<option value="?board=273.0"> =====> Announcements (Hrvatski)</option>
+			<option value="?board=272.0"> ===> Off-topic (Hrvatski)</option>
+			<option value="?board=16.0"> => Deutsch (German)</option>
+			<option value="?board=62.0"> ===> Anfänger und Hilfe</option>
+			<option value="?board=60.0"> ===> Mining (Deutsch)</option>
+			<option value="?board=61.0"> ===> Trading und Spekulation</option>
+			<option value="?board=63.0"> ===> Projektentwicklung</option>
+			<option value="?board=64.0"> ===> Off-Topic (Deutsch)</option>
+			<option value="?board=139.0"> ===> Treffen</option>
+			<option value="?board=140.0"> ===> Presse </option>
+			<option value="?board=152.0"> ===> Altcoins (Deutsch)</option>
+			<option value="?board=270.0"> =====> Announcements (Deutsch)</option>
+			<option value="?board=269.0"> ===> Marktplatz</option>
+			<option value="?board=141.0"> =====> Auktionen</option>
+			<option value="?board=36.0"> =====> Suche</option>
+			<option value="?board=35.0"> =====> Biete</option>
+			<option value="?board=120.0"> => &#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940; (Greek)</option>
+			<option value="?board=136.0"> ===> &#913;&#947;&#959;&#961;&#940;</option>
+			<option value="?board=195.0"> ===> Mining Discussion (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=179.0"> ===> Altcoins (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=246.0"> =====> Altcoin Announcements (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=247.0"> =====> Altcoin Mining (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=95.0"> => &#1506;&#1489;&#1512;&#1497;&#1514; (Hebrew)</option>
+			<option value="?board=13.0"> => Français</option>
+			<option value="?board=183.0"> ===> Actualité et News</option>
+			<option value="?board=208.0"> ===> Débutants</option>
+			<option value="?board=47.0"> ===> Discussions générales et utilisation du Bitcoin</option>
+			<option value="?board=48.0"> ===> Mining et Hardware</option>
+			<option value="?board=187.0"> ===> Économie et spéculation</option>
+			<option value="?board=49.0"> ===> Place de marché</option>
+			<option value="?board=209.0"> =====> Échanges</option>
+			<option value="?board=210.0"> =====> Produits et services</option>
+			<option value="?board=211.0"> =====> Petites annonces</option>
+			<option value="?board=188.0"> ===> Le Bitcoin et la loi</option>
+			<option value="?board=54.0"> ===> Wiki, documentation et traduction</option>
+			<option value="?board=186.0"> ===> Développement et technique</option>
+			<option value="?board=184.0"> ===> Vos sites et projets</option>
+			<option value="?board=50.0"> ===> Hors-sujet</option>
+			<option value="?board=149.0"> ===> Altcoins (Français)</option>
+			<option value="?board=258.0"> =====> Annonces</option>
+			<option value="?board=89.0"> => India</option>
+			<option value="?board=121.0"> ===> Mining (India)</option>
+			<option value="?board=122.0"> ===> Marketplace (India)</option>
+			<option value="?board=123.0"> ===> Regional Languages (India)</option>
+			<option value="?board=124.0"> ===> Press &amp; News from India</option>
+			<option value="?board=125.0"> ===> Alt Coins (India)</option>
+			<option value="?board=126.0"> ===> Buyer/ Seller Reputations (India)</option>
+			<option value="?board=127.0"> ===> Off-Topic (India)</option>
+			<option value="?board=28.0"> => Italiano (Italian)</option>
+			<option value="?board=153.0"> ===> Guide (Italiano)</option>
+			<option value="?board=169.0"> ===> Progetti</option>
+			<option value="?board=205.0"> ===> Discussioni avanzate e sviluppo</option>
+			<option value="?board=175.0"> ===> Trading, analisi e speculazione</option>
+			<option value="?board=170.0"> ===> Mercato</option>
+			<option value="?board=46.0"> =====> Mercato valute</option>
+			<option value="?board=107.0"> =====> Beni</option>
+			<option value="?board=171.0"> =====> Servizi</option>
+			<option value="?board=172.0"> =====> Esercizi commerciali</option>
+			<option value="?board=173.0"> =====> Hardware/Mining (Italiano)</option>
+			<option value="?board=200.0"> =====> Gambling (Italiano)</option>
+			<option value="?board=162.0"> ===> Accuse scam/truffe</option>
+			<option value="?board=115.0"> ===> Mining (Italiano)</option>
+			<option value="?board=132.0"> ===> Alt-Currencies (Italiano)</option>
+			<option value="?board=176.0"> =====> Annunci</option>
+			<option value="?board=144.0"> ===> Raduni/Meeting (Italiano)</option>
+			<option value="?board=165.0"> ===> Crittografia e decentralizzazione</option>
+			<option value="?board=145.0"> ===> Off-Topic (Italiano)</option>
+			<option value="?board=252.0"> => &#26085;&#26412;&#35486; (Japanese)</option>
+			<option value="?board=255.0"> ===> &#12450;&#12523;&#12488;&#12467;&#12452;&#12531;</option>
+			<option value="?board=79.0"> => Nederlands (Dutch)</option>
+			<option value="?board=80.0"> ===> Markt</option>
+			<option value="?board=94.0"> ===> Gokken/lotterijen</option>
+			<option value="?board=116.0"> ===> Mining (Nederlands)</option>
+			<option value="?board=143.0"> ===> Beurzen</option>
+			<option value="?board=147.0"> ===> Alt Coins (Nederlands)</option>
+			<option value="?board=148.0"> ===> Off-topic (Nederlands)</option>
+			<option value="?board=150.0"> ===> Meetings (Nederlands)</option>
+			<option value="?board=82.0"> => &#54620;&#44397;&#50612; (Korean)</option>
+			<option value="?board=182.0"> ===> &#45824;&#52404;&#53076;&#51064; Alt Coins (&#54620;&#44397;&#50612;)</option>
+			<option value="?board=219.0"> => Pilipinas</option>
+			<option value="?board=243.0"> ===> Altcoins (Pilipinas)</option>
+			<option value="?board=260.0"> =====> Altcoin Announcements (Pilipinas)</option>
+			<option value="?board=268.0"> ===> Pamilihan</option>
+			<option value="?board=274.0"> ===> Others (Pilipinas)</option>
+			<option value="?board=142.0"> => Polski</option>
+			<option value="?board=163.0"> ===> Tablica og&#322;osze&#324;</option>
+			<option value="?board=164.0"> ===> Alternatywne kryptowaluty</option>
+			<option value="?board=263.0"> =====> Nowe kryptowaluty i tokeny</option>
+			<option value="?board=264.0"> =====> Tablica og&#322;osze&#324; (altcoiny)</option>
+			<option value="?board=29.0"> => Português (Portuguese)</option>
+			<option value="?board=131.0"> ===> Primeiros Passos (Iniciantes)</option>
+			<option value="?board=69.0"> ===> Economia &amp; Mercado</option>
+			<option value="?board=70.0"> ===> Mineração em Geral</option>
+			<option value="?board=206.0"> ===> Desenvolvimento &amp; Discussões Técnicas</option>
+			<option value="?board=181.0"> ===> Criptomoedas Alternativas</option>
+			<option value="?board=134.0"> ===> Brasil</option>
+			<option value="?board=135.0"> ===> Portugal</option>
+			<option value="?board=10.0"> => &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russian)</option>
+			<option value="?board=22.0"> ===> &#1053;&#1086;&#1074;&#1080;&#1095;&#1082;&#1080;</option>
+			<option value="?board=23.0"> ===> &#1041;&#1080;&#1079;&#1085;&#1077;&#1089;</option>
+			<option value="?board=236.0"> =====> &#1041;&#1072;&#1088;&#1072;&#1093;&#1086;&#1083;&#1082;&#1072;</option>
+			<option value="?board=237.0"> =====> &#1054;&#1073;&#1084;&#1077;&#1085;&#1085;&#1080;&#1082;&#1080;</option>
+			<option value="?board=90.0"> ===> &#1048;&#1076;&#1077;&#1080;</option>
+			<option value="?board=66.0"> ===> &#1050;&#1086;&#1076;&#1077;&#1088;&#1099;</option>
+			<option value="?board=21.0"> ===> &#1052;&#1072;&#1081;&#1085;&#1077;&#1088;&#1099;</option>
+			<option value="?board=91.0"> ===> &#1055;&#1086;&#1083;&#1080;&#1090;&#1080;&#1082;&#1072;</option>
+			<option value="?board=20.0"> ===> &#1058;&#1088;&#1077;&#1081;&#1076;&#1077;&#1088;&#1099;</option>
+			<option value="?board=72.0"> ===> &#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1099;&#1077; &#1082;&#1088;&#1080;&#1087;&#1090;&#1086;&#1074;&#1072;&#1083;&#1102;&#1090;&#1099;</option>
+			<option value="?board=248.0"> =====> &#1058;&#1086;&#1082;&#1077;&#1085;&#1099;</option>
+			<option value="?board=256.0"> =====> &#1041;ay&#1085;&#1090;&#1080; &#1080; a&#1080;p&#1076;po&#1087;&#1099;</option>
+			<option value="?board=55.0"> ===> &#1061;&#1072;&#1081;&#1087;&#1099;</option>
+			<option value="?board=185.0"> ===> &#1056;&#1072;&#1073;&#1086;&#1090;&#1072;</option>
+			<option value="?board=18.0"> ===> &#1056;&#1072;&#1079;&#1085;&#1086;&#1077;</option>
+			<option value="?board=262.0"> ===> O&#1073;cy&#1078;&#1076;e&#1085;&#1080;e Bitcoin</option>
+			<option value="?board=128.0"> =====> &#1053;&#1086;&#1074;&#1086;&#1089;&#1090;&#1080;</option>
+			<option value="?board=19.0"> =====> &#1070;&#1088;&#1080;&#1089;&#1090;&#1099;</option>
+			<option value="?board=108.0"> => Român&#259; (Romanian)</option>
+			<option value="?board=109.0"> ===> Anunturi importante</option>
+			<option value="?board=110.0"> ===> Offtopic</option>
+			<option value="?board=111.0"> ===> Market</option>
+			<option value="?board=257.0"> =====> Discutii Servicii</option>
+			<option value="?board=166.0"> ===> Minerit</option>
+			<option value="?board=112.0"> ===> Tutoriale</option>
+			<option value="?board=113.0"> ===> Bine ai venit!</option>
+			<option value="?board=114.0"> ===> Presa</option>
+			<option value="?board=259.0"> ===> Altcoins (Monede Alternative)</option>
+			<option value="?board=178.0"> =====> Anunturi Monede Alternative</option>
+			<option value="?board=45.0"> => Skandinavisk</option>
+			<option value="?board=133.0"> => Türkçe (Turkish)</option>
+			<option value="?board=180.0"> ===> Bitcoin Haberleri</option>
+			<option value="?board=155.0"> ===> Pazar Alan&#305;</option>
+			<option value="?board=156.0"> ===> Madencilik</option>
+			<option value="?board=189.0"> ===> Ekonomi</option>
+			<option value="?board=190.0"> ===> Servisler</option>
+			<option value="?board=232.0"> =====> Fonlar</option>
+			<option value="?board=229.0"> ===> Proje Geli&#351;tirme</option>
+			<option value="?board=157.0"> ===> Alternatif Kripto-Paralar</option>
+			<option value="?board=235.0"> =====> Madencilik (Alternatif Kripto-Paralar)</option>
+			<option value="?board=239.0"> =====> Duyurular (Alternatif Kripto-Paralar)</option>
+			<option value="?board=158.0"> ===> Konu D&#305;&#351;&#305;</option>
+			<option value="?board=174.0"> ===> Yeni Ba&#351;layanlar &amp; Yard&#305;m</option>
+			<option value="?board=230.0"> ===> Bulu&#351;malar</option>
+			<option value="?board=11.0"> => Other languages/locations</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'https://bitcointalk.org/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div></div><br />
+	</div><script type="text/javascript">
+//<!--
+function detectabp(el) {
+	if(typeof window.getComputedStyle != 'function')
+		return false;
+	if(!el)
+		var el=document.getElementById("sponsor");
+	var s = window.getComputedStyle(el).getPropertyValue("-moz-binding");
+	var s2 = window.getComputedStyle(el).getPropertyValue("display");
+	var detected = typeof s !== "undefined" && s != null && s.length > 0 && s != "none";
+	return detected || (typeof s2 !== "undefined" && s2 != null && s2 == "none");
+}
+function hex(num, length) {
+	str=num.toString(16);
+	while (str.length < length) {
+		str = '0' + str;
+	}
+	return str.substr(0,length);
+
+}
+
+function getabplink(site) {
+	var sites = new Array();sites["https://www.privateinternetaccess.com/"] = 1;
+sites["https://bitcointalk.org/dec/p1.html"] = 2;
+sites["https://fundyourselfnow.com"] = 3;
+sites["https://bountyhive.io"] = 4;
+	site_n=sites[site];
+	if(typeof site_n === 'undefined' || site_n === null || site_n <1 || site_n >150)
+		return site;
+	var code=Math.floor(Math.random()*2100000000);
+	var filler=hex(Math.floor(Math.random()*900000000000000),8);
+	var msg=Math.floor(Math.random()*9999999);
+	var site_c = site_n ^ code;
+	var template = Math.floor(Math.random()*4);
+	if(template==0)
+		template='https://bitcointalk.org/index.php?topic='+msg+'.0;do=watch;sesc=';
+	else if (template==1)
+		template="https://bitcointalk.org/index.php?action=post;msg=" + msg + ";topic=" + msg + ".0;sesc=";
+	else if (template==2)
+		template="https://bitcointalk.org/index.php?action=post;quote="+msg+";topic="+msg+".0;num_replies="+msg+";sesc=";
+	else
+		template="https://bitcointalk.org/index.php?action=ignore;u="+msg+";topic="+msg+";msg="+msg+";sesc=";
+
+	return template + hex(code,8) + hex(code,8) + hex(site_c,8) + filler;
+}
+function antiabp(){
+	if(!detectabp())
+		return;
+	var all_links=document.body.getElementsByTagName('a');
+	var els=new Array();
+	for(var i=0;i<all_links.length;i++) {
+		els.push(all_links[i])
+	}
+	for(var i=0;i<els.length;i++) {
+		if(detectabp(els[i])){
+			var newlink = els[i].cloneNode();
+			newlink.href=getabplink(els[i]);
+			newlink.innerHTML=els[i].innerHTML;
+			els[i].parentNode.insertBefore(newlink, els[i]);
+			els[i].parentNode.removeChild(els[i]);
+		}
+	}
+}
+
+if(window.chrome)
+	window.setTimeout(antiabp, 300);
+else
+	antiabp();
+//-->
+</script><script type="text/javascript">
+//<!--
+Array.prototype.forEach.call(document.getElementsByClassName("userimg"), checkImg);
+//-->
+</script>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" align="center" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="https://bitcointalk.org/Themes/custom1/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="https://bitcointalk.org/Themes/custom1/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.19</a> | 
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2009, Simple Machines</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="https://bitcointalk.org/Themes/custom1/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="https://bitcointalk.org/Themes/custom1/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="ajax_in_progress" style="display: none;">Loading...</div>
+</body></html>

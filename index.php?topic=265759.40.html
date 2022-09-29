@@ -1,0 +1,2026 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<meta name="description" content="Potentially faster method for mining on the CPU" />
+	<meta http-equiv="Content-Language" content="en" />
+	<meta name="keywords" content="bitcoin, forum, bitcoin forum, bitcointalk" />
+	<script language="JavaScript" type="text/javascript" src="https://bitcointalk.org/Themes/default/script.js"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "https://bitcointalk.org/Themes/custom1";
+		var smf_images_url = "https://bitcointalk.org/Themes/custom1/images";
+		var smf_scripturl = "https://bitcointalk.org/index.php";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>Potentially faster method for mining on the CPU</title><!--9ca96a5ec2d9d09efd8ad59fa79c545e63be328ba3c8678cb5a3388423adca367d69fd8ad59fa79c545e63be328ba3c8678cb1a6b4effd8ad59fa79c545e63be328ba3c8678c95-->
+	<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/custom1/style.css" />
+	 <!--[if !IE]> -->
+	 <link rel="stylesheet" type="text/css" media="only screen and (min-device-width: 320px) and (max-device-width: 650px)" href="https://bitcointalk.org/Themes/custom1/mobile.css" />
+	 <!-- <![endif]-->
+	<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/default/print.css" media="print" /><style type="text/css">
+.hGuCeEccGGpzeNoxKxbhLA > td {background-color: #E5E5E8; text-align:center;}
+.hGuCeEccGGpzeNoxKxbhLA > td > table {margin-top:-5px}
+.hGuCeEccGGpzeNoxKxbhLA .VVxxZahQEpgyRowBOccEbA {display:inline-block;max-width:100%; min-width:100%; max-height:47px; overflow:hidden}
+.hGuCeEccGGpzeNoxKxbhLA table,.hGuCeEccGGpzeNoxKxbhLA tbody,.hGuCeEccGGpzeNoxKxbhLA tr,.hGuCeEccGGpzeNoxKxbhLA td {display:inline-block;max-width:100%; min-width:100%; overflow:hidden}
+.hGuCeEccGGpzeNoxKxbhLA .VVxxZahQEpgyRowBOccEbA table,.hGuCeEccGGpzeNoxKxbhLA .VVxxZahQEpgyRowBOccEbA tbody,.hGuCeEccGGpzeNoxKxbhLA .VVxxZahQEpgyRowBOccEbA tr,.hGuCeEccGGpzeNoxKxbhLA .VVxxZahQEpgyRowBOccEbA td {display:initial; max-width:none;min-width:none;overflow:visible}
+.ETcHLxSHooCmWfthEkZxHw {display:none !important}
+.JCOzdaeOlQTmdwchrdFTiQ {display:none}
+.duvjywYhJeagwKUBVdyAqQ {padding: 1px 1px 0 1px;}
+.clYwAnjJdhvPpVWAGgUZdQ{color:#699C62; font-weight:bold; font-size:18px}
+.clYwAnjJdhvPpVWAGgUZdQ:link{color:#699C62; font-weight:bold; font-size:18px}
+.clYwAnjJdhvPpVWAGgUZdQ:visited{color:#699C62; font-weight:bold; font-size:18px}
+.AxrTBKtcWNHcbLcaPJDAYg{color:#00F30C;font-size:15px;font-weight:bold}
+.AxrTBKtcWNHcbLcaPJDAYg:link{color:#00F30C;font-size:15px;font-weight:bold}
+.AxrTBKtcWNHcbLcaPJDAYg:visited{color:#00F30C;font-size:15px;font-weight:bold}
+.BxxOIfZahhegmsdZcuKolg{font-size:x-small}
+
+.OhzyVaxXXbcaGIXpJaNXeg:link {font-size:22px;font-weight:bold;color:orange}
+.OhzyVaxXXbcaGIXpJaNXeg:active {font-size:22px;font-weight:bold;color:orange}
+.OhzyVaxXXbcaGIXpJaNXeg:visited {font-size:22px;font-weight:bold;color:orange}
+.OhzyVaxXXbcaGIXpJaNXeg:hover {text-decoration:none !important;color:red}
+.MgfXxnxAZZbQFftchbgevQ:link {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.MgfXxnxAZZbQFftchbgevQ:active {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.MgfXxnxAZZbQFftchbgevQ:visited {font-size:24px;font-weight:bold;color:rgb(250,180,75)}
+.MgfXxnxAZZbQFftchbgevQ:hover {text-decoration:none !important;color:white;background-color:rgb(181,204,222)}
+.MgfXxnxAZZbQFftchbgevQ {display:inline-block;margin: 3px;0;3px;0}
+.VyjcQmffEvOYhipYgEACaQ:hover {text-decoration:none !important;}
+.VyjcQmffEvOYhipYgEACaQ {font-size:22px;font-weight:bold;}
+.cQeihMGnFgcqrzAcGpbuGA {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .cQeihMGnFgcqrzAcGpbuGA button {     border: none;     background: #8EE000;     color: #fff;     outline: none;     font-size: 1em;     padding: 0.5em 1.2em;     margin-left: 0.3em;     border-radius: 2em;     text-transform: uppercase;     font-weight: 600;     pointer-events: none;   }    .cQeihMGnFgcqrzAcGpbuGA:hover .ftxYZVRgvvIdeveDbNbJxQ span {   display: none; }  .cQeihMGnFgcqrzAcGpbuGA:hover .ftxYZVRgvvIdeveDbNbJxQ span:nth-child(2) {   display: block; }  .ftxYZVRgvvIdeveDbNbJxQ {   display: flex;   align-items: center; }    .ftxYZVRgvvIdeveDbNbJxQ span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .ApJLfVFFnbBaDCyZxiwTKQ {   display: inline-block; }  .ftxYZVRgvvIdeveDbNbJxQ span:nth-child(2) {   display: none; }  .FcxRbgxJisCSAepPKCTxHA {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .FcxRbgxJisCSAepPKCTxHA:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .FcxRbgxJisCSAepPKCTxHA > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .cQeihMGnFgcqrzAcGpbuGA button {     display: none;   }   .ftxYZVRgvvIdeveDbNbJxQ {     margin-left: 1em;   } }   @media (max-width: 550px) {   .FcxRbgxJisCSAepPKCTxHA span span {     display: none;   } }  @media (max-width: 465px) {   .FcxRbgxJisCSAepPKCTxHA {     display: none;   }   .cQeihMGnFgcqrzAcGpbuGA {     justify-content: center;   } }
+.FKuLOFhILDbgGjGoGujVbw {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .FKuLOFhILDbgGjGoGujVbw button {     border: none;     background: #8EE000;     color: #fff;     outline: none;     font-size: 1em;     padding: 0.5em 1.2em;     margin-left: 0.4em;     border-radius: 2em;     text-transform: uppercase;     font-weight: 600; cursor:pointer; transition: all 0.3s;   } button:hover{transform: scale(1.05);}    .JkiFqOCmodQtsjYRxQxfbg:hover span{   display: none; }  .JkiFqOCmodQtsjYRxQxfbg:hover span:nth-child(2) {   display: block; }  .JkiFqOCmodQtsjYRxQxfbg {   display: flex;   align-items: center; color:#fff}    .JkiFqOCmodQtsjYRxQxfbg span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .kxwWMkiyQLrgaOoBZAjKuw {   display: inline-block; }  .JkiFqOCmodQtsjYRxQxfbg span:nth-child(2) {   display: none; }  .DrhBNNggZbwgfysKxxSQig {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .DrhBNNggZbwgfysKxxSQig:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .DrhBNNggZbwgfysKxxSQig > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .FKuLOFhILDbgGjGoGujVbw button {     display: none;   }   .JkiFqOCmodQtsjYRxQxfbg {     margin-left: 1em;   } }   @media (max-width: 550px) {   .DrhBNNggZbwgfysKxxSQig span span {     display: none;   } }  @media (max-width: 465px) {   .DrhBNNggZbwgfysKxxSQig {     display: none;   }   .FKuLOFhILDbgGjGoGujVbw {     justify-content: center;   } }
+.cQeihMGnFgcqrzAcGpbuGA {   width: 900px;   height: 44px;   max-width: 100%;   background: #5CB9F7;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .cQeihMGnFgcqrzAcGpbuGA button {   border: none;   background: #8EE000;   color: #fff;   outline: none;   font-size: 1em;   padding: 0.5em 1.2em;   margin-left: 0.4em;   border-radius: 2em;   text-transform: uppercase;   font-weight: 600;   cursor: pointer;   transition: all 0.3s; }  button:hover {   transform: scale(1.05); }  .ftxYZVRgvvIdeveDbNbJxQ:hover span {   display: none; }  .ftxYZVRgvvIdeveDbNbJxQ:hover span:nth-child(2) {   display: block; }  .ftxYZVRgvvIdeveDbNbJxQ {   display: flex;   align-items: center;   color: #fff; }    .ftxYZVRgvvIdeveDbNbJxQ span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .ApJLfVFFnbBaDCyZxiwTKQ {   display: inline-block; }  .ftxYZVRgvvIdeveDbNbJxQ span:nth-child(2) {   display: none; }  .FcxRbgxJisCSAepPKCTxHA {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .FcxRbgxJisCSAepPKCTxHA:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .FcxRbgxJisCSAepPKCTxHA > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .cQeihMGnFgcqrzAcGpbuGA button {     display: none;   }   .ftxYZVRgvvIdeveDbNbJxQ {     margin-left: 1em;   } }   @media (max-width: 550px) {   .FcxRbgxJisCSAepPKCTxHA span span {     display: none;   } }  @media (max-width: 465px) {   .FcxRbgxJisCSAepPKCTxHA {     display: none;   }   .cQeihMGnFgcqrzAcGpbuGA {     justify-content: center;   } }
+.FKuLOFhILDbgGjGoGujVbw {   width: 900px;   height: 44px;   max-width: 100%;   background: #fff;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   font-size: 16px;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; }    .FKuLOFhILDbgGjGoGujVbw button {   border: none;   background: #8EE000;   color: #fff;   outline: none;   font-size: 1em;   padding: 0.5em 1.2em;   margin-left: 0.4em;   border-radius: 2em;   text-transform: uppercase;   font-weight: 600;   cursor: pointer;   transition: all 0.3s; }  button:hover {   transform: scale(1.05); }  .JkiFqOCmodQtsjYRxQxfbg:hover span {   display: none; }  .JkiFqOCmodQtsjYRxQxfbg:hover span:nth-child(2) {   display: block; }  .JkiFqOCmodQtsjYRxQxfbg {   display: flex;   align-items: center;   color: #5CB9F7; }    .JkiFqOCmodQtsjYRxQxfbg span {   margin-left: 0.1em;   font-size: 1em;   font-weight: 700;   letter-spacing: 0.5px;   font-size: 20px;   width: 11em;   text-align: center; }  .kxwWMkiyQLrgaOoBZAjKuw {   display: inline-block; }  .JkiFqOCmodQtsjYRxQxfbg span:nth-child(2) {   display: none; }  .DrhBNNggZbwgfysKxxSQig {   display: flex;   background: #586A91;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em 0 0.5em;   position: relative;   z-index: 2; }    .DrhBNNggZbwgfysKxxSQig:after {   position: absolute;   right: 100%;   top: 50%;   content: "";   width: 36px;   height: 36px;   background: #586A91;   border-radius: 0.5em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; }    .DrhBNNggZbwgfysKxxSQig > span {   margin-right: 1em;   font-weight: 600;   font-size: 16px;   letter-spacing: 0.5px;   margin-top: 0.1em; }  @media (max-width: 725px) {   .FKuLOFhILDbgGjGoGujVbw button {     display: none;   }   .JkiFqOCmodQtsjYRxQxfbg {     margin-left: 1em;   } }   @media (max-width: 550px) {   .DrhBNNggZbwgfysKxxSQig span span {     display: none;   } }  @media (max-width: 465px) {   .DrhBNNggZbwgfysKxxSQig {     display: none;   }   .FKuLOFhILDbgGjGoGujVbw {     justify-content: center;   } }
+.tlcPbnOzRzwjokyYkSvxAA {   width: 900px;   height: 44px;   margin: 0 auto;   background: #fff;   max-width: 100%;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   color: #000 !important;   font-family: arial, sans-serif;   overflow: hidden; } .tlcPbnOzRzwjokyYkSvxAA:hover {   color: #fff;   background: #715AD0; } .tlcPbnOzRzwjokyYkSvxAA:hover .urOipEZhcbnwfMSlPbkeEg span:nth-child(1) {   display: none; } .tlcPbnOzRzwjokyYkSvxAA:hover .urOipEZhcbnwfMSlPbkeEg span:nth-child(2) {   display: block; } .tlcPbnOzRzwjokyYkSvxAA:hover .cexIivABTbjxgOfdIaYIaw span:nth-child(1) {   display: none;   color: #000; } .tlcPbnOzRzwjokyYkSvxAA:hover .cexIivABTbjxgOfdIaYIaw span:nth-child(2) {   display: block;   color: #000; } .tlcPbnOzRzwjokyYkSvxAA:hover .urOipEZhcbnwfMSlPbkeEg {   background: #fff;   color: #000; } .tlcPbnOzRzwjokyYkSvxAA:hover .cexIivABTbjxgOfdIaYIaw {   background: #fff;   color: #000; } .tlcPbnOzRzwjokyYkSvxAA:hover .urOipEZhcbnwfMSlPbkeEg:after {   background: #715AD0; } .tlcPbnOzRzwjokyYkSvxAA:hover .urOipEZhcbnwfMSlPbkeEg:before {   background: #715AD0; } .tlcPbnOzRzwjokyYkSvxAA:hover .urOipEZhcbnwfMSlPbkeEg span {   color: #000; } .tlcPbnOzRzwjokyYkSvxAA:hover .cexIivABTbjxgOfdIaYIaw:after {   background: #715AD0; } .tlcPbnOzRzwjokyYkSvxAA:hover .cexIivABTbjxgOfdIaYIaw:before {   background: #715AD0; } .tlcPbnOzRzwjokyYkSvxAA:hover .NgmbErTgEdYbdpTnAuYFfQ {   color: #fff; } .tlcPbnOzRzwjokyYkSvxAA:hover .NgmbErTgEdYbdpTnAuYFfQ:before {   background: #fff; } .tlcPbnOzRzwjokyYkSvxAA:hover .NgmbErTgEdYbdpTnAuYFfQ:after {   background: #fff; } .tlcPbnOzRzwjokyYkSvxAA .NgmbErTgEdYbdpTnAuYFfQ {   display: flex;   height: 32px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   position: relative;   z-index: 2;   font-size: 18px;   color: #000;   width: 160px; } .tlcPbnOzRzwjokyYkSvxAA .NgmbErTgEdYbdpTnAuYFfQ:after{   position: absolute;   right: 98%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .tlcPbnOzRzwjokyYkSvxAA .NgmbErTgEdYbdpTnAuYFfQ:before{   position: absolute;   right: 2%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .tlcPbnOzRzwjokyYkSvxAA .NgmbErTgEdYbdpTnAuYFfQ span {   font-size: 26px;   font-family: Existence;   font-weight: 600; } .tlcPbnOzRzwjokyYkSvxAA .NgmbErTgEdYbdpTnAuYFfQ span:hover {   color: #fff;   text-decoration: none; } .tlcPbnOzRzwjokyYkSvxAA .urOipEZhcbnwfMSlPbkeEg {   display: flex;   background: #715AD0;   height: 30px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-left: 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #fff;   width: 220px } .tlcPbnOzRzwjokyYkSvxAA .urOipEZhcbnwfMSlPbkeEg:after{   position: absolute;   right: 102%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .tlcPbnOzRzwjokyYkSvxAA .urOipEZhcbnwfMSlPbkeEg:before{   position: absolute;   right: -2%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; } .tlcPbnOzRzwjokyYkSvxAA .urOipEZhcbnwfMSlPbkeEg span {   color: #fff;   font-size: 13px;   line-height: 13px; } .tlcPbnOzRzwjokyYkSvxAA .urOipEZhcbnwfMSlPbkeEg span:nth-child(2) {   display: none; } .tlcPbnOzRzwjokyYkSvxAA .cexIivABTbjxgOfdIaYIaw{   display: flex;   flex-direction: column;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 220px; } .tlcPbnOzRzwjokyYkSvxAA .cexIivABTbjxgOfdIaYIaw span {   color: #fff;   font-size: 13px;   line-height: 13px; } .tlcPbnOzRzwjokyYkSvxAA .cexIivABTbjxgOfdIaYIaw span:nth-child(2) {   display: none; } .tlcPbnOzRzwjokyYkSvxAA .cexIivABTbjxgOfdIaYIaw {   display: flex;   background: #715AD0;   height: 30px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-right: 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #fff;   width: 220px } .tlcPbnOzRzwjokyYkSvxAA .cexIivABTbjxgOfdIaYIaw:after{   position: absolute;   right: 102%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .tlcPbnOzRzwjokyYkSvxAA .cexIivABTbjxgOfdIaYIaw:before{   position: absolute;   right: -2%;   top: 50%;   content: "";   width: 18px;   height: 18px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; }
+.FhJgldrDxPOKSsBIZKJiLQ {   width: 900px;   height: 44px;   margin: 0 auto;   background: #715AD0;   max-width: 100%;   display: flex;   justify-content: space-between;   align-items: center;   text-decoration: none !important;   color: #fff !important;   font-family: arial, sans-serif;   overflow: hidden; } .FhJgldrDxPOKSsBIZKJiLQ:hover {   color: #fff; } .FhJgldrDxPOKSsBIZKJiLQ:hover .BrPFIJtmQcApygXojymwxQ span:nth-child(1) {   display: none; } .FhJgldrDxPOKSsBIZKJiLQ:hover .BrPFIJtmQcApygXojymwxQ span:nth-child(2) {   display: block; } .FhJgldrDxPOKSsBIZKJiLQ:hover .PUXRAujQnHTCbbhnldEABQ span:nth-child(2) {   display: none; } .FhJgldrDxPOKSsBIZKJiLQ:hover .PUXRAujQnHTCbbhnldEABQ span:nth-child(3) {   display: block; } .FhJgldrDxPOKSsBIZKJiLQ .hrayfyhsZrIQqAfPmxyLbA {   display: flex;   background: #fff;   height: 32px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-right: 1em;   position: relative;   z-index: 2;   font-size: 18px;   color: #000;   width: 150px } // forma mid 1 .FhJgldrDxPOKSsBIZKJiLQ .hrayfyhsZrIQqAfPmxyLbA:after{   position: absolute;   right: 90%;   top: 115%;   content: "";   width: 22px;   height: 22px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .FhJgldrDxPOKSsBIZKJiLQ .hrayfyhsZrIQqAfPmxyLbA:before{   position: absolute;   right: 10%;   top: -15%;   content: "";   width: 22px;   height: 22px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } // forma mid 2 .FhJgldrDxPOKSsBIZKJiLQ .hrayfyhsZrIQqAfPmxyLbA:after{   position: absolute;   right: 98%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .FhJgldrDxPOKSsBIZKJiLQ .hrayfyhsZrIQqAfPmxyLbA:before{   position: absolute;   right: 2%;   top: 50%;   content: "";   width: 25px;   height: 25px;   background: #fff;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: -1; } .FhJgldrDxPOKSsBIZKJiLQ .hrayfyhsZrIQqAfPmxyLbA span {   font-size: 24px;   font-family: Existence;   font-weight: 600; } .FhJgldrDxPOKSsBIZKJiLQ .hrayfyhsZrIQqAfPmxyLbA span:hover {   color: #000;   text-decoration: none; } .FhJgldrDxPOKSsBIZKJiLQ .BrPFIJtmQcApygXojymwxQ {   display: flex;   height: 44px;   flex-direction: column;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 230px; } .FhJgldrDxPOKSsBIZKJiLQ .BrPFIJtmQcApygXojymwxQ:after{   position: absolute;   right: 81%;   top: 70%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .FhJgldrDxPOKSsBIZKJiLQ .BrPFIJtmQcApygXojymwxQ:before{   position: absolute;   right: 19%;   top: 70%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; } .FhJgldrDxPOKSsBIZKJiLQ .BrPFIJtmQcApygXojymwxQ span:nth-child(3) {   display: flex;   background: #fff;   height: 18px;   align-items: center;   justify-content: center;   border-radius: 5px;   padding: 0 1em;   margin-top: 0.35em;   position: relative;   z-index: 2;   font-size: 14px;   color: #000;   width: 130px } .FhJgldrDxPOKSsBIZKJiLQ .BrPFIJtmQcApygXojymwxQ span {   color: #fff;   font-size: 13px;   line-height: 13px; } .FhJgldrDxPOKSsBIZKJiLQ .BrPFIJtmQcApygXojymwxQ span:nth-child(2) {   display: none; } .FhJgldrDxPOKSsBIZKJiLQ .PUXRAujQnHTCbbhnldEABQ{   display: flex;   flex-direction: column;   height: 44px;   align-items: center;   justify-content: center;   padding: 0 1em;   position: relative;   z-index: 2;   width: 230px; } .FhJgldrDxPOKSsBIZKJiLQ .PUXRAujQnHTCbbhnldEABQ span {   color: #fff;   font-size: 13px;   line-height: 13px; } .FhJgldrDxPOKSsBIZKJiLQ .PUXRAujQnHTCbbhnldEABQ span:nth-child(3) {   display: none; } .FhJgldrDxPOKSsBIZKJiLQ .PUXRAujQnHTCbbhnldEABQ span:nth-child(1) {   display: flex;   background: #fff;   height: 18px;   align-items: center;   justify-content: center;   border-radius: 5px;   margin-bottom: 0.35em;   padding: 0 1em;   position: relative;   z-index: 2;   font-size: 14px;   color: #000;   width: 130px } .FhJgldrDxPOKSsBIZKJiLQ .PUXRAujQnHTCbbhnldEABQ:after{   position: absolute;   right: 81%;   top: 30%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 2; } .FhJgldrDxPOKSsBIZKJiLQ .PUXRAujQnHTCbbhnldEABQ:before{   position: absolute;   right: 19%;   top: 30%;   content: "";   width: 14px;   height: 14px;   background: #715AD0;   border-radius: 0.3em;   transform: translate(50%, -50%) rotate(45deg);   z-index: 3; }
+.YLCgZFMNKgLQvaMeHFVPUQ {   background-color:#142155;   width:912px;   height:42px;   display:flex;   justify-content:flex-start;   align-items:center;   position:relative;   padding-left: 20px;   overflow: hidden; }  .YLCgZFMNKgLQvaMeHFVPUQ > a {   position: absolute;   width: 932px;   height: 42px;   margin-left: -20px;   z-index: 44; }  .YLCgZFMNKgLQvaMeHFVPUQ > img:nth-child(2) {   margin-right: 48px;   margin-bottom: 4px; }  .YLCgZFMNKgLQvaMeHFVPUQ > img:nth-child(3) {   margin-right: 48px;   opacity: 1;   transition: opacity 0.2s linear, margin-left 0.2s cubic-bezier(0.05, 0.8, 0.05, 0.8) 0.1s, margin-right 0.2s cubic-bezier(0.05, 0.8, 0.05, 0.8) 0.3s; }  .YLCgZFMNKgLQvaMeHFVPUQ > img:nth-child(4) {   margin-right: 14px;   transition: opacity 0.3s linear; }  .YLCgZFMNKgLQvaMeHFVPUQ > .xuRCgIqKSxnykgYjpxaeVQ {    background-color:#fff;    width:48px;    height:16px;    padding:4px 8px;    transition: opacity 0.3s linear; }  .YLCgZFMNKgLQvaMeHFVPUQ > .xuRCgIqKSxnykgYjpxaeVQ > img {    width:48px; }  .YLCgZFMNKgLQvaMeHFVPUQ > svg {    position:absolute;    top:0;    left:-184px; }  .YLCgZFMNKgLQvaMeHFVPUQ:hover > .dRYenqjTmelSDgIldJNaMw > .HsGXCGPdmQtlmnYiikcyGQ {   right: 0;   transition: all 0.3s cubic-bezier(0.05, 0.8, 0.05, 0.8); } .YLCgZFMNKgLQvaMeHFVPUQ:hover > img:nth-child(3) {   opacity: 0;   margin-left: 880px;   margin-right: 600px; } .YLCgZFMNKgLQvaMeHFVPUQ:hover > img:nth-child(4) {   opacity: 0; } .YLCgZFMNKgLQvaMeHFVPUQ:hover > .xuRCgIqKSxnykgYjpxaeVQ {   opacity: 0; }  .dRYenqjTmelSDgIldJNaMw {   position:absolute;   top:0;   right:0;   height:42px;   width:800px;   overflow: hidden; }  .dRYenqjTmelSDgIldJNaMw > .HsGXCGPdmQtlmnYiikcyGQ {   position: absolute;   height:42px;   width:760px;   right: -820px;   top: 0;   background-color:#fff;   transition: all 0.2s cubic-bezier(0.8, 0.3, 0.8, 0.3); }  .dRYenqjTmelSDgIldJNaMw > .HsGXCGPdmQtlmnYiikcyGQ::after {   content: "";   position: absolute;   border: 0px solid transparent;   border-top: 40px solid #fff;   border-left: 42px solid transparent;   width: 0;   height: 0;   top: 1px;   left: -40px;   transform: rotate(90deg); }  .dRYenqjTmelSDgIldJNaMw > .HsGXCGPdmQtlmnYiikcyGQ > img {   margin-left: 185px;   margin-top: 11px; }
+.bYHsgQKWeevFbobUMagTsw { 	width: 100%; 	max-height: 47px; 	height: 47px; 	border-radius: 8px; 	background: #009FFF; 	background: -webkit-linear-gradient(to right, #736df8, #ec2F4B); 	background: -webkit-gradient(linear, left top, right top, from(#736df8), to(#ec2F4B)); 	background: -webkit-linear-gradient(left, #736df8, #ec2F4B); 	background: -o-linear-gradient(left, #736df8, #ec2F4B); 	background: linear-gradient(to right, #736df8, #ec2F4B); 	color: #ffffff; 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; 	text-decoration: none; 	display: -webkit-box; 	display: -ms-flexbox; 	display: flex; 	-ms-flex-pack: distribute; 	justify-content: space-around; 	-webkit-box-align: center; 	-ms-flex-align: center; 	align-items: center; 	position: relative; }  .ffibgdWBhCapCeUlXURxMA { 	position: absolute; 	width: 100%; 	height: 100%; }  .XQbiycswuicTffzWimhTDg { 	background-color: #333648; 	padding: 8px 20px; 	border-radius: 1000px; 	text-align: center; 	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .08); 	box-shadow: 0 5px 15px rgba(0, 0, 0, .08); 	text-transform: uppercase; 	letter-spacing: 0.0625em; 	font-weight: bold; 	font-size: 14px; 	color: #ffffff; 	text-decoration: none; 	cursor: pointer; }  .letMbkjokjfFHkvaXWDiBg { 	display: -webkit-box; 	display: -ms-flexbox; 	display: flex; 	-webkit-box-pack: center; 	-ms-flex-pack: center; 	justify-content: center; 	-webkit-box-align: center; 	-ms-flex-align: center; 	align-items: center; 	font-size: 16px; }  .letMbkjokjfFHkvaXWDiBg>span { 	margin-left: 8px; 	margin-right: 8px; }  .TMejeVlDcyeNbzevDVmoJA { 	font-size: 20px; }
+.nounderline:hover {text-decoration:none}
+.exempttable {display:inline-table !important}
+.bbca table, .bbca tbody, .bbca tr, .bbca td{
+	display: inline-block !important;
+	min-width: 0px !important;
+	text-align: center !important;
+}
+.gunbot td{text-align:left !important}
+.olddiv{display:block}
+.cryptokg {display:inline-block;padding:2px;font-size:17px;height:42px;width:500px;background-color:white; font-weight:700;color:orange} .cryptokg a:link{color:orange} .cryptokg a:hover{color:orange} .cryptokg a:visited{color:orange}
+</style>
+<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/ac/105.css" />
+<link rel="stylesheet" type="text/css" href="https://bitcointalk.org/Themes/ac/106.css" />
+
+
+
+	<link rel="help" href="https://bitcointalk.org/index.php?action=help" target="_blank" />
+	<link rel="search" href="https://bitcointalk.org/index.php?action=search" />
+	<link rel="contents" href="https://bitcointalk.org/index.php" />
+	<link rel="alternate" type="application/rss+xml" title="Bitcoin Forum - RSS" href="https://bitcointalk.org/index.php?type=rss;action=.xml" />
+	<link rel="prev" href="https://bitcointalk.org/index.php?topic=265759.0;prev_next=prev" />
+	<link rel="next" href="https://bitcointalk.org/index.php?topic=265759.0;prev_next=next" />
+	<link rel="index" href="https://bitcointalk.org/index.php?board=14.0" /><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		function showhide(msgnr)
+		{
+			if (document.getElementById("message"+msgnr).style.display == "")
+			    {document.getElementById("message"+msgnr).style.display = "none";
+			     document.getElementById("ignmsgbttns"+msgnr).style.visibility = "hidden";
+			     document.getElementById("ignoremessage"+msgnr).style.display = "";
+			     document.getElementById("ignfooter"+msgnr).style.display = "none";
+			     document.getElementById("showhide"+msgnr).src = "https://bitcointalk.org/Themes/custom1/images/english/ignshow.gif";
+			     document.getElementById("showhide"+msgnr).alt = "Show";
+			     document.getElementById("ignprofile"+msgnr).style.display = "none";
+			    }
+			    else
+			    {document.getElementById("message"+msgnr).style.display = "";
+			     document.getElementById("ignmsgbttns"+msgnr).style.visibility = "visible";
+			     document.getElementById("ignoremessage"+msgnr).style.display = "none";
+			     document.getElementById("ignfooter"+msgnr).style.display = "";
+			     document.getElementById("showhide"+msgnr).src = "https://bitcointalk.org/Themes/custom1/images/english/ignhide.gif";
+			     document.getElementById("showhide"+msgnr).alt = "Hide";
+			     document.getElementById("ignprofile"+msgnr).style.display = "";
+			     }
+		}
+// ]]></script>
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+			document.getElementById("upshrinkHeader2").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			var current_header_ic = false;
+
+			function shrinkHeaderIC(mode)
+			{
+				document.cookie = "upshrinkIC=" + (mode ? 1 : 0);
+				document.getElementById("upshrink_ic").src = smf_images_url + (mode ? "/expand.gif" : "/collapse.gif");
+
+				document.getElementById("upshrinkHeaderIC").style.display = mode ? "none" : "";
+
+				current_header_ic = mode;
+			}
+		// ]]></script></head>
+<body>
+	<div class="tborder" >
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" id="smfheader">
+			<tr>
+				<td class="catbg" height="32">
+					<span style="font-family: Verdana, sans-serif; font-size: 140%; ">Bitcoin Forum</span>
+				</td>
+				<td align="right" class="catbg">
+					<img src="https://bitcointalk.org/Themes/custom1/images/smflogo.gif" style="margin: 2px;" alt="" />
+				</td>
+			</tr>
+		</table>
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" >
+			<tr>
+				<td class="titlebg2" height="32" align="right">
+					<span class="smalltext">September 29, 2022, 09:14:28 AM</span>
+					<a href="#" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="https://bitcointalk.org/Themes/custom1/images/upshrink.gif" alt="*" title="Shrink or expand the header." align="bottom" style="margin: 0 1ex;" /></a>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td valign="top" colspan="2">
+					<table width="100%" class="bordercolor" cellpadding="8" cellspacing="1" border="0" style="margin-top: 1px;">
+						<tr>
+							<td colspan="2" width="100%" valign="top" class="windowbg2" id="variousheadlinks"><span class="middletext">Welcome, <b>Guest</b>. Please <a href="https://bitcointalk.org/index.php?action=login">login</a> or <a href="https://bitcointalk.org/index.php?action=register">register</a>.				</span>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+		<table id="upshrinkHeader2" width="100%" cellpadding="4" cellspacing="0" border="0">
+			<tr>
+				<td width="90%" class="titlebg2">
+					<span class="smalltext"><b>News</b>: Latest Bitcoin Core release: <a class="ul" href="https://bitcoincore.org/en/download/"><b>23.0</b></a> [<a class="ul" href="https://bitcointalk.org/bitcoin-23.0.torrent">Torrent</a>]</span>
+				</td>
+				<td class="titlebg2" align="right" nowrap="nowrap" valign="top">
+					<form action="https://bitcointalk.org/index.php?action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<a href="https://bitcointalk.org/index.php?action=search;advanced"><img src="https://bitcointalk.org/Themes/custom1/images/filter.gif" align="middle" style="margin: 0 1ex;" alt="" /></a>
+						<input type="text" name="search" value="" style="width: 190px;" />&nbsp;
+						<input type="submit" name="submit" value="Search" style="width: 11ex;" />
+						<input type="hidden" name="advanced" value="0" />
+						<input type="hidden" name="topic" value="265759" />
+					</form>
+				</td>
+			</tr>
+		</table>
+	</div>
+			<table cellpadding="0" cellspacing="0" border="0" style="margin-left: 10px;">
+				<tr>
+					<td class="maintab_first">&nbsp;</td><td class="maintab_active_first">&nbsp;</td>
+				<td valign="top" class="maintab_active_back">
+					<a href="https://bitcointalk.org/index.php">Home</a>
+				</td><td class="maintab_active_last">&nbsp;</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=help">Help</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=search">Search</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=login">Login</a>
+				</td>
+				<td valign="top" class="maintab_back">
+					<a href="https://bitcointalk.org/index.php?action=register">Register</a>
+				</td>
+                                <td valign="top" class="maintab_back">
+                                        <a href="/more.php">More</a>
+                                </td>
+				<td class="maintab_last">&nbsp;</td>
+			</tr>
+		</table>
+	<div id="bodyarea" style="padding: 1ex 0px 2ex 0px;">
+<a name="top"></a>
+<a name="msg2950406"></a>
+<div><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="https://bitcointalk.org/index.php" class="nav">Bitcoin Forum</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php#1" class="nav">Bitcoin</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?board=14.0" class="nav">Mining</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?topic=265759.0" class="nav">Potentially faster method for mining on the CPU</a></b></div></div>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="middletext" valign="bottom" style="padding-bottom: 4px;">Pages: <span class="prevnext"><a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.20">&#171;</a> </span><a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.0">1</a> <a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.20">2</a> [<b>3</b>] <a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.60">4</a> <span class="prevnext"><a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.60">&#187;</a> </span>&nbsp;<a href="https://bitcointalk.org/index.php?topic=265759.0;all">All</a> </td>
+		<td align="right" style="padding-right: 1ex;">
+			<div class="nav" style="margin-bottom: 2px;"> <a href="https://bitcointalk.org/index.php?topic=265759.0;prev_next=prev#new">&laquo; previous topic</a> <a href="https://bitcointalk.org/index.php?topic=265759.0;prev_next=next#new">next topic &raquo;</a></div>
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					
+		<td class="mirrortab_first">&nbsp;</td>
+		<td class="mirrortab_back"><a href="https://bitcointalk.org/index.php?action=printpage;topic=265759.0" target="_blank">Print</a></td>
+		<td class="mirrortab_last">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table width="100%" cellpadding="3" cellspacing="0" border="0" class="tborder" style="border-bottom: 0;">
+		<tr class="catbg3">
+				<td valign="middle" width="2%" style="padding-left: 6px;">
+						<img src="https://bitcointalk.org/Themes/custom1/images/topic/hot_post.gif" align="bottom" alt="" />
+				</td>
+				<td width="13%"> Author</td>
+				<td valign="middle" width="85%" style="padding-left: 6px;" id="top_subject">
+						Topic: Potentially faster method for mining on the CPU &nbsp;(Read 14135 times)
+				</td>
+		</tr>
+</table>
+<form action="https://bitcointalk.org/index.php?action=quickmod2;topic=265759.40" method="post" accept-charset="ISO-8859-1" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('fd8ad59fa79c545e63be328ba3c8678c') : confirm('Are you sure you want to do this?');">
+<table cellpadding="0" cellspacing="0" border="0" width="100%" class="bordercolor">
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ">
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=22876" title="View the profile of botnet">botnet</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 35<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=22876"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2950406#msg2950406"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2950406">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2950406#msg2950406">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 17, 2013, 09:31:37 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns41" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2950406#msg2950406">#41</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2941475#msg2941475">Quote from: jlcooke on August 15, 2013, 08:41:58 PM</a></div><div class="quote">Hehe.&nbsp; I like encouraging people to explore this.&nbsp; Good learning &quot;exorcize&quot; (pun).&nbsp; 32 bit addition logic for botnet: <a rel="ugc" class="ul" href="http://jlcooke.ca/btc/sha256_logred.html">http://jlcooke.ca/btc/sha256_logred.html</a><br /><br />Just do that about 768 times and reduce!&nbsp; <img src="https://bitcointalk.org/Smileys/default/tongue.gif" alt="Tongue" border="0" /><br /></div><br />your c1...c31 bits can be reduced by one instruction <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /><br /><br />c1 == a1b1 + a1c0 + b1c0 <br />&nbsp; &nbsp;== a1(b1+c0) + b1c0<br /><br /><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2950406">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr><tr><td class="duvjywYhJeagwKUBVdyAqQ"></td></tr><tr class="JCOzdaeOlQTmdwchrdFTiQ"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b> <a name="msg1664442868"></a>
+ <table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tbody><tr><td class="windowbg2">
+   <table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+    <tbody><tr>
+       <td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+      <b><a href="https://bitcointalk.org/index.php?action=profile;u=1664442868" title="View the profile of 1664442868">1664442868</a></b>
+      <div class="smalltext">
+       Hero Member<br />
+       <img src="/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664442868" title="Personal Message (Offline)"><img src="/Themes/custom1/images/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0" /></a><span class="smalltext"> Offline</span><br /><br />
+       Posts: 1664442868<br />
+       
+       
+       
+       <br />
+       <a href="https://bitcointalk.org/index.php?action=profile;u=1664442868"><img src="/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664442868" title="Personal Message (Offline)"><img src="/Themes/custom1/images/im_off.gif" alt="Personal Message (Offline)" border="0" /></a><br />
+       <br /><a href="https://bitcointalk.org/index.php?action=ignore;u=1664442868;topic=1664442868;msg=1664442868">Ignore</a>
+      </div>
+     </td>
+       <td style="padding: 2px;" class="td_headerandpost" valign="top" width="85%" height="100%">
+      <table width="100%" border="0"><tbody><tr>
+       <td valign="middle"><a href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868"><img src="/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+       <td valign="middle">
+           <div style="font-weight: bold;" class="subject">
+         <a href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868">1664442868</a>
+        </div>
+           <div class="smalltext">1664442868</div></td>
+           <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" valign="middle" align="right" height="20"><div style="visibility: visible;">
+    <a href="https://bitcointalk.org/index.php?action=post;quote=1664442868;topic=1664442868.100;num_replies=2;sesc=1664442868"><img src="/Themes/custom1/images/frostee/frostee_quote.png" alt="Reply with quote" class="reply_button" style="vertical-align: middle;" /></a>
+       &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868">#2</a>
+  </div>
+       </td>
+      </tr></tbody></table>
+         <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%" />
+      <div class="post">1664442868</div>
+     </td>
+    </tr>
+    <tr>
+     <td class="smalltext" valign="bottom" width="85%">
+      <table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+       <td colspan="2" class="smalltext" width="100%">
+       </td>
+      </tr><tr>
+       <td class="smalltext" valign="bottom">
+       </td>
+       <td class="smalltext" valign="bottom" align="right">
+        <a href="https://bitcointalk.org/index.php?action=reporttm;topic=1664442868.101;msg=1664442868">Report to moderator</a>
+       </td>
+      </tr></tbody></table>
+     </td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+</td></tr><tr class="hGuCeEccGGpzeNoxKxbhLA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b> <a name="msg1664442868"></a>
+ <table width="100%" border="0">
+  <tbody><tr><td>
+   <table width="100%">
+    <tbody><tr>
+       <td rowspan="2">
+     </td>
+       <td>
+      <table width="100%" class="ETcHLxSHooCmWfthEkZxHw"><tr><td></td></tr>
+      </table>
+      <div class="VVxxZahQEpgyRowBOccEbA"><a style="background-image:url(Themes/ai/ownic.png);background-repeat:no-repeat;background-position:center;height:47px;display:block" href="https://discord.gg/Fnd2NjvtVG"></a></div>
+     </td>
+    </tr>
+    <tr class="ETcHLxSHooCmWfthEkZxHw"><td></td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+ <span class="BxxOIfZahhegmsdZcuKolg"><i></i>Adver<i></i>tised sites are not endorsed <i></i>by the Bitcoin Foru<i></i>m. They may be unsafe, <i></i>untrustworthy<i></i>, <i></i>or illegal in yo<i></i>u<i></i>r jurisdiction.<i></i> <a href="https://bitcointalk.org/adrotate.php?adinfo">Adv<i></i>ertise here.</a></span>
+</td></tr><tr class="JCOzdaeOlQTmdwchrdFTiQ"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b> <a name="msg1664442868"></a>
+ <table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tbody><tr><td class="windowbg2">
+   <table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+    <tbody><tr>
+       <td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+      <b><a href="https://bitcointalk.org/index.php?action=profile;u=1664442868" title="View the profile of 1664442868">1664442868</a></b>
+      <div class="smalltext">
+       Hero Member<br />
+       <img src="/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664442868" title="Personal Message (Offline)"><img src="/Themes/custom1/images/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0" /></a><span class="smalltext"> Offline</span><br /><br />
+       Posts: 1664442868<br />
+       
+       
+       
+       <br />
+       <a href="https://bitcointalk.org/index.php?action=profile;u=1664442868"><img src="/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664442868" title="Personal Message (Offline)"><img src="/Themes/custom1/images/im_off.gif" alt="Personal Message (Offline)" border="0" /></a><br />
+       <br /><a href="https://bitcointalk.org/index.php?action=ignore;u=1664442868;topic=1664442868;msg=1664442868">Ignore</a>
+      </div>
+     </td>
+       <td style="padding: 2px;" class="td_headerandpost" valign="top" width="85%" height="100%">
+      <table width="100%" border="0"><tbody><tr>
+       <td valign="middle"><a href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868"><img src="/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+       <td valign="middle">
+           <div style="font-weight: bold;" class="subject">
+         <a href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868">1664442868</a>
+        </div>
+           <div class="smalltext">1664442868</div></td>
+           <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" valign="middle" align="right" height="20"><div style="visibility: visible;">
+    <a href="https://bitcointalk.org/index.php?action=post;quote=1664442868;topic=1664442868.100;num_replies=2;sesc=1664442868"><img src="/Themes/custom1/images/frostee/frostee_quote.png" alt="Reply with quote" class="reply_button" style="vertical-align: middle;" /></a>
+       &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868">#2</a>
+  </div>
+       </td>
+      </tr></tbody></table>
+         <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%" />
+      <div class="post">1664442868</div>
+     </td>
+    </tr>
+    <tr>
+     <td class="smalltext" valign="bottom" width="85%">
+      <table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+       <td colspan="2" class="smalltext" width="100%">
+       </td>
+      </tr><tr>
+       <td class="smalltext" valign="bottom">
+       </td>
+       <td class="smalltext" valign="bottom" align="right">
+        <a href="https://bitcointalk.org/index.php?action=reporttm;topic=1664442868.101;msg=1664442868">Report to moderator</a>
+       </td>
+      </tr></tbody></table>
+     </td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+</td></tr><tr class="JCOzdaeOlQTmdwchrdFTiQ"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b> <a name="msg1664442868"></a>
+ <table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tbody><tr><td class="windowbg2">
+   <table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+    <tbody><tr>
+       <td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+      <b><a href="https://bitcointalk.org/index.php?action=profile;u=1664442868" title="View the profile of 1664442868">1664442868</a></b>
+      <div class="smalltext">
+       Hero Member<br />
+       <img src="/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664442868" title="Personal Message (Offline)"><img src="/Themes/custom1/images/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0" /></a><span class="smalltext"> Offline</span><br /><br />
+       Posts: 1664442868<br />
+       
+       
+       
+       <br />
+       <a href="https://bitcointalk.org/index.php?action=profile;u=1664442868"><img src="/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664442868" title="Personal Message (Offline)"><img src="/Themes/custom1/images/im_off.gif" alt="Personal Message (Offline)" border="0" /></a><br />
+       <br /><a href="https://bitcointalk.org/index.php?action=ignore;u=1664442868;topic=1664442868;msg=1664442868">Ignore</a>
+      </div>
+     </td>
+       <td style="padding: 2px;" class="td_headerandpost" valign="top" width="85%" height="100%">
+      <table width="100%" border="0"><tbody><tr>
+       <td valign="middle"><a href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868"><img src="/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+       <td valign="middle">
+           <div style="font-weight: bold;" class="subject">
+         <a href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868">1664442868</a>
+        </div>
+           <div class="smalltext">1664442868</div></td>
+           <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" valign="middle" align="right" height="20"><div style="visibility: visible;">
+    <a href="https://bitcointalk.org/index.php?action=post;quote=1664442868;topic=1664442868.100;num_replies=2;sesc=1664442868"><img src="/Themes/custom1/images/frostee/frostee_quote.png" alt="Reply with quote" class="reply_button" style="vertical-align: middle;" /></a>
+       &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868">#2</a>
+  </div>
+       </td>
+      </tr></tbody></table>
+         <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%" />
+      <div class="post">1664442868</div>
+     </td>
+    </tr>
+    <tr>
+     <td class="smalltext" valign="bottom" width="85%">
+      <table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+       <td colspan="2" class="smalltext" width="100%">
+       </td>
+      </tr><tr>
+       <td class="smalltext" valign="bottom">
+       </td>
+       <td class="smalltext" valign="bottom" align="right">
+        <a href="https://bitcointalk.org/index.php?action=reporttm;topic=1664442868.101;msg=1664442868">Report to moderator</a>
+       </td>
+      </tr></tbody></table>
+     </td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+</td></tr><tr class="JCOzdaeOlQTmdwchrdFTiQ"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b> <a name="msg1664442868"></a>
+ <table width="100%" border="0" cellpadding="3" cellspacing="0">
+  <tbody><tr><td class="windowbg2">
+   <table style="table-layout: fixed;" width="100%" cellpadding="5" cellspacing="0">
+    <tbody><tr>
+       <td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+      <b><a href="https://bitcointalk.org/index.php?action=profile;u=1664442868" title="View the profile of 1664442868">1664442868</a></b>
+      <div class="smalltext">
+       Hero Member<br />
+       <img src="/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664442868" title="Personal Message (Offline)"><img src="/Themes/custom1/images/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0" /></a><span class="smalltext"> Offline</span><br /><br />
+       Posts: 1664442868<br />
+       
+       
+       
+       <br />
+       <a href="https://bitcointalk.org/index.php?action=profile;u=1664442868"><img src="/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a>
+       <a href="https://bitcointalk.org/index.php?action=pm;sa=send;u=1664442868" title="Personal Message (Offline)"><img src="/Themes/custom1/images/im_off.gif" alt="Personal Message (Offline)" border="0" /></a><br />
+       <br /><a href="https://bitcointalk.org/index.php?action=ignore;u=1664442868;topic=1664442868;msg=1664442868">Ignore</a>
+      </div>
+     </td>
+       <td style="padding: 2px;" class="td_headerandpost" valign="top" width="85%" height="100%">
+      <table width="100%" border="0"><tbody><tr>
+       <td valign="middle"><a href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868"><img src="/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+       <td valign="middle">
+           <div style="font-weight: bold;" class="subject">
+         <a href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868">1664442868</a>
+        </div>
+           <div class="smalltext">1664442868</div></td>
+           <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" valign="middle" align="right" height="20"><div style="visibility: visible;">
+    <a href="https://bitcointalk.org/index.php?action=post;quote=1664442868;topic=1664442868.100;num_replies=2;sesc=1664442868"><img src="/Themes/custom1/images/frostee/frostee_quote.png" alt="Reply with quote" class="reply_button" style="vertical-align: middle;" /></a>
+       &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=1664442868.msg1664442868#msg1664442868">#2</a>
+  </div>
+       </td>
+      </tr></tbody></table>
+         <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%" />
+      <div class="post">1664442868</div>
+     </td>
+    </tr>
+    <tr>
+     <td class="smalltext" valign="bottom" width="85%">
+      <table style="table-layout: fixed;" width="100%" border="0"><tbody><tr>
+       <td colspan="2" class="smalltext" width="100%">
+       </td>
+      </tr><tr>
+       <td class="smalltext" valign="bottom">
+       </td>
+       <td class="smalltext" valign="bottom" align="right">
+        <a href="https://bitcointalk.org/index.php?action=reporttm;topic=1664442868.101;msg=1664442868">Report to moderator</a>
+       </td>
+      </tr></tbody></table>
+     </td>
+    </tr>
+   </tbody></table>
+  </td></tr>
+ </tbody></table>
+</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg2951144"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=140547" title="View the profile of ZirconiumX">ZirconiumX</a></b>
+							<div class="smalltext">
+								Full Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 286<br />
+								Merit: 100<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_140547.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=140547"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2951144#msg2951144"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2951144">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2951144#msg2951144">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: August 18, 2013, 08:07:31 AM by ZirconiumX" class="edited">August 17, 2013, 01:16:37 PM</span><span class="editplain"><br />Last edit: August 18, 2013, 08:07:31 AM by ZirconiumX</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns42" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2951144#msg2951144">#42</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2950406#msg2950406">Quote from: botnet on August 17, 2013, 09:31:37 AM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2941475#msg2941475">Quote from: jlcooke on August 15, 2013, 08:41:58 PM</a></div><div class="quote">Hehe. &nbsp;I like encouraging people to explore this. &nbsp;Good learning &quot;exorcize&quot; (pun). &nbsp;32 bit addition logic for botnet: <a class="ul" href="http://jlcooke.ca/btc/sha256_logred.html">http://jlcooke.ca/btc/sha256_logred.html</a><br /><br />Just do that about 768 times and reduce! &nbsp;<img src="https://bitcointalk.org/Smileys/default/tongue.gif" alt="Tongue" border="0" /><br /></div><br />your c1...c31 bits can be reduced by one instruction <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /><br /><br />c1 == a1b1 + a1c0 + b1c0 <br />&nbsp;&nbsp; == a1(b1+c0) + b1c0<br /><br /><br /><br /></div><br /><del>Replacing ADD with MUL makes no difference.</del> It does indeed, since I didn&#039;t see that a<sub>1</sub>b<sub>1</sub> was a multiplication, not a value.<br /><br />Matthew:out</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2951144">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg2951181"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=143871" title="View the profile of faiza1990">faiza1990</a></b>
+							<div class="smalltext">
+								Sr. Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 420<br />
+								Merit: 250<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="https://bitcointalk.org/avatars/Bitcoin/heart_alt.png" alt="" class="avatar" border="0" /></div><br />
+								&#9733;&#9734;&#9733;777Coin&#9733;&#9734;&#9733;<br />
+								<br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=143871"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2951181#msg2951181"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2951181">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2951181#msg2951181">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 17, 2013, 01:27:13 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns43" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2951181#msg2951181">#43</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">Minning could return to normal people, minning <img src="https://bitcointalk.org/Smileys/default/undecided.gif" alt="Undecided" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2951181">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig143871"><span style="font-size: 16pt !important; line-height: 1.3em;"><a rel="ugc" class="ul" href="https://bitmixer.io"><span style="color: #0044ef;"><b>&#9619;&#9619;&#9619; BITMIXER.IO &#9619;&#9619;&#9619;<span style="color: #fb6b02;">&#9619;&#9619;&#9619; High Volume Bitcoin MIXER &#9619;&#9619;&#9619;</span></b></span></a></span></div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg2964454"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=22876" title="View the profile of botnet">botnet</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 35<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=22876"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2964454#msg2964454"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2964454">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2964454#msg2964454">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 19, 2013, 04:03:09 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns44" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2964454#msg2964454">#44</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2856474#msg2856474">Quote from: jesse11 on August 02, 2013, 09:54:00 PM</a></div><div class="quote">Thoughts? Make sure you have 32GB of RAM installed&nbsp; &nbsp;<img src="https://bitcointalk.org/Smileys/default/grin.gif" alt="Grin" border="0" /><br /></div><br />Do you guys know how often &#039;Version&#039; changes in the block header?&nbsp; Or more specifically, can any bits in the block header can be treated as constant for some extended period of time, for the purposes of mining?<br /><br />I am running into some memory concerns, mostly due to all the parallelization.&nbsp; The fewer variables in these equations the better <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2964454">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg2964596"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=138524" title="View the profile of smolen">smolen</a></b>
+							<div class="smalltext">
+								Hero Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 524<br />
+								Merit: 500<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=138524"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2964596#msg2964596"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2964596">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2964596#msg2964596">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 19, 2013, 04:20:42 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns45" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2964596#msg2964596">#45</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2964454#msg2964454">Quote from: botnet on August 19, 2013, 04:03:09 PM</a></div><div class="quote">can any bits in the block header can be treated as constant<br /></div>hashMerkleRoot <img src="https://bitcointalk.org/Smileys/default/grin.gif" alt="Grin" border="0" /><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2964596">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig138524">Of course I gave you bad advice. Good one is way out of your price range.</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b>
+		<a name="msg2964668"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=132278" title="View the profile of jlcooke">jlcooke</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 46<br />
+								Merit: 0<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_132278.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=132278"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2964668#msg2964668"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2964668">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2964668#msg2964668">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 19, 2013, 04:28:54 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns46" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2964668#msg2964668">#46</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2950406#msg2950406">Quote from: botnet on August 17, 2013, 09:31:37 AM</a></div><div class="quote">your c1...c31 bits can be reduced by one instruction <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /><br /><br />c1 == a1b1 + a1c0 + b1c0 <br />&nbsp; &nbsp;== a1(b1+c0) + b1c0<br /></div><br />Yes, but at the expense of 1 extra depth in the circuit.&nbsp; The form on the site is for shortest path - ideal for implementation.<br /><br /><br />c1 == a1b1 + a1c0 + b1c0 <br />&nbsp; &nbsp;== a1(b1+c0) + b1c0<br />or<br />&nbsp; &nbsp;== a1b1 + c0(a1 + b1)<br />or<br />&nbsp; &nbsp;== b1(a1 + c0) + a1c0</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2964668">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg2964809"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=132278" title="View the profile of jlcooke">jlcooke</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 46<br />
+								Merit: 0<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_132278.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=132278"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2964809#msg2964809"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2964809">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2964809#msg2964809">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 19, 2013, 04:46:37 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns47" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2964809#msg2964809">#47</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2964454#msg2964454">Quote from: botnet on August 19, 2013, 04:03:09 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2856474#msg2856474">Quote from: jesse11 on August 02, 2013, 09:54:00 PM</a></div><div class="quote">Thoughts? Make sure you have 32GB of RAM installed &nbsp; <img src="https://bitcointalk.org/Smileys/default/grin.gif" alt="Grin" border="0" /><br /></div><br />Do you guys know how often &#039;Version&#039; changes in the block header? &nbsp;Or more specifically, can any bits in the block header can be treated as constant for some extended period of time, for the purposes of mining?<br /><br />I am running into some memory concerns, mostly due to all the parallelization. &nbsp;The fewer variables in these equations the better <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /><br /></div><br />The last version change IIRC was at the last 50%+1 blockchain split earlier in the year.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2964809">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ">
+		<a name="msg2975018"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=132278" title="View the profile of jlcooke">jlcooke</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 46<br />
+								Merit: 0<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_132278.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=132278"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2975018#msg2975018"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2975018">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2975018#msg2975018">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 20, 2013, 09:12:13 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns48" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2975018#msg2975018">#48</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2964454#msg2964454">Quote from: botnet on August 19, 2013, 04:03:09 PM</a></div><div class="quote">I am running into some memory concerns, mostly due to all the parallelization.&nbsp; The fewer variables in these equations the better <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /><br /></div><br /><a rel="ugc" class="ul" href="http://jheusser.github.io/2013/02/03/satcoin.html">http://jheusser.github.io/2013/02/03/satcoin.html</a><br /><br />SAT solvers tried, didn&#039;t work.&nbsp; But I&#039;d still like to see a set of 256 monster logic formula with 2048 bit inputs for the SHA256 round function.&nbsp; <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2975018">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg2976399"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=138524" title="View the profile of smolen">smolen</a></b>
+							<div class="smalltext">
+								Hero Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 524<br />
+								Merit: 500<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=138524"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2976399#msg2976399"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2976399">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2976399#msg2976399">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 21, 2013, 01:45:21 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns49" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2976399#msg2976399">#49</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2975018#msg2975018">Quote from: jlcooke on August 20, 2013, 09:12:13 PM</a></div><div class="quote"><a class="ul" href="http://jheusser.github.io/2013/02/03/satcoin.html">http://jheusser.github.io/2013/02/03/satcoin.html</a><br />SAT solvers tried, didn&#039;t work<br /></div>...in such a naïve way <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2976399">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig138524">Of course I gave you bad advice. Good one is way out of your price range.</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg2988113"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=132278" title="View the profile of jlcooke">jlcooke</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 46<br />
+								Merit: 0<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_132278.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=132278"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2988113#msg2988113"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2988113">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2988113#msg2988113">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 22, 2013, 06:57:07 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns50" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2988113#msg2988113">#50</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2964454#msg2964454">Quote from: botnet on August 19, 2013, 04:03:09 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2856474#msg2856474">Quote from: jesse11 on August 02, 2013, 09:54:00 PM</a></div><div class="quote">Thoughts? Make sure you have 32GB of RAM installed&nbsp; &nbsp;<img src="https://bitcointalk.org/Smileys/default/grin.gif" alt="Grin" border="0" /><br /></div><br />Do you guys know how often &#039;Version&#039; changes in the block header?&nbsp; Or more specifically, can any bits in the block header can be treated as constant for some extended period of time, for the purposes of mining?<br /><br />I am running into some memory concerns, mostly due to all the parallelization.&nbsp; The fewer variables in these equations the better <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /><br /></div><br />Any updates?<br /><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2988113">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ">
+		<a name="msg2993878"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=22876" title="View the profile of botnet">botnet</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 35<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=22876"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2993878#msg2993878"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2993878">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2993878#msg2993878">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 23, 2013, 04:51:08 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns51" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2993878#msg2993878">#51</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2988113#msg2988113">Quote from: jlcooke on August 22, 2013, 06:57:07 PM</a></div><div class="quote">Any updates?<br /></div><br />Memory is the big issue right now, trying to run simulations to determine how much ram will be needed. <br />I did runs with 4, 6, 7, and 8 symbolic input bits to see the peak working set of the mathematica kernel.&nbsp; I picked bits from nonce to be symbolic, and the fixed bits came from a previously solved blockheader.<br /><br />4 bits: 79,312 K<br />6 bits: 84,720 K<br />7 bits: 89,372 K<br />8 bits: 850,800 K<br /><br />What&#039;s odd is it looked very linear until 8 bits were reached;&nbsp; It&#039;s running now with 9 bits across 4 cores, I&#039;ll have those results in about 30 hours. <br /><br />I also computed the equation length after PolynomialReduce at each node in the tree;&nbsp; I trust all the data except for &#039;7 bits&#039; where I maybe have recorded it wrong:<br /><br />4 bits: median: 25, max: 62<br />6 bits: median: 170, max:222<br />7 bits: median: 379, max:495<br />8 bits: median: 919, max:1218<br /><br />There the growth does appear linear. <br /><br />For 8 bits I also computed the number of nodes that contained two leaf node children.&nbsp; This is essentially the number of equations that can be simplified in parallel (before any potential adjustments to the tree.) Is there a word for this type of node? <br /><br />median: 17, max:96<br /><br />I can post the output equations if anyone is interested. <br /><br />Lastly, I would be open to try any other symbolic computation engines that support modulus-&gt;2 to compare speed and memory consumption.&nbsp; &nbsp;Any suggestions? <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /><br /><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2993878">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg2993972"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=132278" title="View the profile of jlcooke">jlcooke</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 46<br />
+								Merit: 0<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_132278.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=132278"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg2993972#msg2993972"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_2993972">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg2993972#msg2993972">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 23, 2013, 05:06:21 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns52" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg2993972#msg2993972">#52</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2993878#msg2993878">Quote from: botnet on August 23, 2013, 04:51:08 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2988113#msg2988113">Quote from: jlcooke on August 22, 2013, 06:57:07 PM</a></div><div class="quote">Any updates?<br /></div><br />Memory is the big issue right now, trying to run simulations to determine how much ram will be needed. <br />I did runs with 4, 6, 7, and 8 symbolic input bits to see the peak working set of the mathematica kernel.&nbsp; I picked bits from nonce to be symbolic, and the fixed bits came from a previously solved blockheader.<br /><br />4 bits: 79,312 K<br />6 bits: 84,720 K<br />7 bits: 89,372 K<br />8 bits: 850,800 K<br /><br />What&#039;s odd is it looked very linear until 8 bits were reached;&nbsp; It&#039;s running now with 9 bits across 4 cores, I&#039;ll have those results in about 30 hours. <br /><br />I also computed the equation length after PolynomialReduce at each node in the tree;&nbsp; I trust all the data except for &#039;7 bits&#039; where I maybe have recorded it wrong:<br /><br />4 bits: median: 25, max: 62<br />6 bits: median: 170, max:222<br />7 bits: median: 379, max:495<br />8 bits: median: 919, max:1218<br /><br />There the growth does appear linear. <br /><br />For 8 bits I also computed the number of nodes that contained two leaf node children.&nbsp; This is essentially the number of equations that can be simplified in parallel (before any potential adjustments to the tree.) Is there a word for this type of node? <br /><br />median: 17, max:96<br /><br />I can post the output equations if anyone is interested. <br /><br />Lastly, I would be open to try any other symbolic computation engines that support modulus-&gt;2 to compare speed and memory consumption.&nbsp; &nbsp;Any suggestions? <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /><br /><br /><br /></div><br />Cool.&nbsp; How are you generating the formulas?&nbsp; Iterating through each input possibility?<br /><br />The 8th bit &quot;explosion&quot; is probably due to triggering the use of a 2nd path of 32bit addition.<br /><br />The formulas for 32bit add (64 in, 32 out) get very large very quickly (<a rel="ugc" class="ul" href="http://jlcooke.ca/btc/sha256_logred_formulas.html">http://jlcooke.ca/btc/sha256_logred_formulas.html</a>) due to carry bits.&nbsp; Result r_31 depends on a_31 .. a_0 and b_31 .. b_0.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_2993972">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg3009819"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=22876" title="View the profile of botnet">botnet</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 35<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=22876"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg3009819#msg3009819"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_3009819">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg3009819#msg3009819">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 26, 2013, 06:40:30 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns53" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg3009819#msg3009819">#53</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg2993972#msg2993972">Quote from: jlcooke on August 23, 2013, 05:06:21 PM</a></div><div class="quote">Cool.&nbsp; How are you generating the formulas?&nbsp; Iterating through each input possibility?<br /><br />The 8th bit &quot;explosion&quot; is probably due to triggering the use of a 2nd path of 32bit addition.<br /><br />The formulas for 32bit add (64 in, 32 out) get very large very quickly (<a rel="ugc" class="ul" href="http://jlcooke.ca/btc/sha256_logred_formulas.html">http://jlcooke.ca/btc/sha256_logred_formulas.html</a>) due to carry bits.&nbsp; Result r_31 depends on a_31 .. a_0 and b_31 .. b_0.<br /></div><br />To generate formulas, I do an in-order walk of the tree, and simplify at each level going up... although I&#039;m not sure I fully understand your quesiton. <br /><br />Quick update, I&#039;ve been trying out Maple as a potential replacement for Mathematica.&nbsp; BooleanSimplify chokes on even 8 bits, but doing simplify( (arithmetic expression mod 2, {a*a-a, b*b-b, c*c-c, ....}) does way better.&nbsp; &nbsp;Maple seems to evaluate these expressions an order of magnitude faster than mathematica, although the resulting equations aren&#039;t as compact.&nbsp; It also consumed a modest 300 megs of memory for 8 bits.&nbsp; Still learning the maple syntax so things might improve. <br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3009819">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ">
+		<a name="msg3011153"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=132278" title="View the profile of jlcooke">jlcooke</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 46<br />
+								Merit: 0<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_132278.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=132278"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg3011153#msg3011153"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_3011153">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg3011153#msg3011153">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 26, 2013, 12:24:24 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns54" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg3011153#msg3011153">#54</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3009819#msg3009819">Quote from: botnet on August 26, 2013, 06:40:30 AM</a></div><div class="quote">To generate formulas, I do an in-order walk of the tree, and simplify at each level going up... although I&#039;m not sure I fully understand your quesiton. <br /><br />Quick update, I&#039;ve been trying out Maple as a potential replacement for Mathematica.&nbsp; BooleanSimplify chokes on even 8 bits, but doing simplify( (arithmetic expression mod 2, {a*a-a, b*b-b, c*c-c, ....}) does way better.&nbsp; &nbsp;Maple seems to evaluate these expressions an order of magnitude faster than mathematica, although the resulting equations aren&#039;t as compact.&nbsp; It also consumed a modest 300 megs of memory for 8 bits.&nbsp; Still learning the maple syntax so things might improve. <br /><br /></div><br />OK I think I see now.<br /><br />I&#039;ll PM you a link to my C code for logic reduction in a few mins.&nbsp; You can compile C right?&nbsp; And know how to code?&nbsp; It should be quite a bit faster than Mathmatica or Maple.<br /><br />It uses de Morgan&#039;s rules and some basic reduction rules to optimize the circuit.<br />&nbsp;<ul style="margin-top: 0; margin-bottom: 0;"><li> !(AB) = !A + !B, </li><li> A = A + AB, and</li><li> A + B = A + !AB</li></ul><br />It takes about 4 hours to complete a single 32-bit addition.&nbsp; The API has all the basic operations you want (AND, OR, XOR, NOT, etc).</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3011153">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ">
+		<a name="msg3015989"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=22876" title="View the profile of botnet">botnet</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 35<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=22876"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg3015989#msg3015989"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_3015989">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg3015989#msg3015989">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 27, 2013, 03:48:04 AM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns55" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg3015989#msg3015989">#55</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3011153#msg3011153">Quote from: jlcooke on August 26, 2013, 12:24:24 PM</a></div><div class="quote">I&#039;ll PM you a link to my C code for logic reduction in a few mins.&nbsp; You can compile C right?&nbsp; And know how to code?&nbsp; It should be quite a bit faster than Mathmatica or Maple.<br /><br />It uses de Morgan&#039;s rules and some basic reduction rules to optimize the circuit.<br /></div><br />This is excellent by the way <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /> I will start integrating with my code.&nbsp; &nbsp;Right now my stuff is all C#, so I will have to compile your code into a lib and do marshaling -&nbsp; though at first glance of your API I don&#039;t think marshaling will have too bad of a perf impact.&nbsp; &nbsp;I&#039;ll try with c=a+b to test the runtime and validate the results match yours. <br /><br />Do you know how your de Morgan approach compares to this Quine McCluskey one I keep reading about? <a rel="ugc" class="ul" href="http://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm">http://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm</a><br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3015989">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b>
+		<a name="msg3018534"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=132278" title="View the profile of jlcooke">jlcooke</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 46<br />
+								Merit: 0<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_132278.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=132278"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg3018534#msg3018534"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_3018534">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg3018534#msg3018534">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: August 27, 2013, 05:36:29 PM by jlcooke" class="edited">August 27, 2013, 02:16:16 PM</span><span class="editplain"><br />Last edit: August 27, 2013, 05:36:29 PM by jlcooke</span></div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns56" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg3018534#msg3018534">#56</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3015989#msg3015989">Quote from: botnet on August 27, 2013, 03:48:04 AM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3011153#msg3011153">Quote from: jlcooke on August 26, 2013, 12:24:24 PM</a></div><div class="quote">I&#039;ll PM you a link to my C code for logic reduction in a few mins. &nbsp;You can compile C right? &nbsp;And know how to code? &nbsp;It should be quite a bit faster than Mathmatica or Maple.<br /><br />It uses de Morgan&#039;s rules and some basic reduction rules to optimize the circuit.<br /></div><br />This is excellent by the way <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" /> I will start integrating with my code. &nbsp; Right now my stuff is all C#, so I will have to compile your code into a lib and do marshaling - &nbsp;though at first glance of your API I don&#039;t think marshaling will have too bad of a perf impact. &nbsp; I&#039;ll try with c=a+b to test the runtime and validate the results match yours. <br /><br />Do you know how your de Morgan approach compares to this Quine McCluskey one I keep reading about? <a rel="ugc" class="ul" href="http://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm">http://en.wikipedia.org/wiki/Quine%E2%80%93McCluskey_algorithm</a><br /><br /></div><br />Quine-McCluskey is the analytical twin of Karnaugh Maps (<a rel="ugc" class="ul" href="http://en.wikipedia.org/wiki/Karnaugh_map">http://en.wikipedia.org/wiki/Karnaugh_map</a>)<br /><br />Basically, QMC/KMap takes I/O and creates formulas. &nbsp;My lib lets you build the formulas directly and simplify them. &nbsp;You *could* create the formulas based on I/Os I guess. &nbsp;But since we know the SHA-256 formulas you could skip that step.<br /><br />In fact you really want to, otherwise you will never have the correct formula unless you iterate all possible inputs for the SHA256 compression function (2^256 + 2^(W-array inputs) ).<br /><br />Even 2^32 addition is going to be massive. &nbsp;The nth (0..31) output bit of 32bit-add will be 2^(n+1) terms long. &nbsp;You&#039;re only hope is multiple 32bit-adds start simplifying.<br /><br />Download logred_v3.zip - there was a bug in performing (A+BCD+EFG+...)(HI+!JK+...)(...)... operations.<br /><br />Cheers<br /><br />Edit: <b><br />Playing a bit here, turns out the A=A+AB and A+B=A+!AB reductions have no effect in 32bit add.&nbsp; Guess that&#039;s what makes it a nice 32bit bijection.<br /><br />Download logred_v4.zip which will be faster for your application.<br /><br />You can disable those reduction algorithms by commenting out logred_set_reduce_2_A_AB() and logred_set_reduce_4_A_nAB_n() inside logred_set_reduce() <br /></b></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3018534">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ">
+		<a name="msg3036289"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=22876" title="View the profile of botnet">botnet</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 35<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=22876"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_3036289">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 29, 2013, 04:10:15 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns57" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289">#57</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3018534#msg3018534">Quote from: jlcooke on August 27, 2013, 02:16:16 PM</a></div><div class="quote">Playing a bit here, turns out the A=A+AB and A+B=A+!AB reductions have no effect in 32bit add.&nbsp; Guess that&#039;s what makes it a nice 32bit bijection.<br /><br />Download logred_v4.zip which will be faster for your application.<br /><br />You can disable those reduction algorithms by commenting out logred_set_reduce_2_A_AB() and logred_set_reduce_4_A_nAB_n() inside logred_set_reduce() <br /></div><br />Been trying this out, so many questions... <br /><br />1) &nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;a00 + a00&quot;);<br />&nbsp;&nbsp;&nbsp;logred_set_reduce(a);<br />&nbsp;&nbsp;&nbsp;logred_set_printf(a);<br /><br />Shouldn&#039;t that always produce 0?&nbsp; &nbsp;for me it outputs a00<br /><br />2) Similarly I would expect (a + !a) = 1<br />&nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;a00&quot;);<br />&nbsp;&nbsp;&nbsp;logred_set_not(b, a);<br />&nbsp;&nbsp;&nbsp;logred_set_xor(c, a, b);<br />= crash<br /><br />3) Haven&#039;t debugged enough, but part 2 could be related to this?:<br />&nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;!a00!b00&quot;); = works<br />&nbsp;&nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;!a00&quot;); = crash<br /><br />4) Actually, is there support for numeric literals (0, 1)?&nbsp; c = a+b is purely symbolic, but during SHA256 you add in those K-Constants which can sometimes help reduce things further. <br /><br />4) x64 only?&nbsp; This is giving me heap problems:<br />#define VAR_T&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;size_t<br />#define VAR_T_SIZE_BITS ( 8 * sizeof(VAR_T) )<br />#define VAR_A_BITS&nbsp; &nbsp; &nbsp; 256<br />#define VAR_A_LEN&nbsp; &nbsp; &nbsp; &nbsp;4L&nbsp; &nbsp;<br /><br />(worked around setting VAR_A_BITS = 128... maybe this is the source of all my problems? <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" />)</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3036289">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b>
+		<a name="msg3036414"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=132278" title="View the profile of jlcooke">jlcooke</a></b>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 46<br />
+								Merit: 0<br /><br />
+								<div style="overflow: auto; width: 100%;"><img src="/useravatars/avatar_132278.png" alt="" class="avatar" border="0" /></div><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=132278"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036414#msg3036414"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_3036414">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg3036414#msg3036414">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 29, 2013, 04:27:22 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns58" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg3036414#msg3036414">#58</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">Note: working on Quine-McClusky now.&nbsp; <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" />&nbsp; Always wanted a high speed lib for logic reductions ...<br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289">Quote from: botnet on August 29, 2013, 04:10:15 PM</a></div><div class="quote">Been trying this out, so many questions... <br /><br />1) &nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;a00 + a00&quot;);<br />&nbsp;&nbsp;&nbsp;logred_set_reduce(a);<br />&nbsp;&nbsp;&nbsp;logred_set_printf(a);<br /><br />Shouldn&#039;t that always produce 0?&nbsp; &nbsp;for me it outputs a00<br /></div><br />Nope.&nbsp; A or A == A.&nbsp; &nbsp;A or !A == 1&nbsp; and A!A = 0<br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289">Quote from: botnet on August 29, 2013, 04:10:15 PM</a></div><div class="quote">2) Similarly I would expect (a + !a) = 1<br />&nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;a00&quot;);<br />&nbsp;&nbsp;&nbsp;logred_set_not(b, a);<br />&nbsp;&nbsp;&nbsp;logred_set_xor(c, a, b);<br />= crash<br /></div><br />a = &quot;a00&quot;<br />b = &quot;!a00&quot;<br />c = &quot;a00&quot; ^ &quot;!a00&quot;<br />&nbsp; = a00!(!a00) + !(a00)!a00<br />&nbsp; = a00 + !a00<br />&nbsp; = 1<br /><br />Yup, it crashes.&nbsp; Comments out &quot;logred_set_reduce_4_A_nAB_n(src)&quot; in &quot;logred_set_reduce()&quot; to fix this.<br /><br />It doesn&#039;t resolve down to &quot;1&quot; yet.&nbsp; soon.<br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289">Quote from: botnet on August 29, 2013, 04:10:15 PM</a></div><div class="quote">3) Haven&#039;t debugged enough, but part 2 could be related to this?:<br />&nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;!a00!b00&quot;); = works<br />&nbsp;&nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;!a00&quot;); = crash<br /></div><br />Version I&#039;m working on doesn&#039;t crash on this.&nbsp; <br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289">Quote from: botnet on August 29, 2013, 04:10:15 PM</a></div><div class="quote">4) Actually, is there support for numeric literals (0, 1)?&nbsp; c = a+b is purely symbolic, but during SHA256 you add in those K-Constants which can sometimes help reduce things further. <br /></div><br />Humm, good point.&nbsp; Will not be ready for this release. Soon.<br /><br /><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289">Quote from: botnet on August 29, 2013, 04:10:15 PM</a></div><div class="quote">4) x64 only?&nbsp; This is giving me heap problems:<br />#define VAR_T&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;size_t<br />#define VAR_T_SIZE_BITS ( 8 * sizeof(VAR_T) )<br />#define VAR_A_BITS&nbsp; &nbsp; &nbsp; 256<br />#define VAR_A_LEN&nbsp; &nbsp; &nbsp; &nbsp;4L&nbsp; &nbsp;<br /><br />(worked around setting VAR_A_BITS = 128... maybe this is the source of all my problems? <img src="https://bitcointalk.org/Smileys/default/smiley.gif" alt="Smiley" border="0" />)<br /></div><br />The code should be x32/x64 agnostic.&nbsp; logred_v6.zip is a snapshot of what I have so far.&nbsp; Ignore the logred_set_reduce_5_Quine_McCluskey() functions.<br /><br />The Makefile now lets you define a bunch of flags like VAR_A_BITS.&nbsp; But it should work for values up to 960.&nbsp; It may work beyond that with some tweeks to the variable string lenghts (&quot;a960&quot; and &quot;a1024&quot; are different lengths).<br /><br />Cheers.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3036414">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ">
+		<a name="msg3038600"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=22876" title="View the profile of botnet">botnet</a></b> <span title="This member is the topic-starter" style="cursor: help;">(OP)</span>
+							<div class="smalltext">
+								Newbie<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 35<br />
+								Merit: 0<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=22876"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg3038600#msg3038600"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_3038600">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg3038600#msg3038600">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 29, 2013, 09:40:11 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns59" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg3038600#msg3038600">#59</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036414#msg3036414">Quote from: jlcooke on August 29, 2013, 04:27:22 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?topic=265759.msg3036289#msg3036289">Quote from: botnet on August 29, 2013, 04:10:15 PM</a></div><div class="quote">1) &nbsp;&nbsp;&nbsp;logred_set_scanf(a, &quot;a00 + a00&quot;);<br />&nbsp;&nbsp;&nbsp;logred_set_reduce(a);<br />&nbsp;&nbsp;&nbsp;logred_set_printf(a);<br /><br />Shouldn&#039;t that always produce 0?&nbsp; &nbsp;for me it outputs a00<br /></div>Nope.&nbsp; A or A == A.&nbsp; &nbsp;A or !A == 1&nbsp; and A!A = 0<br /></div><br />Ahh, there was misunderstanding about the + operator. <br />I&#039;ve been thinking about arithmetic operations mod 2, where &quot;(a+b) mod 2&quot; is equivalent to XOR <br />0+0 = 0, 0 mod 2 = 0<br />0+1 = 1, 1 mod 2 = 1<br />1+0 = 1, 1 mod 2 = 1<br />1+1 = 2, 2 mod 2 = 0<br />= XOR<br /></div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3038600">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr class="ikmSeyPbFDoBcNWUIFzNxA"><td class="duvjywYhJeagwKUBVdyAqQ"><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b><b><i></i></b>
+		<a name="msg3042056"></a>
+		<table width="100%" cellpadding="3" cellspacing="0" border="0">
+			<tr><td class="windowbg2">
+				<table width="100%" cellpadding="5" cellspacing="0" style="table-layout: fixed;">
+					<tr>
+								<td valign="top" width="16%" rowspan="2" style="overflow: hidden;" class="poster_info">
+							<b><a href="https://bitcointalk.org/index.php?action=profile;u=45340" title="View the profile of Nancarrow">Nancarrow</a></b>
+							<div class="smalltext">
+								Hero Member<br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><img src="https://bitcointalk.org/Themes/custom1/images/star.gif" alt="*" border="0" /><br />
+								<img src="https://bitcointalk.org/Themes/custom1/images/useroff.gif" alt="Offline" border="0" style="margin-top: 2px;" /><span class="smalltext"> Offline</span><br /><br />
+								Activity: 492<br />
+								Merit: 500<br /><br />
+								
+								
+								
+								<br />
+								<a href="https://bitcointalk.org/index.php?action=profile;u=45340"><img src="https://bitcointalk.org/Themes/custom1/images/icons/profile_sm.gif" alt="View Profile" title="View Profile" border="0" /></a><br />
+							</div>
+						</td>
+								<td valign="top" width="85%" height="100%" style="padding: 2px;" class="td_headerandpost">
+							<table width="100%" border="0"><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?topic=265759.msg3042056#msg3042056"><img src="https://bitcointalk.org/Themes/custom1/images/post/xx.gif" alt="" border="0" /></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_3042056">
+										<a href="https://bitcointalk.org/index.php?topic=265759.msg3042056#msg3042056">Re: Potentially faster method for mining on the CPU</a>
+									</div>
+												<div class="smalltext">August 30, 2013, 12:22:46 PM</div></td>
+										  <td align="right" valign="middle" height="20" style="font-size: smaller; padding-top: 4px;" class="td_buttons" ><div id="ignmsgbttns60" style="visibility: visible;">  <a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?topic=265759.msg3042056#msg3042056">#60</a>
+		 </div>
+								</td>
+							</tr></table>
+									 <hr width="100%" size="1" class="hrcolor"  style="margin-top: 4px;" />
+							<div class="post">Best of luck with this, botnet, but I feel it&#039;s a wild goose chase. I first heard about bitcoins in autumn 2011 and immediately set about trying to &#039;simplify&#039; sha256(sha256(x)) in the same way as you, by trying to find boolean expressions for the first bits of the output in terms of the 640 bits of input. As you&#039;ve found out, it&#039;s the seemingly simple addition of two 32-bit numbers that&#039;s the big problem. It simply doesn&#039;t lend itself to being simplfied, as it&#039;s recursive. As you crawl along the bits from right to left the expression balloons exponentially. All the other operations in SHA-256, the logical connectives and the rotations/shifts are trivial by comparison.<br /><br />You might want to look into the structure of the block header to see how the 640 bits change at different rates. Fr&#039;instance I believe the version number (first 32 bits of the header, but in stupid-endian) has been 1 for most of bitcoin&#039;s history but may be 2 now or soon. That&#039;s 30 zero bits right there. Then you have the first (or, goddammit, probably last) 32 bits of the previous hash guaranteed to be zero. The difficulty changes every two weeks, the merkle hash every block, and so on.<br /><br />But I still think you haven&#039;t quite grasped the magnitude of the P/NP problem yet! Then again, if the impossible ever gets done, it&#039;ll be as always, by someone who didn&#039;t know it was impossible.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="bottom" class="smalltext" width="85%">
+							<table width="100%" border="0" style="table-layout: fixed;"><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td valign="bottom" class="smalltext" id="modified_3042056">
+								</td>
+								<td align="right" valign="bottom" class="smalltext">
+									<img src="https://bitcointalk.org/Themes/custom1/images/ip.gif" alt="" border="0" />
+								</td>
+							</tr></table>
+							<hr width="100%" size="1" class="hrcolor" />
+							<div class="signature sig45340">If I&#39;ve said anything amusing and/or informative and you&#39;re feeling generous:<br />1GNJq39NYtf7cn2QFZZuP5vmC1mTs63rEW</div>
+						</td>
+					</tr>
+				</table>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</table>
+<a name="lastPost"></a>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td class="middletext">Pages: <span class="prevnext"><a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.20">&#171;</a> </span><a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.0">1</a> <a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.20">2</a> [<b>3</b>] <a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.60">4</a> <span class="prevnext"><a class="navPages" href="https://bitcointalk.org/index.php?topic=265759.60">&#187;</a> </span>&nbsp;<a href="https://bitcointalk.org/index.php?topic=265759.0;all">All</a> </td>
+		<td align="right" style="padding-right: 1ex;">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					
+		<td class="maintab_first">&nbsp;</td>
+		<td class="maintab_back"><a href="https://bitcointalk.org/index.php?action=printpage;topic=265759.0" target="_blank">Print</a></td>
+		<td class="maintab_last">&nbsp;</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<script language="JavaScript" type="text/javascript" src="https://bitcointalk.org/Themes/default/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript">//<!--
+	quickReplyCollapsed = true;
+
+	smf_topic = 265759;
+	smf_start = 40;
+	smf_show_modify = 0;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="fd8ad59fa79c545e63be328ba3c8678c" /><input type="hidden" name="topic" value="265759" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'fd8ad59fa79c545e63be328ba3c8678c\');" accesskey="s" />&nbsp;&nbsp;<input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="https://bitcointalk.org/index.php?topic=265759.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject% &nbsp;(Read 14135 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// --></script>
+<table border="0" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom: 1ex;">
+		<tr>
+				<td valign="top"><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="https://bitcointalk.org/index.php" class="nav">Bitcoin Forum</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php#1" class="nav">Bitcoin</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?board=14.0" class="nav">Mining</a></b>&nbsp;>&nbsp;<b><a href="https://bitcointalk.org/index.php?topic=265759.0" class="nav">Potentially faster method for mining on the CPU</a></b></div></td> 
+				<td valign="top" align="right" class="nav"> <a href="https://bitcointalk.org/index.php?topic=265759.0;prev_next=prev#new">&laquo; previous topic</a> <a href="https://bitcointalk.org/index.php?topic=265759.0;prev_next=next#new">next topic &raquo;</a></td>
+		</tr>
+</table>
+	<table cellpadding="0" cellspacing="0" border="0" style="margin-left: 1ex;">
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+</form>
+<div class="tborder"><div class="titlebg2" style="padding: 4px;" align="right">
+	<form action="https://bitcointalk.org/index.php" method="get" accept-charset="ISO-8859-1" style="padding:0; margin: 0;">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#1">Bitcoin</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=1.0"> => Bitcoin Discussion</option>
+			<option value="?board=74.0"> ===> Legal</option>
+			<option value="?board=77.0"> ===> Press</option>
+			<option value="?board=86.0"> ===> Meetups</option>
+			<option value="?board=87.0"> ===> Important Announcements</option>
+			<option value="?board=6.0"> => Development &amp; Technical Discussion</option>
+			<option value="?board=37.0"> ===> Wallet software</option>
+			<option value="?board=98.0"> =====> Electrum</option>
+			<option value="?board=100.0"> =====> Bitcoin Wallet for Android</option>
+			<option value="?board=138.0"> =====> BitcoinJ</option>
+			<option value="?board=97.0"> =====> Armory</option>
+			<option value="?board=231.0"> =====> Mycelium</option>
+			<option value="?board=261.0"> =====> Hardware wallets</option>
+			<option value="?board=14.0" selected="selected"> => Mining</option>
+			<option value="?board=40.0"> ===> Mining support</option>
+			<option value="?board=41.0"> ===> Pools</option>
+			<option value="?board=42.0"> ===> Mining software (miners)</option>
+			<option value="?board=76.0"> ===> Hardware</option>
+			<option value="?board=137.0"> =====> Group buys</option>
+			<option value="?board=81.0"> ===> Mining speculation</option>
+			<option value="?board=4.0"> => Bitcoin Technical Support</option>
+			<option value="?board=12.0"> => Project Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Economy</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=7.0"> => Economics</option>
+			<option value="?board=57.0"> ===> Speculation</option>
+			<option value="?board=5.0"> => Marketplace</option>
+			<option value="?board=51.0"> ===> Goods</option>
+			<option value="?board=75.0"> =====> Computer hardware</option>
+			<option value="?board=93.0"> =====> Digital goods</option>
+			<option value="?board=234.0"> =======> Invites &amp; Accounts</option>
+			<option value="?board=217.0"> =====> Collectibles</option>
+			<option value="?board=52.0"> ===> Services</option>
+			<option value="?board=53.0"> ===> Currency exchange</option>
+			<option value="?board=56.0"> ===> Gambling</option>
+			<option value="?board=71.0"> =====> Games and rounds</option>
+			<option value="?board=207.0"> =====> Investor-based games</option>
+			<option value="?board=228.0"> =====> Gambling discussion</option>
+			<option value="?board=65.0"> ===> Lending</option>
+			<option value="?board=88.0"> =====> Long-term offers</option>
+			<option value="?board=78.0"> ===> Securities</option>
+			<option value="?board=73.0"> ===> Auctions</option>
+			<option value="?board=84.0"> ===> Service Announcements</option>
+			<option value="?board=212.0"> =====> Micro Earnings</option>
+			<option value="?board=85.0"> ===> Service Discussion</option>
+			<option value="?board=222.0"> =====> Web Wallets</option>
+			<option value="?board=223.0"> =====> Exchanges</option>
+			<option value="?board=8.0"> => Trading Discussion</option>
+			<option value="?board=83.0"> ===> Scam Accusations</option>
+			<option value="?board=129.0"> ===> Reputation</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Other</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=24.0"> => Meta</option>
+			<option value="?board=167.0"> ===> New forum software</option>
+			<option value="?board=168.0"> ===> Bitcoin Wiki</option>
+			<option value="?board=34.0"> => Politics &amp; Society</option>
+			<option value="?board=39.0"> => Beginners &amp; Help</option>
+			<option value="?board=9.0"> => Off-topic</option>
+			<option value="?board=250.0"> => Serious discussion</option>
+			<option value="?board=251.0"> ===> Ivory Tower</option>
+			<option value="?board=59.0"> => Archival</option>
+			<option value="?board=92.0"> ===> &#1050;&#1086;&#1088;&#1079;&#1080;&#1085;&#1072;</option>
+			<option value="?board=44.0"> ===> CPU/GPU Bitcoin mining hardware</option>
+			<option value="?board=17.0"> ===> Chinese students</option>
+			<option value="?board=25.0"> ===> Obsolete (buying)</option>
+			<option value="?board=26.0"> ===> Obsolete (selling)</option>
+			<option value="?board=99.0"> ===> MultiBit</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#6">Alternate cryptocurrencies</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=67.0"> => Altcoin Discussion</option>
+			<option value="?board=159.0"> => Announcements (Altcoins)</option>
+			<option value="?board=240.0"> ===> Tokens (Altcoins)</option>
+			<option value="?board=160.0"> => Mining (Altcoins)</option>
+			<option value="?board=199.0"> ===> Pools (Altcoins)</option>
+			<option value="?board=161.0"> => Marketplace (Altcoins)</option>
+			<option value="?board=197.0"> ===> Service Announcements (Altcoins)</option>
+			<option value="?board=198.0"> ===> Service Discussion (Altcoins)</option>
+			<option value="?board=238.0"> ===> Bounties (Altcoins)</option>
+			<option value="?board=224.0"> => Speculation (Altcoins)</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Local</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=241.0"> => &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577; (Arabic)</option>
+			<option value="?board=242.0"> ===> &#1575;&#1604;&#1593;&#1605;&#1604;&#1575;&#1578; &#1575;&#1604;&#1576;&#1583;&#1610;&#1604;&#1577; (Altcoins)</option>
+			<option value="?board=265.0"> =====> &#1575;&#1604;&#1606;&#1602;&#1575;&#1588;&#1575;&#1578;</option>
+			<option value="?board=253.0"> ===> &#1573;&#1587;&#1578;&#1601;&#1587;&#1575;&#1585;&#1575;&#1578; &#1608; &#1571;&#1587;&#1574;&#1604;&#1577; &#1575;&#1604;&#1605;&#1576;&#1578;&#1583;&#1574;&#1610;&#1606;</option>
+			<option value="?board=266.0"> ===> &#1575;&#1604;&#1578;&#1593;&#1583;&#1610;&#1606;</option>
+			<option value="?board=267.0"> ===> &#1575;&#1604;&#1606;&#1602;&#1575;&#1588;&#1575;&#1578; &#1575;&#1604;&#1571;&#1582;&#1585;&#1609;</option>
+			<option value="?board=271.0"> ===> &#1605;&#1606;&#1589;&#1575;&#1578; &#1575;&#1604;&#1578;&#1576;&#1575;&#1583;&#1604;</option>
+			<option value="?board=191.0"> => Bahasa Indonesia (Indonesian)</option>
+			<option value="?board=193.0"> ===> Jual Beli</option>
+			<option value="?board=194.0"> ===> Mining (Bahasa Indonesia)</option>
+			<option value="?board=192.0"> ===> Altcoins (Bahasa Indonesia)</option>
+			<option value="?board=27.0"> => Español (Spanish)</option>
+			<option value="?board=31.0"> ===> Mercado y Economía</option>
+			<option value="?board=202.0"> =====> Servicios</option>
+			<option value="?board=203.0"> =====> Trading y especulación</option>
+			<option value="?board=32.0"> ===> Hardware y Minería</option>
+			<option value="?board=33.0"> ===> Esquina Libre</option>
+			<option value="?board=101.0"> ===> Mercadillo</option>
+			<option value="?board=102.0"> =====> Mexico</option>
+			<option value="?board=103.0"> =====> Argentina</option>
+			<option value="?board=104.0"> =====> España</option>
+			<option value="?board=105.0"> =====> Centroamerica y Caribe</option>
+			<option value="?board=130.0"> ===> Primeros pasos y ayuda</option>
+			<option value="?board=151.0"> ===> Altcoins (criptomonedas alternativas)</option>
+			<option value="?board=177.0"> =====> Minería de altcoins</option>
+			<option value="?board=204.0"> =====> Servicios</option>
+			<option value="?board=254.0"> =====> Tokens (Español)</option>
+			<option value="?board=30.0"> => &#20013;&#25991; (Chinese)</option>
+			<option value="?board=117.0"> ===> &#36339;&#34468;&#24066;&#22330;</option>
+			<option value="?board=118.0"> ===> &#23665;&#23528;&#24065;</option>
+			<option value="?board=119.0"> ===> &#23186;&#20307;</option>
+			<option value="?board=146.0"> ===> &#25366;&#30719;</option>
+			<option value="?board=196.0"> ===> &#31163;&#39064;&#19975;&#37324;</option>
+			<option value="?board=201.0"> => Hrvatski (Croatian)</option>
+			<option value="?board=220.0"> ===> Trgovina</option>
+			<option value="?board=221.0"> ===> Altcoins (Hrvatski)</option>
+			<option value="?board=273.0"> =====> Announcements (Hrvatski)</option>
+			<option value="?board=272.0"> ===> Off-topic (Hrvatski)</option>
+			<option value="?board=16.0"> => Deutsch (German)</option>
+			<option value="?board=62.0"> ===> Anfänger und Hilfe</option>
+			<option value="?board=60.0"> ===> Mining (Deutsch)</option>
+			<option value="?board=61.0"> ===> Trading und Spekulation</option>
+			<option value="?board=63.0"> ===> Projektentwicklung</option>
+			<option value="?board=64.0"> ===> Off-Topic (Deutsch)</option>
+			<option value="?board=139.0"> ===> Treffen</option>
+			<option value="?board=140.0"> ===> Presse </option>
+			<option value="?board=152.0"> ===> Altcoins (Deutsch)</option>
+			<option value="?board=270.0"> =====> Announcements (Deutsch)</option>
+			<option value="?board=269.0"> ===> Marktplatz</option>
+			<option value="?board=141.0"> =====> Auktionen</option>
+			<option value="?board=36.0"> =====> Suche</option>
+			<option value="?board=35.0"> =====> Biete</option>
+			<option value="?board=120.0"> => &#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940; (Greek)</option>
+			<option value="?board=136.0"> ===> &#913;&#947;&#959;&#961;&#940;</option>
+			<option value="?board=195.0"> ===> Mining Discussion (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=179.0"> ===> Altcoins (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=246.0"> =====> Altcoin Announcements (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=247.0"> =====> Altcoin Mining (&#917;&#955;&#955;&#951;&#957;&#953;&#954;&#940;)</option>
+			<option value="?board=95.0"> => &#1506;&#1489;&#1512;&#1497;&#1514; (Hebrew)</option>
+			<option value="?board=13.0"> => Français</option>
+			<option value="?board=183.0"> ===> Actualité et News</option>
+			<option value="?board=208.0"> ===> Débutants</option>
+			<option value="?board=47.0"> ===> Discussions générales et utilisation du Bitcoin</option>
+			<option value="?board=48.0"> ===> Mining et Hardware</option>
+			<option value="?board=187.0"> ===> Économie et spéculation</option>
+			<option value="?board=49.0"> ===> Place de marché</option>
+			<option value="?board=209.0"> =====> Échanges</option>
+			<option value="?board=210.0"> =====> Produits et services</option>
+			<option value="?board=211.0"> =====> Petites annonces</option>
+			<option value="?board=188.0"> ===> Le Bitcoin et la loi</option>
+			<option value="?board=54.0"> ===> Wiki, documentation et traduction</option>
+			<option value="?board=186.0"> ===> Développement et technique</option>
+			<option value="?board=184.0"> ===> Vos sites et projets</option>
+			<option value="?board=50.0"> ===> Hors-sujet</option>
+			<option value="?board=149.0"> ===> Altcoins (Français)</option>
+			<option value="?board=258.0"> =====> Annonces</option>
+			<option value="?board=89.0"> => India</option>
+			<option value="?board=121.0"> ===> Mining (India)</option>
+			<option value="?board=122.0"> ===> Marketplace (India)</option>
+			<option value="?board=123.0"> ===> Regional Languages (India)</option>
+			<option value="?board=124.0"> ===> Press &amp; News from India</option>
+			<option value="?board=125.0"> ===> Alt Coins (India)</option>
+			<option value="?board=126.0"> ===> Buyer/ Seller Reputations (India)</option>
+			<option value="?board=127.0"> ===> Off-Topic (India)</option>
+			<option value="?board=28.0"> => Italiano (Italian)</option>
+			<option value="?board=153.0"> ===> Guide (Italiano)</option>
+			<option value="?board=169.0"> ===> Progetti</option>
+			<option value="?board=205.0"> ===> Discussioni avanzate e sviluppo</option>
+			<option value="?board=175.0"> ===> Trading, analisi e speculazione</option>
+			<option value="?board=170.0"> ===> Mercato</option>
+			<option value="?board=46.0"> =====> Mercato valute</option>
+			<option value="?board=107.0"> =====> Beni</option>
+			<option value="?board=171.0"> =====> Servizi</option>
+			<option value="?board=172.0"> =====> Esercizi commerciali</option>
+			<option value="?board=173.0"> =====> Hardware/Mining (Italiano)</option>
+			<option value="?board=200.0"> =====> Gambling (Italiano)</option>
+			<option value="?board=162.0"> ===> Accuse scam/truffe</option>
+			<option value="?board=115.0"> ===> Mining (Italiano)</option>
+			<option value="?board=132.0"> ===> Alt-Currencies (Italiano)</option>
+			<option value="?board=176.0"> =====> Annunci</option>
+			<option value="?board=144.0"> ===> Raduni/Meeting (Italiano)</option>
+			<option value="?board=165.0"> ===> Crittografia e decentralizzazione</option>
+			<option value="?board=145.0"> ===> Off-Topic (Italiano)</option>
+			<option value="?board=252.0"> => &#26085;&#26412;&#35486; (Japanese)</option>
+			<option value="?board=255.0"> ===> &#12450;&#12523;&#12488;&#12467;&#12452;&#12531;</option>
+			<option value="?board=79.0"> => Nederlands (Dutch)</option>
+			<option value="?board=80.0"> ===> Markt</option>
+			<option value="?board=94.0"> ===> Gokken/lotterijen</option>
+			<option value="?board=116.0"> ===> Mining (Nederlands)</option>
+			<option value="?board=143.0"> ===> Beurzen</option>
+			<option value="?board=147.0"> ===> Alt Coins (Nederlands)</option>
+			<option value="?board=148.0"> ===> Off-topic (Nederlands)</option>
+			<option value="?board=150.0"> ===> Meetings (Nederlands)</option>
+			<option value="?board=82.0"> => &#54620;&#44397;&#50612; (Korean)</option>
+			<option value="?board=182.0"> ===> &#45824;&#52404;&#53076;&#51064; Alt Coins (&#54620;&#44397;&#50612;)</option>
+			<option value="?board=219.0"> => Pilipinas</option>
+			<option value="?board=243.0"> ===> Altcoins (Pilipinas)</option>
+			<option value="?board=260.0"> =====> Altcoin Announcements (Pilipinas)</option>
+			<option value="?board=268.0"> ===> Pamilihan</option>
+			<option value="?board=274.0"> ===> Others (Pilipinas)</option>
+			<option value="?board=142.0"> => Polski</option>
+			<option value="?board=163.0"> ===> Tablica og&#322;osze&#324;</option>
+			<option value="?board=164.0"> ===> Alternatywne kryptowaluty</option>
+			<option value="?board=263.0"> =====> Nowe kryptowaluty i tokeny</option>
+			<option value="?board=264.0"> =====> Tablica og&#322;osze&#324; (altcoiny)</option>
+			<option value="?board=29.0"> => Português (Portuguese)</option>
+			<option value="?board=131.0"> ===> Primeiros Passos (Iniciantes)</option>
+			<option value="?board=69.0"> ===> Economia &amp; Mercado</option>
+			<option value="?board=70.0"> ===> Mineração em Geral</option>
+			<option value="?board=206.0"> ===> Desenvolvimento &amp; Discussões Técnicas</option>
+			<option value="?board=181.0"> ===> Criptomoedas Alternativas</option>
+			<option value="?board=134.0"> ===> Brasil</option>
+			<option value="?board=135.0"> ===> Portugal</option>
+			<option value="?board=10.0"> => &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russian)</option>
+			<option value="?board=22.0"> ===> &#1053;&#1086;&#1074;&#1080;&#1095;&#1082;&#1080;</option>
+			<option value="?board=23.0"> ===> &#1041;&#1080;&#1079;&#1085;&#1077;&#1089;</option>
+			<option value="?board=236.0"> =====> &#1041;&#1072;&#1088;&#1072;&#1093;&#1086;&#1083;&#1082;&#1072;</option>
+			<option value="?board=237.0"> =====> &#1054;&#1073;&#1084;&#1077;&#1085;&#1085;&#1080;&#1082;&#1080;</option>
+			<option value="?board=90.0"> ===> &#1048;&#1076;&#1077;&#1080;</option>
+			<option value="?board=66.0"> ===> &#1050;&#1086;&#1076;&#1077;&#1088;&#1099;</option>
+			<option value="?board=21.0"> ===> &#1052;&#1072;&#1081;&#1085;&#1077;&#1088;&#1099;</option>
+			<option value="?board=91.0"> ===> &#1055;&#1086;&#1083;&#1080;&#1090;&#1080;&#1082;&#1072;</option>
+			<option value="?board=20.0"> ===> &#1058;&#1088;&#1077;&#1081;&#1076;&#1077;&#1088;&#1099;</option>
+			<option value="?board=72.0"> ===> &#1040;&#1083;&#1100;&#1090;&#1077;&#1088;&#1085;&#1072;&#1090;&#1080;&#1074;&#1085;&#1099;&#1077; &#1082;&#1088;&#1080;&#1087;&#1090;&#1086;&#1074;&#1072;&#1083;&#1102;&#1090;&#1099;</option>
+			<option value="?board=248.0"> =====> &#1058;&#1086;&#1082;&#1077;&#1085;&#1099;</option>
+			<option value="?board=256.0"> =====> &#1041;ay&#1085;&#1090;&#1080; &#1080; a&#1080;p&#1076;po&#1087;&#1099;</option>
+			<option value="?board=55.0"> ===> &#1061;&#1072;&#1081;&#1087;&#1099;</option>
+			<option value="?board=185.0"> ===> &#1056;&#1072;&#1073;&#1086;&#1090;&#1072;</option>
+			<option value="?board=18.0"> ===> &#1056;&#1072;&#1079;&#1085;&#1086;&#1077;</option>
+			<option value="?board=262.0"> ===> O&#1073;cy&#1078;&#1076;e&#1085;&#1080;e Bitcoin</option>
+			<option value="?board=128.0"> =====> &#1053;&#1086;&#1074;&#1086;&#1089;&#1090;&#1080;</option>
+			<option value="?board=19.0"> =====> &#1070;&#1088;&#1080;&#1089;&#1090;&#1099;</option>
+			<option value="?board=108.0"> => Român&#259; (Romanian)</option>
+			<option value="?board=109.0"> ===> Anunturi importante</option>
+			<option value="?board=110.0"> ===> Offtopic</option>
+			<option value="?board=111.0"> ===> Market</option>
+			<option value="?board=257.0"> =====> Discutii Servicii</option>
+			<option value="?board=166.0"> ===> Minerit</option>
+			<option value="?board=112.0"> ===> Tutoriale</option>
+			<option value="?board=113.0"> ===> Bine ai venit!</option>
+			<option value="?board=114.0"> ===> Presa</option>
+			<option value="?board=259.0"> ===> Altcoins (Monede Alternative)</option>
+			<option value="?board=178.0"> =====> Anunturi Monede Alternative</option>
+			<option value="?board=45.0"> => Skandinavisk</option>
+			<option value="?board=133.0"> => Türkçe (Turkish)</option>
+			<option value="?board=180.0"> ===> Bitcoin Haberleri</option>
+			<option value="?board=155.0"> ===> Pazar Alan&#305;</option>
+			<option value="?board=156.0"> ===> Madencilik</option>
+			<option value="?board=189.0"> ===> Ekonomi</option>
+			<option value="?board=190.0"> ===> Servisler</option>
+			<option value="?board=232.0"> =====> Fonlar</option>
+			<option value="?board=229.0"> ===> Proje Geli&#351;tirme</option>
+			<option value="?board=157.0"> ===> Alternatif Kripto-Paralar</option>
+			<option value="?board=235.0"> =====> Madencilik (Alternatif Kripto-Paralar)</option>
+			<option value="?board=239.0"> =====> Duyurular (Alternatif Kripto-Paralar)</option>
+			<option value="?board=158.0"> ===> Konu D&#305;&#351;&#305;</option>
+			<option value="?board=174.0"> ===> Yeni Ba&#351;layanlar &amp; Yard&#305;m</option>
+			<option value="?board=230.0"> ===> Bulu&#351;malar</option>
+			<option value="?board=11.0"> => Other languages/locations</option>
+		</select>&nbsp;
+		<input type="button" value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'https://bitcointalk.org/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" />
+	</form>
+</div></div><br />
+	</div><script type="text/javascript">
+//<!--
+function detectabp(el) {
+	if(typeof window.getComputedStyle != 'function')
+		return false;
+	if(!el)
+		var el=document.getElementById("sponsor");
+	var s = window.getComputedStyle(el).getPropertyValue("-moz-binding");
+	var s2 = window.getComputedStyle(el).getPropertyValue("display");
+	var detected = typeof s !== "undefined" && s != null && s.length > 0 && s != "none";
+	return detected || (typeof s2 !== "undefined" && s2 != null && s2 == "none");
+}
+function hex(num, length) {
+	str=num.toString(16);
+	while (str.length < length) {
+		str = '0' + str;
+	}
+	return str.substr(0,length);
+
+}
+
+function getabplink(site) {
+	var sites = new Array();sites["https://www.privateinternetaccess.com/"] = 1;
+sites["https://bitcointalk.org/dec/p1.html"] = 2;
+sites["https://fundyourselfnow.com"] = 3;
+sites["https://bountyhive.io"] = 4;
+	site_n=sites[site];
+	if(typeof site_n === 'undefined' || site_n === null || site_n <1 || site_n >150)
+		return site;
+	var code=Math.floor(Math.random()*2100000000);
+	var filler=hex(Math.floor(Math.random()*900000000000000),8);
+	var msg=Math.floor(Math.random()*9999999);
+	var site_c = site_n ^ code;
+	var template = Math.floor(Math.random()*4);
+	if(template==0)
+		template='https://bitcointalk.org/index.php?topic='+msg+'.0;do=watch;sesc=';
+	else if (template==1)
+		template="https://bitcointalk.org/index.php?action=post;msg=" + msg + ";topic=" + msg + ".0;sesc=";
+	else if (template==2)
+		template="https://bitcointalk.org/index.php?action=post;quote="+msg+";topic="+msg+".0;num_replies="+msg+";sesc=";
+	else
+		template="https://bitcointalk.org/index.php?action=ignore;u="+msg+";topic="+msg+";msg="+msg+";sesc=";
+
+	return template + hex(code,8) + hex(code,8) + hex(site_c,8) + filler;
+}
+function antiabp(){
+	if(!detectabp())
+		return;
+	var all_links=document.body.getElementsByTagName('a');
+	var els=new Array();
+	for(var i=0;i<all_links.length;i++) {
+		els.push(all_links[i])
+	}
+	for(var i=0;i<els.length;i++) {
+		if(detectabp(els[i])){
+			var newlink = els[i].cloneNode();
+			newlink.href=getabplink(els[i]);
+			newlink.innerHTML=els[i].innerHTML;
+			els[i].parentNode.insertBefore(newlink, els[i]);
+			els[i].parentNode.removeChild(els[i]);
+		}
+	}
+}
+
+if(window.chrome)
+	window.setTimeout(antiabp, 300);
+else
+	antiabp();
+//-->
+</script><script type="text/javascript">
+//<!--
+Array.prototype.forEach.call(document.getElementsByClassName("userimg"), checkImg);
+//-->
+</script>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table cellspacing="0" cellpadding="3" border="0" align="center" width="100%">
+			<tr>
+				<td width="28%" valign="middle" align="right">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="https://bitcointalk.org/Themes/custom1/images/powered-mysql.gif" alt="Powered by MySQL" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="https://bitcointalk.org/Themes/custom1/images/powered-php.gif" alt="Powered by PHP" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+				<td valign="middle" align="center" style="white-space: nowrap;">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.19</a> | 
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF &copy; 2006-2009, Simple Machines</a>
+		</span>
+				</td>
+				<td width="28%" valign="middle" align="left">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="https://bitcointalk.org/Themes/custom1/images/valid-xhtml10.gif" alt="Valid XHTML 1.0!" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="https://bitcointalk.org/Themes/custom1/images/valid-css.gif" alt="Valid CSS!" width="54" height="20" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" /></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div id="ajax_in_progress" style="display: none;">Loading...</div>
+</body></html>
